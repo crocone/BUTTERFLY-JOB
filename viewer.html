@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Asset Viewer — Butterfly Job</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <style>
+      html, body { margin: 0; height: 100%; background: #efe8da; color: #2f2e31; font: 13px Georgia, serif; overflow: hidden; }
+      #panel { position: absolute; left: 10px; top: 10px; background: #f8f3e8; border: 1px solid #c9bfae; padding: 10px 12px;
+               max-height: calc(100% - 44px); overflow: auto; min-width: 220px; }
+      #panel h1 { font-size: 15px; margin: 0 0 6px; letter-spacing: .08em; }
+      #panel label { display: block; white-space: nowrap; }
+      #status { position: absolute; right: 10px; bottom: 10px; background: #f8f3e8; border: 1px solid #c9bfae; padding: 6px 10px; }
+      canvas { display: block; }
+    </style>
+  </head>
+  <body>
+    <div id="panel"><h1>ASSET VIEWER</h1><div id="list">Loading…</div></div>
+    <div id="status"></div>
+    <script type="module" src="./src/dev/viewer.ts"></script>
+  </body>
+</html>

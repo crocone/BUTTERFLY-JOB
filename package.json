@@ -1,0 +1,30 @@
+{
+  "name": "butterfly-job",
+  "private": true,
+  "version": "1.0.0",
+  "description": "BUTTERFLY JOB — a heist game about changing the past. Three.js + TypeScript + Blender-authored paper diorama.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "assets": "python3 blender/scripts/build_all.py",
+    "e2e": "node e2e/run-all.mjs"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/courier-prime": "^5.3.0",
+    "@fontsource/eb-garamond": "^5.3.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/three": "^0.186.0",
+    "playwright": "1.56.1",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2"
+  }
+}

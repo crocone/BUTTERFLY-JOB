@@ -1,0 +1,2685 @@
+{
+ "version": 1,
+ "generated": "2026-09-28T21:00:26+00:00",
+ "blender": "5.0.1",
+ "conventions": {
+  "units": "1 unit = 1 tile = 1 m",
+  "up": "+Y (glTF), Blender +Z",
+  "grid_to_world": "x_world = x_grid - 15, z_world = z_grid - 11",
+  "node_names": "<asset>__<part>; bj_* custom properties exported as extras",
+  "roles": [
+   "variant",
+   "part",
+   "anchor",
+   "proxy",
+   "camera",
+   "dynamic",
+   "pivot",
+   "character"
+  ]
+ },
+ "assets": {
+  "trees": {
+   "asset": "trees",
+   "file": "assets/models/trees.glb",
+   "source": "blender/source/trees.blend",
+   "blender": "5.0.1",
+   "stats": {
+    "objects": 111,
+    "triangles": 7704,
+    "materials": [
+     "bj_edge",
+     "bj_foliage",
+     "bj_paper",
+     "bj_wood"
+    ],
+    "images": [
+     "bj_tex_edge",
+     "bj_tex_foliage",
+     "bj_tex_grain",
+     "bj_tex_wood"
+    ],
+    "glb_bytes": 289472
+   },
+   "nodes": [
+    {
+     "node": "oak__garden_1946",
+     "role": "variant",
+     "variant": "oak.garden.1946",
+     "anim": "unfurl",
+     "position": [
+      10.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       10.302,
+       0.0,
+       2.286
+      ],
+      "max": [
+       10.72,
+       0.756,
+       2.714
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_1946__seg0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "oak__garden_1946",
+     "position": [
+      10.5,
+      0.5,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       10.41,
+       0.591,
+       2.379
+      ],
+      "max": [
+       10.643,
+       0.756,
+       2.623
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_1946__seg1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "oak__garden_1946",
+     "position": [
+      10.5,
+      0.5,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       10.318,
+       0.506,
+       2.363
+      ],
+      "max": [
+       10.503,
+       0.614,
+       2.539
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_1946__seg2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "oak__garden_1946",
+     "position": [
+      10.5,
+      0.5,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       10.535,
+       0.456,
+       2.473
+      ],
+      "max": [
+       10.68,
+       0.57,
+       2.621
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_1946__stem",
+     "role": "part",
+     "anim": "rise",
+     "parent": "oak__garden_1946",
+     "position": [
+      10.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       10.302,
+       0.0,
+       2.286
+      ],
+      "max": [
+       10.72,
+       0.75,
+       2.714
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_1986_full",
+     "role": "variant",
+     "variant": "oak.garden.1986.full",
+     "anim": "unfurl",
+     "position": [
+      10.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       9.491,
+       0.0,
+       1.449
+      ],
+      "max": [
+       11.598,
+       2.718,
+       3.655
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_1986_full__seg0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "oak__garden_1986_full",
+     "position": [
+      10.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       9.762,
+       1.325,
+       1.822
+      ],
+      "max": [
+       11.266,
+       2.53,
+       3.229
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_1986_full__seg1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "oak__garden_1986_full",
+     "position": [
+      10.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       10.504,
+       1.553,
+       1.683
+      ],
+      "max": [
+       11.598,
+       2.213,
+       2.699
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_1986_full__seg2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "oak__garden_1986_full",
+     "position": [
+      10.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       10.007,
+       1.507,
+       1.449
+      ],
+      "max": [
+       11.017,
+       2.102,
+       2.508
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_1986_full__seg3",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 3,
+     "parent": "oak__garden_1986_full",
+     "position": [
+      10.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       9.491,
+       1.755,
+       1.932
+      ],
+      "max": [
+       10.474,
+       2.342,
+       2.836
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_1986_full__seg4",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 4,
+     "parent": "oak__garden_1986_full",
+     "position": [
+      10.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       9.747,
+       1.633,
+       2.497
+      ],
+      "max": [
+       10.649,
+       2.241,
+       3.572
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_1986_full__seg5",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 5,
+     "parent": "oak__garden_1986_full",
+     "position": [
+      10.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       10.288,
+       1.693,
+       2.558
+      ],
+      "max": [
+       11.329,
+       2.395,
+       3.655
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_1986_full__seg6",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 6,
+     "parent": "oak__garden_1986_full",
+     "position": [
+      10.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       10.079,
+       2.048,
+       2.091
+      ],
+      "max": [
+       11.084,
+       2.718,
+       3.022
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_1986_full__trunk",
+     "role": "part",
+     "anim": "rise",
+     "parent": "oak__garden_1986_full",
+     "position": [
+      10.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       10.117,
+       0.0,
+       1.985
+      ],
+      "max": [
+       10.943,
+       1.355,
+       2.656
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_2026_full",
+     "role": "variant",
+     "variant": "oak.garden.2026.full",
+     "anim": "unfurl",
+     "position": [
+      10.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       8.052,
+       0.0,
+       -0.168
+      ],
+      "max": [
+       13.024,
+       4.377,
+       4.837
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_2026_full__seg0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "oak__garden_2026_full",
+     "position": [
+      10.5,
+      1.9,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       8.568,
+       2.178,
+       0.67
+      ],
+      "max": [
+       12.482,
+       4.072,
+       4.437
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_2026_full__seg1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "oak__garden_2026_full",
+     "position": [
+      10.5,
+      1.9,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       10.699,
+       2.303,
+       1.182
+      ],
+      "max": [
+       13.024,
+       3.634,
+       3.29
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_2026_full__seg2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "oak__garden_2026_full",
+     "position": [
+      10.5,
+      1.9,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       9.757,
+       2.009,
+       -0.168
+      ],
+      "max": [
+       12.467,
+       3.66,
+       2.818
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_2026_full__seg3",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 3,
+     "parent": "oak__garden_2026_full",
+     "position": [
+      10.5,
+      1.9,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       8.261,
+       2.505,
+       0.176
+      ],
+      "max": [
+       10.981,
+       4.101,
+       2.894
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_2026_full__seg4",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 4,
+     "parent": "oak__garden_2026_full",
+     "position": [
+      10.5,
+      1.9,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       8.052,
+       2.377,
+       1.081
+      ],
+      "max": [
+       10.274,
+       3.817,
+       3.544
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_2026_full__seg5",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 5,
+     "parent": "oak__garden_2026_full",
+     "position": [
+      10.5,
+      1.9,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       8.468,
+       2.468,
+       2.376
+      ],
+      "max": [
+       10.744,
+       3.902,
+       4.666
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_2026_full__seg6",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 6,
+     "parent": "oak__garden_2026_full",
+     "position": [
+      10.5,
+      1.9,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       9.191,
+       2.503,
+       2.825
+      ],
+      "max": [
+       11.307,
+       3.948,
+       4.837
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_2026_full__seg7",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 7,
+     "parent": "oak__garden_2026_full",
+     "position": [
+      10.5,
+      1.9,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       10.689,
+       2.631,
+       2.322
+      ],
+      "max": [
+       12.993,
+       4.138,
+       4.638
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_2026_full__seg8",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 8,
+     "parent": "oak__garden_2026_full",
+     "position": [
+      10.5,
+      1.9,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       9.632,
+       3.328,
+       1.356
+      ],
+      "max": [
+       11.718,
+       4.377,
+       3.604
+      ]
+     }
+    },
+    {
+     "node": "oak__garden_2026_full__trunk",
+     "role": "part",
+     "anim": "rise",
+     "parent": "oak__garden_2026_full",
+     "position": [
+      10.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       9.88,
+       0.0,
+       2.088
+      ],
+      "max": [
+       11.261,
+       2.248,
+       2.812
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1946",
+     "role": "variant",
+     "variant": "oak.square.1946",
+     "anim": "unfurl",
+     "position": [
+      0.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.302,
+       0.0,
+       2.286
+      ],
+      "max": [
+       0.72,
+       0.781,
+       2.714
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1946__seg0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "oak__square_1946",
+     "position": [
+      0.5,
+      0.5,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.412,
+       0.583,
+       2.393
+      ],
+      "max": [
+       0.644,
+       0.781,
+       2.603
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1946__seg1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "oak__square_1946",
+     "position": [
+      0.5,
+      0.5,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.34,
+       0.503,
+       2.365
+      ],
+      "max": [
+       0.48,
+       0.628,
+       2.534
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1946__seg2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "oak__square_1946",
+     "position": [
+      0.5,
+      0.5,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.519,
+       0.453,
+       2.489
+      ],
+      "max": [
+       0.672,
+       0.566,
+       2.617
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1946__stem",
+     "role": "part",
+     "anim": "rise",
+     "parent": "oak__square_1946",
+     "position": [
+      0.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.302,
+       0.0,
+       2.286
+      ],
+      "max": [
+       0.72,
+       0.75,
+       2.714
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_full",
+     "role": "variant",
+     "variant": "oak.square.1986.full",
+     "anim": "unfurl",
+     "position": [
+      0.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.64,
+       0.0,
+       1.423
+      ],
+      "max": [
+       1.568,
+       2.653,
+       3.616
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_full__seg0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "oak__square_1986_full",
+     "position": [
+      0.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.267,
+       1.299,
+       1.765
+      ],
+      "max": [
+       1.273,
+       2.437,
+       3.264
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_full__seg1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "oak__square_1986_full",
+     "position": [
+      0.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.581,
+       1.68,
+       2.027
+      ],
+      "max": [
+       1.568,
+       2.262,
+       2.956
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_full__seg2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "oak__square_1986_full",
+     "position": [
+      0.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.044,
+       1.387,
+       1.423
+      ],
+      "max": [
+       1.006,
+       1.959,
+       2.435
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_full__seg3",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 3,
+     "parent": "oak__square_1986_full",
+     "position": [
+      0.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.64,
+       1.463,
+       1.804
+      ],
+      "max": [
+       0.391,
+       2.091,
+       2.801
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_full__seg4",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 4,
+     "parent": "oak__square_1986_full",
+     "position": [
+      0.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.435,
+       1.365,
+       2.358
+      ],
+      "max": [
+       0.797,
+       2.068,
+       3.616
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_full__seg5",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 5,
+     "parent": "oak__square_1986_full",
+     "position": [
+      0.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.261,
+       1.752,
+       2.492
+      ],
+      "max": [
+       1.302,
+       2.33,
+       3.518
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_full__seg6",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 6,
+     "parent": "oak__square_1986_full",
+     "position": [
+      0.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.106,
+       2.04,
+       2.086
+      ],
+      "max": [
+       1.113,
+       2.653,
+       2.955
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_full__trunk",
+     "role": "part",
+     "anim": "rise",
+     "parent": "oak__square_1986_full",
+     "position": [
+      0.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.24,
+       0.0,
+       2.216
+      ],
+      "max": [
+       0.98,
+       1.25,
+       2.656
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_pruned",
+     "role": "variant",
+     "variant": "oak.square.1986.pruned",
+     "anim": "unfurl",
+     "position": [
+      0.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.277,
+       0.0,
+       1.941
+      ],
+      "max": [
+       1.242,
+       2.143,
+       3.175
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_pruned__seg0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "oak__square_1986_pruned",
+     "position": [
+      0.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.022,
+       1.296,
+       1.941
+      ],
+      "max": [
+       0.944,
+       2.059,
+       3.072
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_pruned__seg1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "oak__square_1986_pruned",
+     "position": [
+      0.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.507,
+       1.51,
+       2.165
+      ],
+      "max": [
+       1.242,
+       1.959,
+       2.838
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_pruned__seg2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "oak__square_1986_pruned",
+     "position": [
+      0.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.031,
+       1.473,
+       2.1
+      ],
+      "max": [
+       0.698,
+       1.888,
+       2.746
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_pruned__seg3",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 3,
+     "parent": "oak__square_1986_pruned",
+     "position": [
+      0.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.277,
+       1.339,
+       2.171
+      ],
+      "max": [
+       0.462,
+       1.761,
+       2.832
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_pruned__seg4",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 4,
+     "parent": "oak__square_1986_pruned",
+     "position": [
+      0.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.361,
+       1.381,
+       2.476
+      ],
+      "max": [
+       1.017,
+       1.776,
+       3.175
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_pruned__seg5",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 5,
+     "parent": "oak__square_1986_pruned",
+     "position": [
+      0.5,
+      1.25,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.283,
+       1.771,
+       2.198
+      ],
+      "max": [
+       0.887,
+       2.143,
+       2.857
+      ]
+     }
+    },
+    {
+     "node": "oak__square_1986_pruned__trunk",
+     "role": "part",
+     "anim": "rise",
+     "parent": "oak__square_1986_pruned",
+     "position": [
+      0.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.085,
+       0.0,
+       2.314
+      ],
+      "max": [
+       0.998,
+       1.37,
+       2.656
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_full",
+     "role": "variant",
+     "variant": "oak.square.2026.full",
+     "anim": "unfurl",
+     "position": [
+      0.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -1.755,
+       0.0,
+       0.078
+      ],
+      "max": [
+       2.95,
+       4.147,
+       4.68
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_full__seg0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "oak__square_2026_full",
+     "position": [
+      0.5,
+      1.85,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -1.275,
+       2.096,
+       0.723
+      ],
+      "max": [
+       2.222,
+       3.789,
+       3.962
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_full__seg1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "oak__square_2026_full",
+     "position": [
+      0.5,
+      1.85,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.646,
+       2.227,
+       1.045
+      ],
+      "max": [
+       2.95,
+       3.608,
+       3.415
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_full__seg2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "oak__square_2026_full",
+     "position": [
+      0.5,
+      1.85,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.022,
+       2.135,
+       0.078
+      ],
+      "max": [
+       2.495,
+       3.56,
+       2.343
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_full__seg3",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 3,
+     "parent": "oak__square_2026_full",
+     "position": [
+      0.5,
+      1.85,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -1.321,
+       2.231,
+       0.183
+      ],
+      "max": [
+       0.916,
+       3.503,
+       2.442
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_full__seg4",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 4,
+     "parent": "oak__square_2026_full",
+     "position": [
+      0.5,
+      1.85,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -1.755,
+       2.202,
+       1.185
+      ],
+      "max": [
+       0.324,
+       3.458,
+       3.271
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_full__seg5",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 5,
+     "parent": "oak__square_2026_full",
+     "position": [
+      0.5,
+      1.85,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -1.542,
+       2.479,
+       2.256
+      ],
+      "max": [
+       0.681,
+       3.9,
+       4.379
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_full__seg6",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 6,
+     "parent": "oak__square_2026_full",
+     "position": [
+      0.5,
+      1.85,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.58,
+       2.364,
+       2.58
+      ],
+      "max": [
+       1.488,
+       3.56,
+       4.68
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_full__seg7",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 7,
+     "parent": "oak__square_2026_full",
+     "position": [
+      0.5,
+      1.85,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.39,
+       2.126,
+       2.543
+      ],
+      "max": [
+       2.553,
+       3.466,
+       4.634
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_full__seg8",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 8,
+     "parent": "oak__square_2026_full",
+     "position": [
+      0.5,
+      1.85,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.499,
+       3.202,
+       1.661
+      ],
+      "max": [
+       1.695,
+       4.147,
+       3.651
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_full__trunk",
+     "role": "part",
+     "anim": "rise",
+     "parent": "oak__square_2026_full",
+     "position": [
+      0.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.124,
+       0.0,
+       1.817
+      ],
+      "max": [
+       0.86,
+       1.864,
+       3.176
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_pruned",
+     "role": "variant",
+     "variant": "oak.square.2026.pruned",
+     "anim": "unfurl",
+     "position": [
+      0.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -1.075,
+       0.0,
+       1.439
+      ],
+      "max": [
+       2.08,
+       3.624,
+       3.913
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_pruned__seg0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "oak__square_2026_pruned",
+     "position": [
+      0.5,
+      1.7,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.65,
+       1.899,
+       1.439
+      ],
+      "max": [
+       1.614,
+       3.373,
+       3.536
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_pruned__seg1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "oak__square_2026_pruned",
+     "position": [
+      0.5,
+      1.7,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.514,
+       2.321,
+       1.617
+      ],
+      "max": [
+       2.08,
+       3.22,
+       3.155
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_pruned__seg2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "oak__square_2026_pruned",
+     "position": [
+      0.5,
+      1.7,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.04,
+       2.157,
+       1.552
+      ],
+      "max": [
+       1.376,
+       2.944,
+       3.041
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_pruned__seg3",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 3,
+     "parent": "oak__square_2026_pruned",
+     "position": [
+      0.5,
+      1.7,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -1.075,
+       2.382,
+       1.515
+      ],
+      "max": [
+       0.599,
+       3.384,
+       3.195
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_pruned__seg4",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 4,
+     "parent": "oak__square_2026_pruned",
+     "position": [
+      0.5,
+      1.7,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.801,
+       2.177,
+       2.366
+      ],
+      "max": [
+       0.711,
+       3.07,
+       3.854
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_pruned__seg5",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 5,
+     "parent": "oak__square_2026_pruned",
+     "position": [
+      0.5,
+      1.7,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       0.11,
+       2.007,
+       2.461
+      ],
+      "max": [
+       1.554,
+       2.895,
+       3.913
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_pruned__seg6",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 6,
+     "parent": "oak__square_2026_pruned",
+     "position": [
+      0.5,
+      1.7,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.137,
+       2.821,
+       1.898
+      ],
+      "max": [
+       1.338,
+       3.624,
+       3.275
+      ]
+     }
+    },
+    {
+     "node": "oak__square_2026_pruned__trunk",
+     "role": "part",
+     "anim": "rise",
+     "parent": "oak__square_2026_pruned",
+     "position": [
+      0.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       -0.136,
+       0.0,
+       2.076
+      ],
+      "max": [
+       1.055,
+       1.956,
+       2.964
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1946",
+     "role": "variant",
+     "variant": "oak.yard.1946",
+     "anim": "unfurl",
+     "position": [
+      9.5,
+      0.0,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.302,
+       0.0,
+       -5.714
+      ],
+      "max": [
+       9.72,
+       0.759,
+       -5.286
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1946__seg0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "oak__yard_1946",
+     "position": [
+      9.5,
+      0.5,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.406,
+       0.584,
+       -5.601
+      ],
+      "max": [
+       9.618,
+       0.759,
+       -5.372
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1946__seg1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "oak__yard_1946",
+     "position": [
+      9.5,
+      0.5,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.338,
+       0.504,
+       -5.633
+      ],
+      "max": [
+       9.485,
+       0.609,
+       -5.473
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1946__seg2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "oak__yard_1946",
+     "position": [
+      9.5,
+      0.5,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.531,
+       0.454,
+       -5.522
+      ],
+      "max": [
+       9.682,
+       0.569,
+       -5.391
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1946__stem",
+     "role": "part",
+     "anim": "rise",
+     "parent": "oak__yard_1946",
+     "position": [
+      9.5,
+      0.0,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.302,
+       0.0,
+       -5.714
+      ],
+      "max": [
+       9.72,
+       0.75,
+       -5.286
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_full",
+     "role": "variant",
+     "variant": "oak.yard.1986.full",
+     "anim": "unfurl",
+     "position": [
+      9.5,
+      0.0,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.438,
+       0.0,
+       -6.699
+      ],
+      "max": [
+       10.5,
+       2.664,
+       -4.44
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_full__seg0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "oak__yard_1986_full",
+     "position": [
+      9.5,
+      1.25,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.701,
+       1.328,
+       -6.22
+      ],
+      "max": [
+       10.323,
+       2.405,
+       -4.772
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_full__seg1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "oak__yard_1986_full",
+     "position": [
+      9.5,
+      1.25,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.477,
+       1.49,
+       -6.317
+      ],
+      "max": [
+       10.5,
+       2.233,
+       -5.09
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_full__seg2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "oak__yard_1986_full",
+     "position": [
+      9.5,
+      1.25,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.893,
+       1.558,
+       -6.699
+      ],
+      "max": [
+       10.082,
+       2.284,
+       -5.485
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_full__seg3",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 3,
+     "parent": "oak__yard_1986_full",
+     "position": [
+      9.5,
+      1.25,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.438,
+       1.477,
+       -6.366
+      ],
+      "max": [
+       9.473,
+       2.06,
+       -5.372
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_full__seg4",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 4,
+     "parent": "oak__yard_1986_full",
+     "position": [
+      9.5,
+      1.25,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.467,
+       1.378,
+       -5.565
+      ],
+      "max": [
+       9.735,
+       2.081,
+       -4.44
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_full__seg5",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 5,
+     "parent": "oak__yard_1986_full",
+     "position": [
+      9.5,
+      1.25,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.349,
+       1.699,
+       -5.519
+      ],
+      "max": [
+       10.365,
+       2.357,
+       -4.553
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_full__seg6",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 6,
+     "parent": "oak__yard_1986_full",
+     "position": [
+      9.5,
+      1.25,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.113,
+       2.041,
+       -5.86
+      ],
+      "max": [
+       10.113,
+       2.664,
+       -4.96
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_full__trunk",
+     "role": "part",
+     "anim": "rise",
+     "parent": "oak__yard_1986_full",
+     "position": [
+      9.5,
+      0.0,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.115,
+       0.0,
+       -5.656
+      ],
+      "max": [
+       9.876,
+       1.35,
+       -5.081
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_pruned",
+     "role": "variant",
+     "variant": "oak.yard.1986.pruned",
+     "anim": "unfurl",
+     "position": [
+      9.5,
+      0.0,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.963,
+       0.0,
+       -6.179
+      ],
+      "max": [
+       10.205,
+       2.157,
+       -4.784
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_pruned__seg0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "oak__yard_1986_pruned",
+     "position": [
+      9.5,
+      1.25,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.963,
+       1.28,
+       -5.986
+      ],
+      "max": [
+       9.995,
+       2.025,
+       -4.956
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_pruned__seg1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "oak__yard_1986_pruned",
+     "position": [
+      9.5,
+      1.25,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.589,
+       1.481,
+       -6.004
+      ],
+      "max": [
+       10.205,
+       1.856,
+       -5.341
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_pruned__seg2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "oak__yard_1986_pruned",
+     "position": [
+      9.5,
+      1.25,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.155,
+       1.472,
+       -6.179
+      ],
+      "max": [
+       9.761,
+       1.822,
+       -5.523
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_pruned__seg3",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 3,
+     "parent": "oak__yard_1986_pruned",
+     "position": [
+      9.5,
+      1.25,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.097,
+       1.566,
+       -5.855
+      ],
+      "max": [
+       9.759,
+       1.967,
+       -5.129
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_pruned__seg4",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 4,
+     "parent": "oak__yard_1986_pruned",
+     "position": [
+      9.5,
+      1.25,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.208,
+       1.515,
+       -5.474
+      ],
+      "max": [
+       9.883,
+       1.945,
+       -4.784
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_pruned__seg5",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 5,
+     "parent": "oak__yard_1986_pruned",
+     "position": [
+      9.5,
+      1.25,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.282,
+       1.77,
+       -5.759
+      ],
+      "max": [
+       9.926,
+       2.157,
+       -5.132
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_1986_pruned__trunk",
+     "role": "part",
+     "anim": "rise",
+     "parent": "oak__yard_1986_pruned",
+     "position": [
+      9.5,
+      0.0,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.32,
+       0.0,
+       -5.703
+      ],
+      "max": [
+       9.868,
+       1.391,
+       -5.04
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_full",
+     "role": "variant",
+     "variant": "oak.yard.2026.full",
+     "anim": "unfurl",
+     "position": [
+      9.5,
+      0.0,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       5.928,
+       -0.026,
+       -7.696
+      ],
+      "max": [
+       11.594,
+       4.157,
+       -3.091
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_full__seg0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "oak__yard_2026_full",
+     "position": [
+      9.15,
+      1.85,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       7.563,
+       2.093,
+       -7.124
+      ],
+      "max": [
+       10.812,
+       3.972,
+       -3.86
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_full__seg1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "oak__yard_2026_full",
+     "position": [
+      9.15,
+      1.85,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.194,
+       2.275,
+       -7.155
+      ],
+      "max": [
+       11.594,
+       3.675,
+       -4.768
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_full__seg2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "oak__yard_2026_full",
+     "position": [
+      9.15,
+      1.85,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.441,
+       2.054,
+       -7.592
+      ],
+      "max": [
+       10.876,
+       3.538,
+       -5.301
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_full__seg3",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 3,
+     "parent": "oak__yard_2026_full",
+     "position": [
+      9.15,
+      1.85,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       7.457,
+       2.331,
+       -7.696
+      ],
+      "max": [
+       9.876,
+       3.76,
+       -5.28
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_full__seg4",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 4,
+     "parent": "oak__yard_2026_full",
+     "position": [
+      9.15,
+      1.85,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       5.928,
+       2.441,
+       -7.02
+      ],
+      "max": [
+       8.21,
+       3.783,
+       -4.558
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_full__seg5",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 5,
+     "parent": "oak__yard_2026_full",
+     "position": [
+      9.15,
+      1.85,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       6.31,
+       2.191,
+       -6.056
+      ],
+      "max": [
+       8.831,
+       3.818,
+       -3.586
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_full__seg6",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 6,
+     "parent": "oak__yard_2026_full",
+     "position": [
+      9.15,
+      1.85,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       7.993,
+       2.279,
+       -5.368
+      ],
+      "max": [
+       10.254,
+       3.647,
+       -3.091
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_full__seg7",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 7,
+     "parent": "oak__yard_2026_full",
+     "position": [
+      9.15,
+      1.85,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.791,
+       1.969,
+       -6.1
+      ],
+      "max": [
+       11.331,
+       3.666,
+       -3.673
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_full__seg8",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 8,
+     "parent": "oak__yard_2026_full",
+     "position": [
+      9.15,
+      1.85,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.219,
+       3.201,
+       -6.437
+      ],
+      "max": [
+       10.276,
+       4.157,
+       -4.511
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_full__trunk",
+     "role": "part",
+     "anim": "rise",
+     "parent": "oak__yard_2026_full",
+     "position": [
+      9.5,
+      0.0,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       7.083,
+       -0.026,
+       -5.957
+      ],
+      "max": [
+       9.863,
+       2.626,
+       -4.958
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_pruned",
+     "role": "variant",
+     "variant": "oak.yard.2026.pruned",
+     "anim": "unfurl",
+     "position": [
+      9.5,
+      0.0,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.447,
+       0.0,
+       -6.93
+      ],
+      "max": [
+       10.911,
+       3.588,
+       -4.138
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_pruned__seg0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "oak__yard_2026_pruned",
+     "position": [
+      9.5,
+      1.7,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.447,
+       1.886,
+       -6.598
+      ],
+      "max": [
+       10.655,
+       3.267,
+       -4.459
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_pruned__seg1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "oak__yard_2026_pruned",
+     "position": [
+      9.5,
+      1.7,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.533,
+       2.275,
+       -6.529
+      ],
+      "max": [
+       10.911,
+       3.033,
+       -4.992
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_pruned__seg2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "oak__yard_2026_pruned",
+     "position": [
+      9.5,
+      1.7,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.932,
+       2.084,
+       -6.93
+      ],
+      "max": [
+       10.358,
+       2.836,
+       -5.64
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_pruned__seg3",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 3,
+     "parent": "oak__yard_2026_pruned",
+     "position": [
+      9.5,
+      1.7,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.604,
+       2.463,
+       -6.539
+      ],
+      "max": [
+       10.047,
+       3.318,
+       -4.936
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_pruned__seg4",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 4,
+     "parent": "oak__yard_2026_pruned",
+     "position": [
+      9.5,
+      1.7,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.67,
+       2.444,
+       -5.662
+      ],
+      "max": [
+       10.086,
+       3.294,
+       -4.187
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_pruned__seg5",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 5,
+     "parent": "oak__yard_2026_pruned",
+     "position": [
+      9.5,
+      1.7,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.339,
+       1.964,
+       -5.554
+      ],
+      "max": [
+       10.738,
+       2.88,
+       -4.138
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_pruned__seg6",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 6,
+     "parent": "oak__yard_2026_pruned",
+     "position": [
+      9.5,
+      1.7,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       8.903,
+       2.802,
+       -6.113
+      ],
+      "max": [
+       10.225,
+       3.588,
+       -4.767
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_2026_pruned__trunk",
+     "role": "part",
+     "anim": "rise",
+     "parent": "oak__yard_2026_pruned",
+     "position": [
+      9.5,
+      0.0,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.14,
+       0.0,
+       -6.167
+      ],
+      "max": [
+       9.889,
+       1.887,
+       -4.86
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_stump",
+     "role": "variant",
+     "variant": "oak.yard.stump",
+     "anim": "unfurl",
+     "position": [
+      9.5,
+      0.0,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.194,
+       -0.018,
+       -6.083
+      ],
+      "max": [
+       10.614,
+       0.225,
+       -4.93
+      ]
+     }
+    },
+    {
+     "node": "oak__yard_stump__stump",
+     "role": "part",
+     "anim": "pop",
+     "parent": "oak__yard_stump",
+     "position": [
+      9.5,
+      0.0,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       9.194,
+       -0.018,
+       -6.083
+      ],
+      "max": [
+       10.614,
+       0.225,
+       -4.93
+      ]
+     }
+    }
+   ],
+   "animations": []
+  }
+ }
+}
