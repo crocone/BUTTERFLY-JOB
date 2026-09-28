@@ -61,7 +61,7 @@ describe('asset manifest ↔ game data', () => {
   });
 
   it('each era of each timeline shows exactly one oak state and one bank state', () => {
-    const plans = [{}, { 'oak.plant': 'yard' }, { 'oak.plant': 'yard', 'oak.renovation': 'preserve' }, { 'oak.plant': 'square', 'oak.renovation': 'preserve' },
+    const plans: Array<Record<string, string>> = [{}, { 'oak.plant': 'yard' }, { 'oak.plant': 'yard', 'oak.renovation': 'preserve' }, { 'oak.plant': 'square', 'oak.renovation': 'preserve' },
       { 'oak.plant': 'yard', 'oak.renovation': 'preserve', 'alley.fate': 'kept' }];
     for (const p of plans) {
       const f = computeTimeline(p).facts;

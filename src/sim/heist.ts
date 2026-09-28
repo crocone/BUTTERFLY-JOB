@@ -218,18 +218,20 @@ export interface DeliveryState {
   doorOpen: boolean;
   /** seconds until the door next opens (0 when open) */
   nextOpenIn: number;
+  /** seconds until the propped door closes again (0 when closed) */
+  closesIn: number;
   cycleTime: number;
 }
 
 export function deliveryState(d: DeliveryInstance | null, t: number): DeliveryState {
-  if (!d) return { vanPresent: false, vanArrive: 0, courier: null, doorOpen: false, nextOpenIn: Infinity, cycleTime: 0 };
+  if (!d) return { vanPresent: false, vanArrive: 0, courier: null, doorOpen: false, nextOpenIn: Infinity, closesIn: 0, cycleTime: 0 };
   const { firstArrival, period, arriveTime, insideTime, leaveTime } = DELIVERY;
   const openAt = arriveTime + d.walkTime;
   const closeAt = openAt + insideTime;
   const backAt = closeAt + d.walkTime;
   const goneAt = backAt + leaveTime;
   if (t < firstArrival) {
-    return { vanPresent: false, vanArrive: 0, courier: null, doorOpen: false, nextOpenIn: firstArrival - t + openAt, cycleTime: -1 };
+    return { vanPresent: false, vanArrive: 0, courier: null, doorOpen: false, nextOpenIn: firstArrival - t + openAt, closesIn: 0, cycleTime: -1 };
   }
   const u = (t - firstArrival) % period;
   const vanPresent = u < goneAt;
@@ -253,7 +255,8 @@ export function deliveryState(d: DeliveryInstance | null, t: number): DeliverySt
   }
   const doorOpen = u >= openAt && u < closeAt;
   const nextOpenIn = doorOpen ? 0 : u < openAt ? openAt - u : period - u + openAt;
-  return { vanPresent, vanArrive, courier, doorOpen, nextOpenIn, cycleTime: u };
+  const closesIn = doorOpen ? closeAt - u : 0;
+  return { vanPresent, vanArrive, courier, doorOpen, nextOpenIn, closesIn, cycleTime: u };
 }
 
 export function cameraYaw(c: CameraInstance, t: number): number {
@@ -413,18 +416,19 @@ export class HeistSim {
     return 'block';
   };
 
-  edgeBlocksSight = (key: string, info: EdgeInfo): boolean => {
-    const d = info.door;
-    if (d && d.kind === 'service') return !(this.world.delivery?.door.id === d.id && this.delivery().doorOpen);
-    // vault: a released maglock unlocks the door, but it stays a closed, opaque door
-    return defaultEdgeBlocks(key, info);
-  };
-
-  sightContext(): SightContext {
+  /** Line-of-sight rules at time `t` (defaults to now; the replay asks for recorded moments). */
+  sightContext(t = this.t): SightContext {
+    const del = deliveryState(this.world.delivery, t);
+    const propped = del.doorOpen ? this.world.delivery?.door.id : undefined;
     const dyn = new Set<string>();
-    const del = this.delivery();
     if (del.vanPresent && this.world.delivery) for (const [x, z] of this.world.delivery.vanTiles) dyn.add(`G:${x},${z}`);
-    return { grid: this.world.grid, edgeBlocks: this.edgeBlocksSight, dynamicOpaque: dyn };
+    const edgeBlocks = (key: string, info: EdgeInfo): boolean => {
+      const d = info.door;
+      if (d && d.kind === 'service') return d.id !== propped;
+      // vault: a released maglock unlocks the door, but it stays a closed, opaque door
+      return defaultEdgeBlocks(key, info);
+    };
+    return { grid: this.world.grid, edgeBlocks, dynamicOpaque: dyn };
   }
 
   blockedNow(): Set<string> {
