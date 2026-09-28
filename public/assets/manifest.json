@@ -1,26 +1,58 @@
 {
  "version": 1,
- "generated": "2026-09-28T23:12:08+00:00",
+ "generated": "2026-09-28T23:31:39+00:00",
  "blender": "5.0.1",
  "conventions": {
   "units": "1 unit = 1 tile = 1 m",
   "up": "+Y (glTF), Blender +Z",
   "grid_to_world": "x_world = x_grid - 15, z_world = z_grid - 11",
   "node_names": "<asset>__<part>; bj_* custom properties exported as extras",
-  "roles": [
-   "variant",
-   "part",
-   "anchor",
-   "proxy",
-   "camera",
-   "dynamic",
-   "pivot",
-   "character"
-  ]
+  "roles": {
+   "variant": "root of an era/intervention variant; id in bj_variant (registered in src/data/variants.json)",
+   "part": "mesh group inside a variant",
+   "level": "one floor of a building (bj_level S/B/G/U/R, bj_building); pivot on that floor, hidden by the interior cutaway",
+   "side": "one facade of a floor (bj_side n/e/s/w); lowered when it faces the camera",
+   "roof": "roof of a building (bj_level R)",
+   "anchor": "non-rendered point: doors, portal ends, targets, spawn/exit (bj_anchor)",
+   "proxy": "pick/collision box as metadata (bj_proxy, bj_size)",
+   "camera": "security camera head, rotated at runtime (bj_camera)",
+   "dynamic": "part moved by the simulation: doors, van, lever, hatch lid, laser (bj_dynamic)",
+   "character": "skinned character mesh on the shared rig (bj_character)",
+   "rig": "the shared armature carrying the animation clips"
+  },
+  "transition_styles": "bj_anim on variants: rise | fold | unfurl | pop | flatten | none"
  },
  "assets": {
   "terrain": {
    "asset": "terrain",
+   "variants": [
+    "drainworks.1986",
+    "ground.1946",
+    "ground.1986",
+    "ground.2026",
+    "ground.alley.1946",
+    "ground.alley.kept",
+    "ground.garden",
+    "ground.garden.1946",
+    "manhole.street",
+    "repair.creek",
+    "repair.street",
+    "sewer.creek",
+    "sewer.hatchShaft",
+    "sewer.street",
+    "survey.1946",
+    "terrain.plinth",
+    "trench.creek",
+    "trench.street",
+    "utility.creek"
+   ],
+   "anchors": [
+    "portal.hatch.a",
+    "portal.manhole.a",
+    "portal.manhole.b",
+    "site.drain"
+   ],
+   "clips": [],
    "file": "assets/models/terrain.glb",
    "source": "blender/source/terrain.blend",
    "blender": "5.0.1",
@@ -1072,6 +1104,63 @@
   },
   "bank": {
    "asset": "bank",
+   "variants": [
+    "bank.annex",
+    "bank.cam.C6",
+    "bank.cams2026",
+    "bank.gardenwing",
+    "bank.hatch",
+    "bank.laser",
+    "bank.main",
+    "bank.site1946",
+    "bank.slot.alley.door",
+    "bank.slot.alley.wall",
+    "bank.slot.front.door",
+    "bank.slot.front.wall",
+    "bank.slot.plant.door",
+    "bank.slot.plant.wall",
+    "bank.trim1986",
+    "bank.trim2026",
+    "bank.westwing",
+    "prop.depositBox",
+    "prop.diamond",
+    "prop.lindenFile"
+   ],
+   "anchors": [
+    "door.bank.archive",
+    "door.bank.boiler",
+    "door.bank.glass",
+    "door.bank.lobby_office",
+    "door.bank.lobby_service",
+    "door.bank.main.a",
+    "door.bank.main.b",
+    "door.bank.plant",
+    "door.bank.service_alley",
+    "door.bank.service_front",
+    "door.bank.stair_B",
+    "door.bank.stair_G",
+    "door.bank.stair_U",
+    "door.bank.upper_service",
+    "door.bank.vault",
+    "portal.hatch.a",
+    "portal.hatch.b",
+    "portal.manhole.a",
+    "portal.manhole.b",
+    "portal.oak.a",
+    "portal.oak.b",
+    "portal.roof_ladder.a",
+    "portal.roof_ladder.b",
+    "portal.skylight.a",
+    "portal.skylight.b",
+    "portal.stair_BG.a",
+    "portal.stair_BG.b",
+    "portal.stair_GU.a",
+    "portal.stair_GU.b",
+    "target.c1",
+    "target.c2",
+    "target.c3"
+   ],
+   "clips": [],
    "file": "assets/models/bank.glb",
    "source": "blender/source/bank.blend",
    "blender": "5.0.1",
@@ -1098,7 +1187,7 @@
      "bj_tex_plank",
      "bj_tex_wood"
     ],
-    "glb_bytes": 476584
+    "glb_bytes": 476600
    },
    "nodes": [
     {
@@ -5454,6 +5543,18 @@
   },
   "cafe": {
    "asset": "cafe",
+   "variants": [
+    "cafe.building",
+    "cafe.closed.flood",
+    "cafe.closed.terrace",
+    "cafe.lot1946",
+    "cafe.open1986",
+    "cafe.open2026",
+    "cafe.terrace1986",
+    "cafe.valve"
+   ],
+   "anchors": [],
+   "clips": [],
    "file": "assets/models/cafe.glb",
    "source": "blender/source/cafe.blend",
    "blender": "5.0.1",
@@ -5907,6 +6008,17 @@
   },
   "workshop": {
    "asset": "workshop",
+   "variants": [
+    "workshop.1946",
+    "workshop.1986",
+    "workshop.2026",
+    "workshop.building",
+    "workshop.junction"
+   ],
+   "anchors": [
+    "junction"
+   ],
+   "clips": [],
    "file": "assets/models/workshop.glb",
    "source": "blender/source/workshop.blend",
    "blender": "5.0.1",
@@ -6280,6 +6392,13 @@
   },
   "townhouses": {
    "asset": "townhouses",
+   "variants": [
+    "townhouses.1946",
+    "townhouses.1986",
+    "townhouses.2026"
+   ],
+   "anchors": [],
+   "clips": [],
    "file": "assets/models/townhouses.glb",
    "source": "blender/source/townhouses.blend",
    "blender": "5.0.1",
@@ -6619,6 +6738,31 @@
   },
   "trees": {
    "asset": "trees",
+   "variants": [
+    "fence.garden",
+    "garden.plants",
+    "garden.plaque",
+    "garden.plot1946",
+    "oak.garden.1946",
+    "oak.garden.1986.full",
+    "oak.garden.2026.full",
+    "oak.square.1946",
+    "oak.square.1986.full",
+    "oak.square.1986.pruned",
+    "oak.square.2026.full",
+    "oak.square.2026.pruned",
+    "oak.yard.1946",
+    "oak.yard.1986.full",
+    "oak.yard.1986.pruned",
+    "oak.yard.2026.full",
+    "oak.yard.2026.pruned",
+    "oak.yard.stump",
+    "trees.1946",
+    "trees.1986",
+    "trees.2026"
+   ],
+   "anchors": [],
+   "clips": [],
    "file": "assets/models/trees.glb",
    "source": "blender/source/trees.blend",
    "blender": "5.0.1",
@@ -11501,6 +11645,22 @@
   },
   "props": {
    "asset": "props",
+   "variants": [
+    "bike.getaway",
+    "car.lane",
+    "car.yard",
+    "props.1946",
+    "props.1986",
+    "props.2026",
+    "site.alleyNotice1986",
+    "site.blueprint1986",
+    "site.petition1986",
+    "site.petitionSigned"
+   ],
+   "anchors": [
+    "exit"
+   ],
+   "clips": [],
    "file": "assets/models/props.glb",
    "source": "blender/source/props.blend",
    "blender": "5.0.1",
@@ -12088,6 +12248,34 @@
   },
   "characters": {
    "asset": "characters",
+   "variants": [],
+   "anchors": [],
+   "clips": [
+    {
+     "name": "climb",
+     "seconds": 1.0
+    },
+    {
+     "name": "crouch",
+     "seconds": 1.0
+    },
+    {
+     "name": "idle",
+     "seconds": 2.0
+    },
+    {
+     "name": "interact",
+     "seconds": 1.0
+    },
+    {
+     "name": "sit",
+     "seconds": 2.0
+    },
+    {
+     "name": "walk",
+     "seconds": 0.8
+    }
+   ],
    "file": "assets/models/characters.glb",
    "source": "blender/source/characters.blend",
    "blender": "5.0.1",
@@ -12100,7 +12288,7 @@
     "images": [
      "bj_tex_grain"
     ],
-    "glb_bytes": 71552
+    "glb_bytes": 71548
    },
    "nodes": [
     {

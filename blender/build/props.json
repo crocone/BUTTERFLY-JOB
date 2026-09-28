@@ -1,5 +1,21 @@
 {
  "asset": "props",
+ "variants": [
+  "bike.getaway",
+  "car.lane",
+  "car.yard",
+  "props.1946",
+  "props.1986",
+  "props.2026",
+  "site.alleyNotice1986",
+  "site.blueprint1986",
+  "site.petition1986",
+  "site.petitionSigned"
+ ],
+ "anchors": [
+  "exit"
+ ],
+ "clips": [],
  "file": "assets/models/props.glb",
  "source": "blender/source/props.blend",
  "blender": "5.0.1",

@@ -9,6 +9,7 @@ Node structure (cutaway-friendly):
 from __future__ import annotations
 
 import math
+import zlib
 
 import bj_arch as A
 import bj_build as B
@@ -186,7 +187,7 @@ def slot_pair(parent, col, side, index, name, a_spec, b_spec):
         s0, e0 = A.edge_line(side, *MAIN)
         hinge = s0 + (e0 - s0).normalized() * (index + 0.5)   # base centre of the slot: fold pivot
         node = K.vroot(f'bank__slot_{name}_{"door" if kind == "door" else "wall"}', vid, loc=hinge, anim='fold', col=col, parent=parent, side=side)
-        mb = MB(seed=hash(vid) % 1000)
+        mb = MB(seed=zlib.crc32(str(vid).encode()) % 1000)
         B.slot_wall(mb, side, MAIN, index, y0, 2.0, 'door' if kind == 'door' else ('window' if kind == 'window' else 'plain'), spec,
                     out_col=STONE, out_mat='brick', door_col=spec.get('col', PAL['wood']))
         if kind == 'door':

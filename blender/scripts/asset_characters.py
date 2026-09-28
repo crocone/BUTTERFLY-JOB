@@ -7,6 +7,7 @@ Clips: idle, walk, climb, crouch, interact, sit.
 from __future__ import annotations
 
 import math
+import zlib
 
 import bj_kit as K
 import bpy
@@ -139,7 +140,7 @@ def build_bodies(rig, col):
                      hat='fedora', hat_col=PAL['slate'], band=PAL['ink']),
     }
     for name, s in specs.items():
-        body = Body(seed=hash(name) % 997)
+        body = Body(seed=zlib.crc32(str(name).encode()) % 997)
         legs(body.mb, body, s['trouser'], s['shoe'])
         body.part('torso', lambda m, s=s: torso_prism(m, s['coat'], flare=s.get('flare')))
         arms(body.mb, body, s['sleeve'])

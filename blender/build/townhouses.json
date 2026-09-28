@@ -1,5 +1,12 @@
 {
  "asset": "townhouses",
+ "variants": [
+  "townhouses.1946",
+  "townhouses.1986",
+  "townhouses.2026"
+ ],
+ "anchors": [],
+ "clips": [],
  "file": "assets/models/townhouses.glb",
  "source": "blender/source/townhouses.blend",
  "blender": "5.0.1",

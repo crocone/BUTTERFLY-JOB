@@ -1,5 +1,16 @@
 {
  "asset": "workshop",
+ "variants": [
+  "workshop.1946",
+  "workshop.1986",
+  "workshop.2026",
+  "workshop.building",
+  "workshop.junction"
+ ],
+ "anchors": [
+  "junction"
+ ],
+ "clips": [],
  "file": "assets/models/workshop.glb",
  "source": "blender/source/workshop.blend",
  "blender": "5.0.1",

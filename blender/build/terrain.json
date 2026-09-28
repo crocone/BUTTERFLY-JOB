@@ -1,5 +1,33 @@
 {
  "asset": "terrain",
+ "variants": [
+  "drainworks.1986",
+  "ground.1946",
+  "ground.1986",
+  "ground.2026",
+  "ground.alley.1946",
+  "ground.alley.kept",
+  "ground.garden",
+  "ground.garden.1946",
+  "manhole.street",
+  "repair.creek",
+  "repair.street",
+  "sewer.creek",
+  "sewer.hatchShaft",
+  "sewer.street",
+  "survey.1946",
+  "terrain.plinth",
+  "trench.creek",
+  "trench.street",
+  "utility.creek"
+ ],
+ "anchors": [
+  "portal.hatch.a",
+  "portal.manhole.a",
+  "portal.manhole.b",
+  "site.drain"
+ ],
+ "clips": [],
  "file": "assets/models/terrain.glb",
  "source": "blender/source/terrain.blend",
  "blender": "5.0.1",

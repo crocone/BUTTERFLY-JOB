@@ -10,8 +10,9 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "assets": "python3 blender/scripts/build_all.py",
-    "e2e": "node e2e/run-all.mjs"
+    "e2e": "node e2e/run-all.mjs",
+    "assets": "${BLENDER_PYTHON:-python3} blender/scripts/build_all.py",
+    "assets:verify": "${BLENDER_PYTHON:-python3} blender/scripts/verify_blend.py"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.3.0",
@@ -26,5 +27,8 @@
     "typescript": "~5.9.3",
     "vite": "^8.3.1",
     "vitest": "^5.0.2"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

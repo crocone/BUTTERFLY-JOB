@@ -866,8 +866,14 @@ def manifest_part(asset: str, glb_path: str, blend_path: str) -> dict:
             entry['bounds'] = b
         nodes.append(entry)
     anims = [a.name for a in bpy.data.actions]
+    clips = [{'name': a.name, 'seconds': round((a.frame_range[1] - a.frame_range[0]) / bpy.context.scene.render.fps, 3)} for a in bpy.data.actions]
+    variants = sorted({n['variant'] for n in nodes if n.get('role') == 'variant' and 'variant' in n})
+    anchors = sorted({n['anchor'] for n in nodes if n.get('role') == 'anchor' and 'anchor' in n})
     return {
         'asset': asset,
+        'variants': variants,
+        'anchors': anchors,
+        'clips': clips,
         'file': f'assets/models/{asset}.glb',
         'source': f'blender/source/{asset}.blend',
         'blender': bpy.app.version_string,

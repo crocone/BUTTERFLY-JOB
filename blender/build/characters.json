@@ -1,5 +1,33 @@
 {
  "asset": "characters",
+ "variants": [],
+ "anchors": [],
+ "clips": [
+  {
+   "name": "climb",
+   "seconds": 1.0
+  },
+  {
+   "name": "crouch",
+   "seconds": 1.0
+  },
+  {
+   "name": "idle",
+   "seconds": 2.0
+  },
+  {
+   "name": "interact",
+   "seconds": 1.0
+  },
+  {
+   "name": "sit",
+   "seconds": 2.0
+  },
+  {
+   "name": "walk",
+   "seconds": 0.8
+  }
+ ],
  "file": "assets/models/characters.glb",
  "source": "blender/source/characters.blend",
  "blender": "5.0.1",
@@ -12,7 +40,7 @@
   "images": [
    "bj_tex_grain"
   ],
-  "glb_bytes": 71552
+  "glb_bytes": 71548
  },
  "nodes": [
   {

@@ -1,5 +1,17 @@
 {
  "asset": "cafe",
+ "variants": [
+  "cafe.building",
+  "cafe.closed.flood",
+  "cafe.closed.terrace",
+  "cafe.lot1946",
+  "cafe.open1986",
+  "cafe.open2026",
+  "cafe.terrace1986",
+  "cafe.valve"
+ ],
+ "anchors": [],
+ "clips": [],
  "file": "assets/models/cafe.glb",
  "source": "blender/source/cafe.blend",
  "blender": "5.0.1",

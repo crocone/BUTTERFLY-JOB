@@ -138,7 +138,8 @@ Unexpected consequences required by the brief:
 
 ## 5. Present-day security (2026)
 
-Guards see 90° / 6 tiles on their own floor. Cameras watch the floor they are mounted on.
+Guards see 90° / 6 tiles on their own floor and also notice anyone within 1.1 tiles whatever
+way they face (walls and floors still block). Cameras watch the floor they are mounted on.
 Line of sight is blocked by wall edges, closed doors, building footprints and sight blockers
 (canopies, van, umbrellas, kiosk, statue). Nobody sees across floors.
 
@@ -155,12 +156,13 @@ as a detection event.
 | C2 basement corridor | B | sweeping along the corridor |
 | C3 yard | G | sweeping; oak canopy blocks part |
 | C4 Glass Room dome | U | rotating; on the alarm circuit |
-| C5 square lamppost | G | static, faces the bank front |
+| C5 square lamppost | G | static, faces the bank front; monitored live, so it fills the meter 2.5× faster |
 | C6 roof | U | only if roof access exists; sweeps the annex roof |
 | courier | G | short-sighted; only during deliveries |
 
-Deliveries run on a fixed 36 s cycle: the van arrives, the courier props the service door
-open for ~9 s, then leaves. Service doors can always be opened from inside (push bar).
+Deliveries run on a fixed 30 s cycle (first van at 6 s): the van arrives, the courier walks to
+the service door and props it open for 8 s, then walks back and the van leaves. The parked van
+blocks sight and movement. Service doors can always be opened from inside (push bar).
 
 ## 6. Contracts
 
@@ -170,7 +172,8 @@ open for ~9 s, then leaves. Service doors can always be opened from inside (push
 | 2 | The Glass Diamond | diamond, Glass Room (U) | 5 | building access **plus** a way past the laser door / dome camera |
 | 3 | A Clean Timeline | deposit box 46, vault (B, maglock) | 3 | the vault needs the alarm circuit cut, and the garden must survive and the café must stay open |
 
-The alarm circuit (C4, the Glass Room laser, the vault maglock) can only be cut at the
+The alarm circuit feeds contract-specific security — contract 2: the Glass Room laser and dome
+camera C4; contract 3: the vault maglock and basement camera C2. It can only be cut at the
 workshop junction box, which exists only if `alarm.wiring = workshop` in 1946.
 
 ### Contract 1 solutions (each verified by a scripted heist test)
@@ -200,7 +203,9 @@ Zero interventions: the only physical way in is the front service door, which ca
 ## 7. Modes and loop
 
 Planning: inspect objects in any era, change decisions in object cards, undo/reset, compare with
-the original timeline, show patrols and vision, watch 2026 guards on their schedule.
+the original timeline, show patrols and vision, watch 2026 guards on their schedule. Era
+changes asked for while a transition is still playing are queued; plan changes are refused
+until it settles.
 Heist: timeline locked; click to move / interact, hold Space to wait, Esc to pause; target then
 escape to the getaway bicycle. Failure → retry the same plan or return to planning.
 Success → replay (obstacle → interventions by era → resulting route → theft → escape) → results.
