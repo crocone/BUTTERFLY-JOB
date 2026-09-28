@@ -1,0 +1,134 @@
+{
+  "comment": "Spatial source of truth shared by navigation/vision (src/sim/layout.ts) and the Blender generators (blender/scripts). Rects are inclusive tile ranges [x0,z0,x1,z1]; x east, z south. 'when' lists are [fact, op, value] conditions over 2026 facts (src/sim/causality.ts). Doors are edges between tiles a and b.",
+  "grid": { "w": 30, "h": 22 },
+  "levels": {
+    "S": { "y": -3.6, "height": 1.3 },
+    "B": { "y": -2.0, "height": 1.85 },
+    "G": { "y": 0.0, "height": 1.95 },
+    "U": { "y": 2.0, "height": 1.95 },
+    "R": { "y": 4.1, "height": 0 }
+  },
+  "areas": [
+    { "id": "lane", "level": "G", "kind": "outdoor", "rects": [[0, 0, 29, 1]] },
+    { "id": "alley", "level": "G", "kind": "outdoor", "rects": [[9, 2, 10, 9]], "when": [["alley.kept", "==", true]] },
+    { "id": "square", "level": "G", "kind": "outdoor", "rects": [[9, 10, 21, 18]] },
+    { "id": "street", "level": "G", "kind": "outdoor", "rects": [[0, 19, 29, 21], [22, 18, 29, 18]] },
+    { "id": "eastwalk", "level": "G", "kind": "outdoor", "rects": [[29, 2, 29, 17]] },
+    { "id": "yard", "level": "G", "kind": "outdoor", "rects": [[24, 2, 28, 9]] },
+    { "id": "garden", "level": "G", "kind": "outdoor", "boundary": "fence", "rects": [[22, 10, 28, 17]], "when": [["garden.exists", "==", true]] },
+
+    { "id": "bank.G.stair", "level": "G", "kind": "indoor", "building": "bank", "boundary": "wall", "rects": [[11, 2, 12, 4]] },
+    { "id": "bank.G.service", "level": "G", "kind": "indoor", "building": "bank", "boundary": "wall", "rects": [[11, 5, 12, 9]] },
+    { "id": "bank.G.lobby", "level": "G", "kind": "indoor", "building": "bank", "boundary": "wall", "rects": [[13, 5, 20, 9]] },
+    { "id": "bank.G.office", "level": "G", "kind": "indoor", "building": "bank", "boundary": "wall", "walkable": false, "rects": [[13, 2, 20, 4]] },
+    { "id": "bank.G.plant", "level": "G", "kind": "indoor", "building": "bank", "boundary": "wall", "rects": [[9, 2, 10, 5]], "when": [["bank.expansion", "==", "alley"]] },
+    { "id": "bank.G.records", "level": "G", "kind": "indoor", "building": "bank", "boundary": "wall", "walkable": false, "rects": [[9, 6, 10, 9]], "when": [["bank.expansion", "==", "alley"]] },
+    { "id": "annex.G", "level": "G", "kind": "indoor", "building": "annex", "boundary": "wall", "walkable": false, "rects": [[21, 2, 23, 9]] },
+
+    { "id": "bank.U.stair", "level": "U", "kind": "indoor", "building": "bank", "boundary": "wall", "rects": [[11, 2, 12, 4]] },
+    { "id": "bank.U.corridor", "level": "U", "kind": "indoor", "building": "bank", "boundary": "wall", "rects": [[11, 5, 20, 6]] },
+    { "id": "bank.U.glass", "level": "U", "kind": "indoor", "building": "bank", "boundary": "wall", "rects": [[13, 2, 18, 4]] },
+    { "id": "bank.U.office", "level": "U", "kind": "indoor", "building": "bank", "boundary": "wall", "walkable": false, "rects": [[19, 2, 20, 4]] },
+    { "id": "bank.U.offices", "level": "U", "kind": "indoor", "building": "bank", "boundary": "wall", "walkable": false, "rects": [[11, 7, 20, 9]] },
+    { "id": "bank.U.westwing", "level": "U", "kind": "indoor", "building": "bank", "boundary": "wall", "walkable": false, "rects": [[9, 2, 10, 9]], "when": [["bank.expansion", "==", "alley"]] },
+    { "id": "annex.roof", "level": "U", "kind": "roof", "building": "annex", "rects": [[21, 2, 23, 9]] },
+
+    { "id": "bank.B.stair", "level": "B", "kind": "indoor", "building": "bank", "boundary": "wall", "rects": [[11, 2, 12, 4]] },
+    { "id": "bank.B.corridor", "level": "B", "kind": "indoor", "building": "bank", "boundary": "wall", "rects": [[11, 5, 20, 6]] },
+    { "id": "bank.B.archive", "level": "B", "kind": "indoor", "building": "bank", "boundary": "wall", "rects": [[13, 2, 16, 4]] },
+    { "id": "bank.B.vault", "level": "B", "kind": "indoor", "building": "bank", "boundary": "wall", "rects": [[17, 2, 20, 4]] },
+    { "id": "bank.B.boiler", "level": "B", "kind": "indoor", "building": "bank", "boundary": "wall", "rects": [[11, 7, 14, 9]] },
+    { "id": "bank.B.storage", "level": "B", "kind": "indoor", "building": "bank", "boundary": "wall", "walkable": false, "rects": [[15, 7, 20, 9]] },
+
+    { "id": "bank.roof", "level": "R", "kind": "roof", "building": "bank", "rects": [[11, 2, 20, 9]] },
+
+    { "id": "sewer.street", "level": "S", "kind": "tunnel", "group": "sewer", "boundary": "wall", "rects": [[3, 20, 29, 20]] },
+    { "id": "sewer.creek", "level": "S", "kind": "tunnel", "group": "sewer", "boundary": "wall", "rects": [[8, 11, 8, 19], [9, 11, 12, 11], [12, 7, 12, 10]], "when": [["sewer.creek", "==", true]] }
+  ],
+  "solids": [
+    { "id": "workshop", "level": "G", "rects": [[1, 2, 8, 9]] },
+    { "id": "cafe", "level": "G", "rects": [[1, 10, 8, 14]] },
+    { "id": "townhouses", "level": "G", "rects": [[0, 15, 8, 18]] },
+    { "id": "hedge.west", "level": "G", "rects": [[0, 2, 0, 14]] },
+    { "id": "gardenwing", "level": "G", "rects": [[22, 10, 28, 17]], "when": [["bank.expansion", "==", "garden"]] }
+  ],
+  "doors": [
+    { "id": "door.bank.main.a", "level": "G", "a": [15, 9], "b": [15, 10], "kind": "locked" },
+    { "id": "door.bank.main.b", "level": "G", "a": [16, 9], "b": [16, 10], "kind": "locked" },
+    { "id": "door.bank.service_front", "level": "G", "a": [12, 9], "b": [12, 10], "kind": "service", "inside": [12, 9], "when": [["service.door", "==", "front"]] },
+    { "id": "door.bank.service_alley", "level": "G", "a": [11, 7], "b": [10, 7], "kind": "service", "inside": [11, 7], "when": [["service.door", "==", "alley"]] },
+    { "id": "door.bank.stair_G", "level": "G", "a": [11, 4], "b": [11, 5], "kind": "open" },
+    { "id": "door.bank.lobby_service", "level": "G", "a": [12, 7], "b": [13, 7], "kind": "open" },
+    { "id": "door.bank.lobby_office", "level": "G", "a": [17, 4], "b": [17, 5], "kind": "locked" },
+    { "id": "door.bank.plant", "level": "G", "a": [10, 3], "b": [11, 3], "kind": "open", "when": [["bank.expansion", "==", "alley"]] },
+    { "id": "gate.garden.west", "level": "G", "a": [21, 14], "b": [22, 14], "kind": "gate", "when": [["garden.exists", "==", true]] },
+    { "id": "gate.garden.north", "level": "G", "a": [26, 9], "b": [26, 10], "kind": "gate", "when": [["garden.exists", "==", true]] },
+    { "id": "gate.garden.south", "level": "G", "a": [25, 17], "b": [25, 18], "kind": "gate", "when": [["garden.exists", "==", true]] },
+
+    { "id": "door.bank.stair_U", "level": "U", "a": [11, 4], "b": [11, 5], "kind": "open" },
+    { "id": "door.bank.glass", "level": "U", "a": [16, 4], "b": [16, 5], "kind": "glass" },
+    { "id": "door.bank.upper_service", "level": "U", "a": [20, 5], "b": [21, 5], "kind": "roofdoor" },
+
+    { "id": "door.bank.stair_B", "level": "B", "a": [11, 4], "b": [11, 5], "kind": "open" },
+    { "id": "door.bank.archive", "level": "B", "a": [15, 4], "b": [15, 5], "kind": "open" },
+    { "id": "door.bank.vault", "level": "B", "a": [18, 4], "b": [18, 5], "kind": "vault" },
+    { "id": "door.bank.boiler", "level": "B", "a": [12, 6], "b": [12, 7], "kind": "open" }
+  ],
+  "portals": [
+    { "id": "portal.manhole", "kind": "ladder", "a": { "level": "G", "x": 8, "z": 20 }, "b": { "level": "S", "x": 8, "z": 20 }, "time": 1.6 },
+    { "id": "portal.hatch", "kind": "ladder", "a": { "level": "S", "x": 12, "z": 8 }, "b": { "level": "B", "x": 12, "z": 8 }, "time": 1.3, "when": [["drain.hatch", "==", true]] },
+    { "id": "portal.stair_BG", "kind": "stairs", "a": { "level": "B", "x": 12, "z": 3 }, "b": { "level": "G", "x": 11, "z": 3 }, "time": 1.4 },
+    { "id": "portal.stair_GU", "kind": "stairs", "a": { "level": "G", "x": 12, "z": 3 }, "b": { "level": "U", "x": 11, "z": 3 }, "time": 1.4 },
+    { "id": "portal.oak", "kind": "climb", "a": { "level": "G", "x": 25, "z": 5 }, "b": { "level": "U", "x": 23, "z": 5 }, "time": 2.2, "when": [["oak.roofAccess", "==", true]] },
+    { "id": "portal.roof_ladder", "kind": "ladder", "a": { "level": "U", "x": 21, "z": 8 }, "b": { "level": "R", "x": 20, "z": 8 }, "time": 1.5 },
+    { "id": "portal.skylight", "kind": "rope", "a": { "level": "R", "x": 15, "z": 3 }, "b": { "level": "U", "x": 15, "z": 3 }, "time": 1.8 }
+  ],
+  "blockers": [
+    { "id": "oak.trunk.garden", "level": "G", "tiles": [[25, 13]], "move": true, "sight": false, "when": [["oak.location", "==", "garden"], ["garden.exists", "==", true]] },
+    { "id": "oak.trunk.yard", "level": "G", "tiles": [[24, 5]], "move": true, "sight": false, "when": [["oak.location", "==", "yard"], ["oak.felled", "==", false]] },
+    { "id": "oak.trunk.square", "level": "G", "tiles": [[15, 13]], "move": true, "sight": false, "when": [["oak.location", "==", "square"]] },
+    { "id": "canopy.garden", "level": "G", "canopy": true, "move": false, "sight": true,
+      "rects": [[23, 11, 27, 15]], "exclude": [[23, 11], [27, 11], [23, 15], [27, 15]],
+      "when": [["oak.location", "==", "garden"], ["garden.exists", "==", true]] },
+    { "id": "canopy.yard", "level": "G", "canopy": true, "move": false, "sight": true,
+      "rects": [[24, 3, 26, 7]], "when": [["oak.roofAccess", "==", true]] },
+    { "id": "canopy.square", "level": "G", "canopy": true, "move": false, "sight": true,
+      "rects": [[13, 11, 17, 15]], "exclude": [[13, 11], [17, 11], [13, 15], [17, 15]],
+      "when": [["oak.squareCanopy", "==", true]] },
+    { "id": "statue", "level": "G", "tiles": [[11, 16]], "move": true, "sight": true },
+    { "id": "kiosk", "level": "G", "tiles": [[18, 16], [19, 16]], "move": true, "sight": true },
+    { "id": "bench.square.w", "level": "G", "tiles": [[13, 17]], "move": true, "sight": false },
+    { "id": "bench.square.e", "level": "G", "tiles": [[17, 17]], "move": true, "sight": false },
+    { "id": "terrace.table.n", "level": "G", "tiles": [[9, 11]], "move": true, "sight": true, "when": [["cafe.open", "==", true]] },
+    { "id": "terrace.table.s", "level": "G", "tiles": [[9, 13]], "move": true, "sight": true, "when": [["cafe.open", "==", true]] },
+    { "id": "car.yard", "level": "G", "tiles": [[27, 6], [27, 7]], "move": true, "sight": true, "when": [["car.spot", "==", "yard"]] },
+    { "id": "car.lane", "level": "G", "tiles": [[22, 0], [23, 0]], "move": true, "sight": true, "when": [["car.spot", "==", "lane"]] },
+    { "id": "crates.yard", "level": "G", "tiles": [[28, 9]], "move": true, "sight": true },
+    { "id": "garden.shed", "level": "G", "tiles": [[27, 16], [28, 16], [27, 17], [28, 17]], "move": true, "sight": true, "when": [["garden.exists", "==", true]] },
+    { "id": "garden.bed.w", "level": "G", "tiles": [[23, 16]], "move": true, "sight": false, "when": [["garden.exists", "==", true]] },
+    { "id": "garden.bed.n", "level": "G", "tiles": [[28, 11]], "move": true, "sight": false, "when": [["garden.exists", "==", true]] },
+    { "id": "pedestal.diamond", "level": "U", "tiles": [[15, 2]], "move": true, "sight": false },
+    { "id": "boiler", "level": "B", "tiles": [[13, 8], [14, 8]], "move": true, "sight": true }
+  ],
+  "cameras": [
+    { "id": "C1", "level": "G", "x": 20, "z": 5, "mount": 1.75, "yaw": 135, "wall": "ne" },
+    { "id": "C2", "level": "B", "x": 20, "z": 5, "mount": 1.6, "yaw": 180, "wall": "e" },
+    { "id": "C3", "level": "G", "x": 28, "z": 2, "mount": 1.9, "yaw": 135, "wall": "ne" },
+    { "id": "C4", "level": "U", "x": 17, "z": 3, "mount": 1.8, "yaw": 180, "wall": "ceiling" },
+    { "id": "C5", "level": "G", "x": 15, "z": 17, "mount": 2.6, "yaw": 270, "wall": "pole" },
+    { "id": "C6", "level": "U", "x": 21, "z": 2, "mount": 1.4, "yaw": 90, "wall": "w" }
+  ],
+  "anchors": {
+    "start": { "level": "G", "x": 1, "z": 20 },
+    "exit": { "level": "G", "x": 1, "z": 20 },
+    "junction": { "level": "G", "x": 9, "z": 4, "wall": "w" },
+    "target.c1": { "level": "B", "x": 13, "z": 2 },
+    "target.c2": { "level": "U", "x": 15, "z": 3, "object": [15, 2] },
+    "target.c3": { "level": "B", "x": 20, "z": 3 },
+    "van.square": { "level": "G", "tiles": [[13, 11], [14, 11]] },
+    "van.lane": { "level": "G", "tiles": [[9, 0], [10, 0]] },
+    "courier.square": { "level": "G", "path": [[12, 11], [12, 10]] },
+    "courier.lane": { "level": "G", "path": [[10, 1], [10, 2], [10, 3], [10, 4], [10, 5], [10, 6], [10, 7]] }
+  },
+  "oakSites": { "garden": [25, 13], "yard": [24, 5], "square": [15, 13] }
+}

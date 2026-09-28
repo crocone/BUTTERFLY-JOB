@@ -20,7 +20,8 @@ const materialCache = new Map<string, THREE.Material>();
 /** Keep one GPU texture per Blender print texture name (every .glb embeds its own copy). */
 export function dedupeTexture(tex: THREE.Texture | null | undefined, anisotropy: number): THREE.Texture | null {
   if (!tex) return null;
-  const key = tex.name || (tex.image && (tex.image as { src?: string }).src) || tex.uuid;
+  const src = (tex.image as { src?: string } | null | undefined)?.src;
+  const key: string = tex.name || src || tex.uuid;
   const hit = textureCache.get(key);
   if (hit) {
     if (hit !== tex) tex.dispose();
