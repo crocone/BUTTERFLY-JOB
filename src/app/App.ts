@@ -55,7 +55,8 @@ export interface HeistOutcome {
 
 export class App {
   readonly ui: UI;
-  readonly stage: Stage;
+  /** absent when the browser cannot create a WebGL context (boot then explains why) */
+  readonly stage!: Stage;
   readonly audio = new AudioEngine();
   readonly lib = new AssetLibrary('./');
   world!: World;
@@ -84,7 +85,7 @@ export class App {
   private hatchUsed = false;
   private hover: { tile: TileRef | null; interact: Interactable | null; path: PathResult | PathFailure | null } = { tile: null, interact: null, path: null };
   private pointer = { x: 0, y: 0, down: false, button: 0, moved: 0, startX: 0, startY: 0, inside: false };
-  private raycaster = new THREE.Raycaster();
+  readonly raycaster = new THREE.Raycaster();
   private hoverSite: string | null = null;
   private hoverMeshes: Array<{ mesh: THREE.Mesh; mat: THREE.Material | THREE.Material[] }> = [];
   private compareGhosts = new THREE.Group();
@@ -98,6 +99,8 @@ export class App {
   private skipRequested = false;
   private freshTimeline = new Set<string>();
   private wasBusy = false;
+  /** era asked for while a transition was still playing (applied when it ends) */
+  private queuedEra: Era | null = null;
   private pendingEraHighlight: Era | null = null;
 
   constructor(root: HTMLElement) {
@@ -120,8 +123,14 @@ export class App {
       share: () => void this.sharePlan(),
       closeCard: () => this.select(null),
     });
-    this.stage = new Stage(this.ui.stageEl, this.save.settings.quality);
-    this.stage.rig.reducedMotion = this.save.settings.reducedMotion;
+    if (webglAvailable()) {
+      try {
+        this.stage = new Stage(this.ui.stageEl, this.save.settings.quality);
+        this.stage.rig.reducedMotion = this.save.settings.reducedMotion;
+      } catch {
+        /* reported by boot() */
+      }
+    }
     this.audio.setVolume(this.save.settings.volume);
     this.audio.setMuted(this.save.settings.muted);
     this.ui.setFps(this.save.settings.showFps ? '…' : null);
@@ -129,7 +138,7 @@ export class App {
 
   // ==================================================================================== boot
   async boot(): Promise<void> {
-    if (!this.webglOk()) {
+    if (!this.stage) {
       this.mode = 'error';
       this.ui.loadingError(T.errors.webgl);
       return;
@@ -137,8 +146,7 @@ export class App {
     this.ui.loading(0, '');
     try {
       await this.lib.loadManifest();
-      const labels: Record<string, string> = { terrain: 'the base', bank: 'the bank', cafe: 'Café Kopp', workshop: 'the workshop', townhouses: 'the townhouses', trees: 'the trees', props: 'the street', characters: 'the people' };
-      await this.lib.loadAll([...WORLD_ASSETS, 'characters'], (done, total, id) => this.ui.loading(done / total, id ? labels[id] ?? id : ''));
+      await this.lib.loadAll([...WORLD_ASSETS, 'characters'], (done, total, id) => this.ui.loading(done / total, id ? T.loading.parts[id] ?? id : ''));
     } catch (err) {
       this.mode = 'error';
       const file = err instanceof AssetError ? err.file : String(err);
@@ -167,7 +175,7 @@ export class App {
         this.save.current = fromLink.contract;
         this.decisions = { ...fromLink.decisions };
         this.save.plans[fromLink.contract] = { ...this.decisions };
-        setTimeout(() => this.ui.toast(`Plan loaded from link: ${this.contractLine()}`, 'green'), 400);
+        setTimeout(() => this.ui.toast(fmt(T.ui.linkLoaded, { contract: this.contractLine() }), 'green'), 400);
       } else if (fromLink.ok) {
         setTimeout(() => this.ui.toast(T.errors.linkLocked, 'danger', 6000), 400);
       } else {
@@ -186,15 +194,6 @@ export class App {
     else this.enterPlanning();
   }
 
-  private webglOk(): boolean {
-    try {
-      const c = document.createElement('canvas');
-      return !!(c.getContext('webgl2') || c.getContext('webgl'));
-    } catch {
-      return false;
-    }
-  }
-
   // ==================================================================================== frame loop
   private frame(t: number): void {
     this.timer.update(t);
@@ -209,7 +208,13 @@ export class App {
     if (this.world.busy !== this.wasBusy) {
       // options are disabled while a transition plays: re-enable them when it ends
       this.wasBusy = this.world.busy;
-      if (!this.wasBusy && this.mode === 'planning') this.refreshCard();
+      if (!this.wasBusy && this.mode === 'planning') {
+        if (this.queuedEra !== null) {
+          const q = this.queuedEra;
+          this.queuedEra = null;
+          this.setEra(q);
+        } else this.refreshCard();
+      }
     }
     this.cutaway.update(dt);
     this.updateActors(dt);
@@ -288,6 +293,7 @@ export class App {
   // ==================================================================================== planning
   enterPlanning(): void {
     this.mode = 'planning';
+    this.queuedEra = null;
     this.sim = null;
     this.ui.setMode('planning');
     this.ui.closeDialog();
@@ -427,6 +433,13 @@ export class App {
 
   setEra(e: Era, opts: { quiet?: boolean } = {}): void {
     if (this.mode !== 'planning' && this.mode !== 'intro' && this.mode !== 'replay') return;
+    if (this.mode === 'planning' && this.world.busy) {
+      // input is held while the diorama refolds; the latest request plays next
+      this.queuedEra = e === this.era ? null : e;
+      this.ui.setEra(e);
+      return;
+    }
+    this.queuedEra = null;
     if (e === this.era) return;
     this.world.animator.finishAll();
     this.era = e;
@@ -692,7 +705,7 @@ export class App {
     await rig.flyTo({ target: new THREE.Vector3(1.5, 1.2, -3), azimuth: 20 * DEG, elevation: 26 * DEG, viewSize: 6.5 }, 0);
     this.world.apply(2026, originalTimeline().facts, this.contract.id, { animate: false, reducedMotion: true });
     if (!this.skipRequested) {
-      this.ui.caption(T.intro.lines[0], 'RIVERDALE · LINDEN SQUARE');
+      this.ui.caption(T.intro.lines[0], T.ui.place);
       void rig.flyTo({ target: new THREE.Vector3(1, 1.5, -4), azimuth: 55 * DEG, elevation: 30 * DEG, viewSize: 7.5 }, 4);
       await wait(3.2);
     }
@@ -739,6 +752,7 @@ export class App {
 
   enterHeist(practice: boolean): void {
     this.world.animator.finishAll();
+    this.queuedEra = null;
     this.practice = practice;
     this.select(null);
     if (this.era !== 2026) {
@@ -913,7 +927,7 @@ export class App {
         h('div', { class: 'actions' },
           h('button', { class: 'btn primary', onclick: () => (this.ui.closeDialog(), this.enterHeist(this.practice)) }, T.failure.retry),
           h('button', { class: 'btn', onclick: () => this.backToPlanning() }, T.failure.back)),
-      ], { stamp: { text: 'CAUGHT', cls: 'red' } });
+      ], { stamp: { text: T.stamps.caught, cls: 'red' } });
     }, 900);
   }
 
@@ -1017,7 +1031,7 @@ export class App {
       h('ul', { class: 'conds' }, ...req, ...opt),
       !next && !o.practice ? h('p', { style: 'font-style:italic', text: T.results.allDone }) : null,
       h('div', { class: 'actions' }, ...actions),
-    ].filter(Boolean) as HTMLElement[], { stamp: o.practice ? { text: 'PRACTICE', cls: 'ink' } : { text: 'CLOSED', cls: 'green' } });
+    ].filter(Boolean) as HTMLElement[], { stamp: o.practice ? { text: T.stamps.practice, cls: 'ink' } : { text: T.stamps.closed, cls: 'green' } });
   }
 
   private async replayAgain(): Promise<void> {
@@ -1056,8 +1070,8 @@ export class App {
       h('h2', { text: c.name }),
       h('p', { text: c.brief }),
       this.contract.required.length ? h('ul', { class: 'conds' }, ...this.contract.required.map((r) => h('li', { text: `• ${T.conditions[r]}` }))) : null,
-      h('div', { class: 'actions' }, h('button', { class: 'btn primary', onclick: () => this.ui.closeDialog() }, 'Open the case file')),
-    ].filter(Boolean) as HTMLElement[], { stamp: { text: 'NEW JOB', cls: 'ink' }, onClose: () => this.ui.closeDialog() });
+      h('div', { class: 'actions' }, h('button', { class: 'btn primary', onclick: () => this.ui.closeDialog() }, T.ui.openCaseFile)),
+    ].filter(Boolean) as HTMLElement[], { stamp: { text: T.stamps.newJob, cls: 'ink' }, onClose: () => this.ui.closeDialog() });
   }
 
   showContracts(): void {
@@ -1088,10 +1102,10 @@ export class App {
         this.persist();
         this.audio.hint();
         render(n + 1);
-      } }, n === 0 ? 'Show a hint' : 'A more specific hint'));
+      } }, n === 0 ? T.hints.first : T.hints.more));
       actions.append(h('button', { class: 'btn', onclick: () => this.ui.closeDialog() }, T.ui.close));
-      this.ui.dialog([h('div', { class: 'kicker', text: this.contractLine() }), h('h2', { text: 'HINTS' }),
-        n ? list : h('p', { style: 'font-style:italic', text: 'Hints go from a direction, to specifics, to the answer for one obstacle.' }), actions], { onClose: () => this.ui.closeDialog() });
+      this.ui.dialog([h('div', { class: 'kicker', text: this.contractLine() }), h('h2', { text: T.hints.title }),
+        n ? list : h('p', { style: 'font-style:italic', text: T.hints.intro }), actions], { onClose: () => this.ui.closeDialog() });
     };
     render(lvl);
   }
@@ -1250,7 +1264,7 @@ export class App {
         this.decisions = r.decisions;
         this.timeline = computeTimeline(this.decisions);
         this.afterPlanChange(before);
-        this.ui.toast('Plan loaded from link.', 'green');
+        this.ui.toast(T.ui.linkLoadedShort, 'green');
       } else this.ui.toast(r.ok ? T.errors.linkLocked : T.errors.link, 'danger', 6000);
     });
   }
@@ -1592,6 +1606,17 @@ export class App {
       move: (level: Level, x: number, z: number) => (app.sim ? app.sim.moveTo({ level, x, z }).ok : false),
       interact: (what: Interactable) => (app.sim ? app.sim.interact(what).ok : false),
       audio: () => app.audio.state,
+      /** what is under a client pixel (debugging): object names up to the variant root */
+      pickAt: (x: number, y: number) => {
+        const r = app.stage.renderer.domElement.getBoundingClientRect();
+        app.raycaster.setFromCamera(new THREE.Vector2(((x - r.left) / r.width) * 2 - 1, -((y - r.top) / r.height) * 2 + 1), app.stage.rig.camera);
+        app.raycaster.far = Infinity;
+        return app.raycaster.intersectObject(app.world.root, true).filter((h) => isShown(h.object)).slice(0, 3).map((h) => {
+          const chain: string[] = [];
+          for (let o: THREE.Object3D | null = h.object; o && o !== app.world.root; o = o.parent) chain.push(o.name);
+          return chain.join(' < ');
+        });
+      },
       memory: () => ({ ...app.stage.info() }),
       autoplay: () => (app.autoplay ? { done: app.autoplay.done, error: app.autoplay.error, step: app.autoplay.i } : null),
       decodePlan: (s: string) => decodePlan(s),
@@ -1602,6 +1627,15 @@ export class App {
       stage: app.stage,
       allConsequenceIds: CONSEQUENCES.map((c) => c.id),
     };
+  }
+}
+
+function webglAvailable(): boolean {
+  try {
+    const c = document.createElement('canvas');
+    return !!c.getContext('webgl2');
+  } catch {
+    return false;
   }
 }
 

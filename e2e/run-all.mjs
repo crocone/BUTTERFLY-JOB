@@ -338,6 +338,55 @@ await test('contracts-hints-settings-audio', async (ctx) => {
 });
 
 // ------------------------------------------------------------------------------------------------
+await test('errors-tabs-and-queue', async (ctx) => {
+  // a model that fails to load: a readable message and a reload button, no hang
+  const { page: p1, context: c1, log: l1 } = await openPage(browser, `${BASE}?nointro`, { width: 900, height: 600, storage: seededSave(), route: ['**/models/bank.glb', 'abort'] });
+  ctx.contexts.push(c1);
+  await waitFor(p1, "document.querySelector('.loading .error') !== null", 60000);
+  const msg = await p1.$eval('.loading .error', (e) => e.textContent);
+  assert(msg.includes('failed to load') && msg.includes('bank'), `asset error message (${msg})`);
+  assert((await p1.$$('.loading button')).length === 1, 'reload button offered');
+  ctx.notes.assetError = msg;
+  // expected noise from the deliberately failed request only
+  const unexpected = l1.filter((l) => !/bank\.glb|Failed to load|ERR_FAILED|AssetError/.test(l));
+  assert(unexpected.length === 0, `unexpected console output: ${unexpected.join(' | ')}`);
+  // no WebGL at all
+  const { page: p2, context: c2 } = await openPage(browser, `${BASE}?nointro`, { width: 900, height: 600, storage: seededSave(), noWebGL: true });
+  ctx.contexts.push(c2);
+  await waitFor(p2, "document.querySelector('.loading .error') !== null", 30000);
+  assert((await p2.$eval('.loading .error', (e) => e.textContent)).includes('WebGL'), 'WebGL message');
+  // hiding the tab pauses a heist
+  const page = await ctx.open(`${BASE}?nointro`, { width: 1000, height: 640, storage: seededSave() });
+  await bj(page, () => window.__bj.start(true));
+  await waitFor(page, 'window.__bj.mode === "heist"');
+  await sleep(800);
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'hidden', { configurable: true, get: () => true });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await waitFor(page, 'window.__bj.mode === "paused"', 5000);
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'hidden', { configurable: true, get: () => false });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await clickText(page, '.dialog button', 'Back to planning');
+  await waitFor(page, 'window.__bj.mode === "planning"');
+  await settle(page);
+  // era requests during a transition are held and the last one wins
+  await page.keyboard.press('1');
+  await sleep(60);
+  const busy = await bj(page, () => window.__bj.transitioning);
+  await page.keyboard.press('2');
+  await page.keyboard.press('3');
+  await page.keyboard.press('2');
+  await settle(page);
+  await sleep(300);
+  await settle(page);
+  assert((await bj(page, () => window.__bj.era)) === 1986, 'the last era asked for is shown');
+  ctx.notes.queuedWhileBusy = busy;
+});
+
+// ------------------------------------------------------------------------------------------------
 await test('window-sizes', async (ctx) => {
   const sizes = [[1920, 1080], [1366, 768], [1280, 720], [1024, 640], [800, 600], [390, 844]];
   const page = await ctx.open(`${BASE}?nointro`, { width: 1280, height: 720, storage: seededSave() });

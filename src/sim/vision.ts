@@ -17,6 +17,8 @@ export interface Observer {
   yaw: number;
   fov: number;
   range: number;
+  /** within this distance the field of view does not matter (a guard hears footsteps) */
+  near?: number;
 }
 
 export interface SightContext {
@@ -144,7 +146,7 @@ export function canSee(ctx: SightContext, obs: Observer, level: Level, tx: numbe
   const dz = tz - obs.z;
   const distance = Math.hypot(dx, dz);
   if (level !== obs.level || distance > obs.range) return { visible: false, distance };
-  if (distance > 0.35) {
+  if (distance > (obs.near ?? 0.35)) {
     const ang = Math.atan2(dz, dx);
     if (Math.abs(angleDiff(ang, obs.yaw)) > obs.fov / 2) return { visible: false, distance };
   }

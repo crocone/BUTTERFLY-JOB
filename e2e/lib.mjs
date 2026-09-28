@@ -11,8 +11,17 @@ export async function launch() {
 }
 
 /** New page that records console errors/warnings and uncaught exceptions. */
-export async function openPage(browser, url, { width = 1400, height = 860, storage = null } = {}) {
+export async function openPage(browser, url, { width = 1400, height = 860, storage = null, route = null, noWebGL = false } = {}) {
   const context = await browser.newContext({ viewport: { width, height } });
+  if (route) await context.route(route[0], (r) => (route[1] === 'abort' ? r.abort() : r.continue()));
+  if (noWebGL) {
+    await context.addInitScript(() => {
+      const orig = HTMLCanvasElement.prototype.getContext;
+      HTMLCanvasElement.prototype.getContext = function (type, ...rest) {
+        return /webgl/i.test(String(type)) ? null : orig.call(this, type, ...rest);
+      };
+    });
+  }
   if (storage) {
     // seed the save only when none exists, so reloads keep what the game wrote
     await context.addInitScript((s) => {

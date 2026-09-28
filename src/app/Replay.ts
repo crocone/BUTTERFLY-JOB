@@ -62,13 +62,15 @@ export async function runReplay(app: App, o: HeistOutcome, skipped: () => boolea
     const before = computeTimeline(applied).facts;
     applied[id] = option;
     const after = computeTimeline(applied).facts;
+    const log = T.interventions[id].options[option].log;
     if (app.era !== def.era) {
+      app.ui.caption(log, String(def.era));
       eraChange(def.era, before);
       await play(reduced ? 0.3 : 1.0, skipped);
     }
     const site = siteTile(def.site, after);
     void rig.flyTo({ target: new THREE.Vector3(site.x - 15, site.y * 0.5, site.z - 11), viewSize: 5.6 }, reduced ? 0 : 1.1);
-    app.ui.caption(T.interventions[id].options[option].log, String(def.era));
+    app.ui.caption(log, String(def.era));
     await play(reduced ? 0.4 : 1.0, skipped);
     if (skipped()) break;
     setWorld(def.era, after, true);

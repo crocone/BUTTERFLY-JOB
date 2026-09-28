@@ -102,7 +102,7 @@ export class UI {
     // top bar
     this.topContract = h('div', { class: 'contract' });
     this.topGoal = h('div', { class: 'goal' });
-    this.hintBtn = h('button', { class: 'chip', onclick: () => act.hint(), title: 'Progressive hints (H)' }, T.ui.hint);
+    this.hintBtn = h('button', { class: 'chip', onclick: () => act.hint(), title: T.ui.hintTitle }, T.ui.hint);
     const actions = h('div', { class: 'actions' }, this.hintBtn, h('button', { class: 'chip', onclick: () => act.contracts() }, T.ui.contracts),
       h('button', { class: 'chip', onclick: () => act.share(), title: T.ui.share }, T.ui.share), h('button', { class: 'chip', onclick: () => act.settings() }, T.ui.settings));
     this.modeEl = h('div', { class: 'mode' }, T.modes.planning);
@@ -114,17 +114,17 @@ export class UI {
     // left: timeline
     this.tlList = h('ul', { class: 'tl-list' });
     this.budgetEl = h('div', { class: 'budget' });
-    this.undoBtn = h('button', { class: 'btn', onclick: () => act.undo(), title: 'Ctrl/Cmd + Z' }, T.ui.undo);
+    this.undoBtn = h('button', { class: 'btn', onclick: () => act.undo(), title: T.ui.undoTitle }, T.ui.undo);
     this.resetBtn = h('button', { class: 'btn', onclick: () => act.reset() }, T.ui.reset);
     const tg = (name: 'compare' | 'overlays' | 'underground', label: string) => {
       const input = h('input', { type: 'checkbox', onchange: () => act.toggle(name, input.checked) }) as HTMLInputElement;
       this.toggles[name] = input;
       return h('label', { class: 'toggle' }, input, label);
     };
-    this.left = h('aside', { class: 'panel left', 'aria-label': 'Your timeline' },
+    this.left = h('aside', { class: 'panel left', 'aria-label': T.ui.timelineLabel },
       h('h2', { text: T.ui.timeline }), this.tlList, this.budgetEl, h('div', { class: 'row' }, this.undoBtn, this.resetBtn),
       h('div', { class: 'toggles' }, tg('compare', T.ui.compare), tg('overlays', T.ui.overlays), tg('underground', T.ui.underground)),
-      h('div', { class: 'quote', html: `${LEAF}“Same places.<br/>New stories.”` }));
+      h('div', { class: 'quote', html: `${LEAF}${T.ui.quoteLeft}` }));
     root.append(this.left);
 
     // right: object card
@@ -134,7 +134,7 @@ export class UI {
 
     // bottom: controls hint, eras, start
     this.controlsHint = h('div', { class: 'controls-hint', html: `${MOUSE}<span>${T.controls.planning}</span>` });
-    const eras = h('nav', { class: 'eras', 'aria-label': 'Era' });
+    const eras = h('nav', { class: 'eras', 'aria-label': T.ui.eraLabel });
     ([1946, 1986, 2026] as Era[]).forEach((e, i) => {
       const b = h('button', { class: 'era', dataset: { era: String(e) }, onclick: () => act.era(e), 'aria-label': `${e}: ${T.eras[e].tagline}`, title: T.eras[e].tagline },
         h('span', { class: 'key', text: String(i + 1) }), String(e));
@@ -229,8 +229,8 @@ export class UI {
     this.right.classList.toggle('has-card', !!m);
     this.right.innerHTML = '';
     if (!m) {
-      this.right.append(h('h2', { text: 'CASE NOTES' }), h('div', { class: 'placeholder', text: T.ui.selectHint }),
-        h('div', { class: 'quote', html: `${LEAF}“Bigger tomorrows<br/>often start small.”` }));
+      this.right.append(h('h2', { text: T.ui.caseNotes }), h('div', { class: 'placeholder', text: T.ui.selectHint }),
+        h('div', { class: 'quote', html: `${LEAF}${T.ui.quoteRight}` }));
       return;
     }
     this.right.append(h('h2', { text: m.title }), h('div', { class: 'era-line', html: `<span class="swatch" style="background:${ERA_COLORS[m.era]}"></span>${m.era}` }),

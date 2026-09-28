@@ -46,7 +46,25 @@ export const T = {
     selectHint: 'Click an object on the model to inspect it.',
     transitioning: 'The timeline is still settling…',
     contractLocked: 'Finish the previous contract to unlock this one.',
+    caseNotes: 'CASE NOTES',
+    quoteLeft: '“Same places.<br/>New stories.”',
+    quoteRight: '“Bigger tomorrows<br/>often start small.”',
+    timelineLabel: 'Your timeline',
+    eraLabel: 'Era',
+    hintTitle: 'Progressive hints (H)',
+    undoTitle: 'Ctrl/Cmd + Z',
+    linkLoaded: 'Plan loaded from link: {contract}',
+    linkLoadedShort: 'Plan loaded from link.',
+    openCaseFile: 'Open the case file',
+    place: 'RIVERDALE · LINDEN SQUARE',
   },
+  hints: {
+    title: 'HINTS',
+    intro: 'Hints go from a direction, to specifics, to the answer for one obstacle.',
+    first: 'Show a hint',
+    more: 'A more specific hint',
+  },
+  stamps: { caught: 'CAUGHT', closed: 'CLOSED', practice: 'PRACTICE', newJob: 'NEW JOB' },
   controls: {
     planning: 'Drag to rotate · Scroll to zoom · Right-drag to pan · 1 2 3 eras · Ctrl+Z undo',
     heist: 'Click to move · Click objects to use · Hold Space to wait · Esc pause',
@@ -448,7 +466,20 @@ export const T = {
     linkLocked: 'That plan link is for a contract you have not unlocked yet.',
     reload: 'Reload',
   },
-  loading: { title: 'Assembling the diorama', detail: 'Unfolding {label}…' },
+  loading: {
+    title: 'Assembling the diorama',
+    detail: 'Unfolding {label}…',
+    parts: {
+      terrain: 'the base',
+      bank: 'the bank',
+      cafe: 'Café Kopp',
+      workshop: 'the workshop',
+      townhouses: 'the townhouses',
+      trees: 'the trees',
+      props: 'the street',
+      characters: 'the people',
+    } as Record<string, string>,
+  },
 };
 
 export function fmt(s: string, vars: Record<string, string | number> = {}): string {

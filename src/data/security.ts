@@ -44,6 +44,8 @@ export interface CameraDef {
 export const GUARD_SPEED = 1.4;
 export const GUARD_FOV = 90;
 export const GUARD_RANGE = 6;
+/** guards notice anyone this close (tiles) whatever way they face, walls and floors still block */
+export const GUARD_HEARING = 1.1;
 
 export const CAMERAS: readonly CameraDef[] = [
   { id: 'C1', fov: 70, range: 8, sweep: 40, period: 9, phase: 0 },

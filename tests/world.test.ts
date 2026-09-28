@@ -6,6 +6,7 @@ import { presentWorld } from '../src/sim/heist';
 import { buildGrid, isWalkable } from '../src/sim/layout';
 import { findPath, isPathFailure, reachable, type DoorPolicy } from '../src/sim/nav';
 import { canSee, defaultEdgeBlocks, type SightContext } from '../src/sim/vision';
+import { GUARD_HEARING } from '../src/data/security';
 import type { TileRef } from '../src/sim/types';
 
 function validPlans(): Decisions[] {
@@ -159,6 +160,19 @@ describe('vision', () => {
     expect(canSee({ grid: canopy, edgeBlocks: defaultEdgeBlocks }, cam, 'G', 12.5, 10.5).visible).toBe(false);
     expect(canSee({ grid: bare, edgeBlocks: defaultEdgeBlocks }, cam, 'G', 12.5, 10.5).visible).toBe(true);
     expect(canSee({ grid: pruned, edgeBlocks: defaultEdgeBlocks }, cam, 'G', 12.5, 10.5).visible).toBe(true);
+  });
+
+  it('a guard hears someone right behind him, but not through a wall or from further away', () => {
+    // guard in the square facing east; thief one tile behind (west)
+    const guard = { level: 'G' as const, x: 12.5, z: 14.5, yaw: 0, fov: 90 * deg, range: 6, near: GUARD_HEARING };
+    expect(canSee(ctx, guard, 'G', 11.5, 14.5).visible).toBe(true);
+    expect(canSee(ctx, guard, 'G', 10.3, 14.5).visible).toBe(false); // two tiles behind: unheard
+    expect(canSee(ctx, { ...guard, near: undefined }, 'G', 11.5, 14.5).visible).toBe(false); // cameras do not hear
+    // lobby guard with his back to the service corridor wall: the thief behind the wall stays unseen
+    const lobby = { level: 'G' as const, x: 13.5, z: 6.5, yaw: 0, fov: 90 * deg, range: 6, near: GUARD_HEARING };
+    expect(canSee(ctx, lobby, 'G', 12.7, 6.5).visible).toBe(false); // 0.8 tiles behind, wall between
+    const lobby2 = { ...lobby, x: 14.5 };
+    expect(canSee(ctx, lobby2, 'G', 13.7, 6.5).visible).toBe(true); // 0.8 tiles behind, same room
   });
 
   it('garden fence does not block sight but blocks movement', () => {

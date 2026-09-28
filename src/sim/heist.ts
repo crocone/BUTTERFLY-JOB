@@ -1,5 +1,5 @@
 import type { ContractDef } from '../data/contracts';
-import { CAMERAS, DELIVERY, guardARoute, guardBRoute, type CameraDef, type GuardDef, type Waypoint } from '../data/security';
+import { CAMERAS, DELIVERY, GUARD_HEARING, guardARoute, guardBRoute, type CameraDef, type GuardDef, type Waypoint } from '../data/security';
 import { factsSignature } from './causality';
 import { buildGrid, LAYOUT, type DoorDef, type EdgeInfo, type WorldGrid } from './layout';
 import { findPath, isPathFailure, THIEF_SPEED, type DoorPolicy, type PathFailure, type PathResult, type PathStep } from './nav';
@@ -654,7 +654,7 @@ export class HeistSim {
   private observers(): Array<{ id: string; obs: Observer; guard?: GuardRuntime; alert: number }> {
     const out: Array<{ id: string; obs: Observer; guard?: GuardRuntime; alert: number }> = [];
     for (const g of this.guards) {
-      out.push({ id: g.route.guard.id, guard: g, alert: 1, obs: { level: g.route.guard.level, x: g.pose.x, z: g.pose.z, yaw: g.pose.yaw, fov: g.route.guard.fov * DEG, range: g.route.guard.range } });
+      out.push({ id: g.route.guard.id, guard: g, alert: 1, obs: { level: g.route.guard.level, x: g.pose.x, z: g.pose.z, yaw: g.pose.yaw, fov: g.route.guard.fov * DEG, range: g.route.guard.range, near: GUARD_HEARING } });
     }
     for (const c of this.world.cameras) {
       if (c.circuit && !this.power) continue;

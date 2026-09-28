@@ -479,36 +479,51 @@ def build_site1946(col):
 # era trims, hatch, cameras, contract props
 # ---------------------------------------------------------------------------------------------
 
+def level_part(name: str, parent, col, level: str, building: str, side: str | None = None, at: Vector | None = None):
+    """Grouping for things that must follow a floor in the interior cutaway: a `level` node
+    (hidden with the floors above the one in focus) and optionally a façade `side` inside it
+    (lowered when it faces the camera).  Pivots sit on the floor of `level`."""
+    base = (at if at is not None else W(16, 6, 0)).copy()
+    base.z = LV[level]
+    lvl = K.group(f'{name}__lvl', parent=parent, col=col, loc=base, role='level', level=level, building=building)
+    if side is None:
+        return lvl
+    return K.group(f'{name}__side', parent=lvl, col=col, loc=base, role='side', side=side, level=level, building=building)
+
+
 def build_trims(col):
     for era, accent, accent_pale in ((1986, PAL['teal'], PAL['teal_pale']), (2026, PAL['coral'], PAL['coral_pale'])):
         root = K.vroot(f'bank__trim{era}', f'bank.trim{era}', loc=W(16, 10, 0), anim='unfurl', col=col, building='bank')
-        mb = MB(seed=700 + era, jitter=0.02)
+        mbG, mbU, mbR = MB(seed=700 + era, jitter=0.02), MB(seed=710 + era, jitter=0.02), MB(seed=720 + era, jitter=0.02)
         s_along, s_out = A.dir_vectors('s')
         # name sign above the entrance (U level façade)
-        A.sign(mb, W(16.0, 10.0, 2.55) + s_out * 0.08, s_along, s_out, 'RIVERDALE SAVINGS', 0.26, PAL['stone'], PAL['charcoal'] if era == 1986 else PAL['ink'], width=4.1)
+        A.sign(mbU, W(16.0, 10.0, 2.55) + s_out * 0.08, s_along, s_out, 'RIVERDALE SAVINGS', 0.26, PAL['stone'], PAL['charcoal'] if era == 1986 else PAL['ink'], width=4.1)
         # banners either side of the doors
         for x in (13.5, 18.5):
-            A.banner(mb, W(x, 10.0, 3.7) + s_out * 0.08, s_along, s_out, 0.5, 1.2, accent, PAL['white'])
+            A.banner(mbU, W(x, 10.0, 3.7) + s_out * 0.08, s_along, s_out, 0.5, 1.2, accent, PAL['white'])
         # entrance canopy
         c0 = W(14.6, 10.0, 1.78)
-        mb.panel(c0 + s_out * 0.55 + UP * 0.02, s_along * 2.8, -s_out * 0.55 + UP * 0.1, 0.05, 'paper', accent)
+        mbG.panel(c0 + s_out * 0.55 + UP * 0.02, s_along * 2.8, -s_out * 0.55 + UP * 0.1, 0.05, 'paper', accent)
         # parapet cap stripe in the era accent
         for side in 'nesw':
             s, e = A.edge_line(side, *MAIN)
             along, out = A.dir_vectors(side)
             dn = (e - s).normalized()
-            mb.panel(s - dn * 0.12 + out * 0.1 + UP * (LV['R'] + 0.43), dn * ((e - s).length + 0.24), -out * 0.24, 0.04, 'paper', accent)
+            mbR.panel(s - dn * 0.12 + out * 0.1 + UP * (LV['R'] + 0.43), dn * ((e - s).length + 0.24), -out * 0.24, 0.04, 'paper', accent)
         # steps in front of the main door
-        A.stairs(mb, W(16.0, 10.95, 0.0), Vector((0, 1, 0)), Vector((1, 0, 0)), 2.2, 0.1, 0.6, 2, col=PAL['stone'])
+        A.stairs(mbG, W(16.0, 10.95, 0.0), Vector((0, 1, 0)), Vector((1, 0, 0)), 2.2, 0.1, 0.6, 2, col=PAL['stone'])
         if era == 2026:
             # security lights and a card reader by the service door; brass plaque
             for x in (11.3, 20.7):
                 p = W(x, 10.0, 1.7) + s_out * 0.1
-                mb.box(p.x - 0.08, p.y - 0.06, p.z, p.x + 0.08, p.y + 0.06, p.z + 0.1, 'paper', PAL['charcoal'], edge=None)
-            A.sign(mb, W(17.6, 10.0, 1.2) + s_out * 0.08, s_along, s_out, 'EST. 1948', 0.09, PAL['copper'], PAL['ink'])
+                mbG.box(p.x - 0.08, p.y - 0.06, p.z, p.x + 0.08, p.y + 0.06, p.z + 0.1, 'paper', PAL['charcoal'], edge=None)
+            A.sign(mbG, W(17.6, 10.0, 1.2) + s_out * 0.08, s_along, s_out, 'EST. 1948', 0.09, PAL['copper'], PAL['ink'])
         else:
-            A.sign(mb, W(17.6, 10.0, 1.2) + s_out * 0.08, s_along, s_out, 'OPEN 9-4', 0.09, PAL['teal_pale'], PAL['ink'])
-        mb.build(f'bank__trim{era}__mesh', parent=root, col=col, props={'bj_role': 'part'})
+            A.sign(mbG, W(17.6, 10.0, 1.2) + s_out * 0.08, s_along, s_out, 'OPEN 9-4', 0.09, PAL['teal_pale'], PAL['ink'])
+        front = W(16, 10, 0)
+        mbG.build(f'bank__trim{era}__G__mesh', parent=level_part(f'bank__trim{era}__G', root, col, 'G', 'bank', 's', front), col=col, props={'bj_role': 'part'})
+        mbU.build(f'bank__trim{era}__U__mesh', parent=level_part(f'bank__trim{era}__U', root, col, 'U', 'bank', 's', front), col=col, props={'bj_role': 'part'})
+        mbR.build(f'bank__trim{era}__R__mesh', parent=level_part(f'bank__trim{era}__R', root, col, 'R', 'bank'), col=col, props={'bj_role': 'part'})
 
 
 def build_hatch(col):
@@ -549,6 +564,9 @@ def build_cameras(col):
         parent = root
         if cid == 'C6':
             parent = K.vroot('bank__cam_C6', 'bank.cam.C6', anim='pop', col=col)
+        building = 'bank' if 11 <= m['x'] <= 20 and 2 <= m['z'] <= 9 else 'annex' if 21 <= m['x'] <= 23 and 2 <= m['z'] <= 9 else None
+        if building:
+            parent = level_part(f'cam__{cid}', parent, col, m['level'], building, at=W(m['x'] + 0.5, m['z'] + 0.5, 0))
         y = LV[m['level']] + m['mount']
         # mount point: against the wall the camera hangs on (tile centre otherwise)
         pos = W(m['x'] + 0.5, m['z'] + 0.5, y)
@@ -588,7 +606,7 @@ def build_contract_props(col):
     c = W(13.5, 2.55, yB + 0.95)
     mb.box(c.x - 0.18, c.y - 0.12, c.z, c.x + 0.18, c.y + 0.12, c.z + 0.3, 'paper', PAL['amber'])
     mb.box(c.x - 0.19, c.y - 0.02, c.z - 0.005, c.x + 0.19, c.y + 0.02, c.z + 0.305, 'paper', PAL['coral'], edge=None)
-    mb.build('prop__lindenFile__box', parent=r, col=col, props={'bj_role': 'part'})
+    mb.build('prop__lindenFile__box', parent=level_part('prop__lindenFile', r, col, 'B', 'bank', at=c), col=col, props={'bj_role': 'part'})
     K.anchor('anchor__target_c1', 'target.c1', W(13.5, 2.5, yB), parent=r, col=col)
     # the Glass Diamond (c2)
     r = K.vroot('prop__diamond', 'prop.diamond', loc=W(15.5, 2.5, yU + 0.95), anim='pop', col=col)
@@ -601,7 +619,7 @@ def build_contract_props(col):
         j = (i + 1) % 8
         mb.face([ring[i], ring[j], top], 'glass', PAL['sky'] if i % 2 else PAL['white'], vary=False)
         mb.face([ring[j], ring[i], bot], 'glass', PAL['glass'] if i % 2 else PAL['sky'], vary=False)
-    mb.build('prop__diamond__gem', parent=r, col=col, pivot=c, props={'bj_role': 'part', 'bj_spin': 1})
+    mb.build('prop__diamond__gem', parent=level_part('prop__diamond', r, col, 'U', 'bank', at=c), col=col, pivot=c, props={'bj_role': 'part', 'bj_spin': 1})
     K.anchor('anchor__target_c2', 'target.c2', W(15.5, 3.5, yU), parent=r, col=col)
     # deposit box 46 (c3) pulled half out of the vault wall
     r = K.vroot('prop__depositBox', 'prop.depositBox', loc=W(20.4, 3.5, yB + 0.8), anim='pop', col=col)
@@ -609,10 +627,11 @@ def build_contract_props(col):
     c = W(20.55, 3.5, yB + 0.8)
     mb.box(c.x - 0.25, c.y - 0.12, c.z, c.x, c.y + 0.12, c.z + 0.12, 'paper', PAL['copper'])
     A.sign(mb, c + Vector((-0.26, 0, 0.05)), Vector((0, 1, 0)), Vector((-1, 0, 0)), '46', 0.06, PAL['copper'], PAL['ink'], board=False)
-    mb.build('prop__depositBox__box', parent=r, col=col, props={'bj_role': 'part'})
+    mb.build('prop__depositBox__box', parent=level_part('prop__depositBox', r, col, 'B', 'bank', at=c), col=col, props={'bj_role': 'part'})
     K.anchor('anchor__target_c3', 'target.c3', W(20.5, 3.5, yB), parent=r, col=col)
     # laser curtain (c2): emitters + beams across the Glass Room doorway
     r = K.vroot('bank__laser', 'bank.laser', loc=W(16.5, 5.0, yU), anim='pop', col=col)
+    r = level_part('bank__laser', r, col, 'U', 'bank', at=W(16.5, 5.0, yU))
     mb = MB(seed=1003, jitter=0)
     for x in (16.18, 16.82):
         p = W(x, 5.0, yU)
