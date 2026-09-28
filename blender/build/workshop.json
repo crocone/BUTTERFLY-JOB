@@ -1,0 +1,373 @@
+{
+ "asset": "workshop",
+ "file": "assets/models/workshop.glb",
+ "source": "blender/source/workshop.blend",
+ "blender": "5.0.1",
+ "stats": {
+  "objects": 16,
+  "triangles": 7964,
+  "materials": [
+   "bj_brick",
+   "bj_edge",
+   "bj_foliage",
+   "bj_glass",
+   "bj_paper",
+   "bj_paving",
+   "bj_roof",
+   "bj_wall",
+   "bj_wood"
+  ],
+  "images": [
+   "bj_tex_brick",
+   "bj_tex_edge",
+   "bj_tex_foliage",
+   "bj_tex_glass",
+   "bj_tex_grain",
+   "bj_tex_hatch",
+   "bj_tex_paving",
+   "bj_tex_roof",
+   "bj_tex_wood"
+  ],
+  "glb_bytes": 131300
+ },
+ "nodes": [
+  {
+   "node": "anchor__junction",
+   "role": "anchor",
+   "anchor": "junction",
+   "parent": "workshop__junction",
+   "position": [
+    -5.5,
+    0.0,
+    -6.5
+   ]
+  },
+  {
+   "node": "proxy__junction",
+   "role": "proxy",
+   "proxy": "site.junction",
+   "size": [
+    0.5,
+    0.8,
+    0.6
+   ],
+   "parent": "workshop__junction",
+   "position": [
+    -5.9,
+    1.0,
+    -6.5
+   ]
+  },
+  {
+   "node": "proxy__workshop",
+   "role": "proxy",
+   "proxy": "site.workshop",
+   "size": [
+    6.0,
+    3.2,
+    6.0
+   ],
+   "parent": "workshop__building",
+   "position": [
+    -9.0,
+    1.6,
+    -5.0
+   ]
+  },
+  {
+   "node": "workshop__1946",
+   "role": "variant",
+   "variant": "workshop.1946",
+   "anim": "unfurl",
+   "position": [
+    -6.0,
+    2.6,
+    -5.0
+   ],
+   "bounds": {
+    "min": [
+     -13.77,
+     -0.102,
+     -9.457
+    ],
+    "max": [
+     8.35,
+     3.4,
+     -3.2
+    ]
+   }
+  },
+  {
+   "node": "workshop__1946__dressing",
+   "role": "part",
+   "parent": "workshop__1946",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -13.77,
+     -0.102,
+     -9.457
+    ],
+    "max": [
+     8.35,
+     3.4,
+     -3.2
+    ]
+   }
+  },
+  {
+   "node": "workshop__1986",
+   "role": "variant",
+   "variant": "workshop.1986",
+   "anim": "unfurl",
+   "position": [
+    -6.0,
+    2.6,
+    -5.0
+   ],
+   "bounds": {
+    "min": [
+     -7.84,
+     0.0,
+     -8.728
+    ],
+    "max": [
+     -5.938,
+     3.072,
+     -3.2
+    ]
+   }
+  },
+  {
+   "node": "workshop__1986__dressing",
+   "role": "part",
+   "parent": "workshop__1986",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -7.84,
+     0.0,
+     -8.728
+    ],
+    "max": [
+     -5.938,
+     3.072,
+     -3.2
+    ]
+   }
+  },
+  {
+   "node": "workshop__2026",
+   "role": "variant",
+   "variant": "workshop.2026",
+   "anim": "unfurl",
+   "position": [
+    -6.0,
+    2.6,
+    -5.0
+   ],
+   "bounds": {
+    "min": [
+     -13.834,
+     0.0,
+     -8.2
+    ],
+    "max": [
+     -5.938,
+     3.072,
+     -2.055
+    ]
+   }
+  },
+  {
+   "node": "workshop__2026__dressing",
+   "role": "part",
+   "parent": "workshop__2026",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -13.834,
+     0.0,
+     -8.2
+    ],
+    "max": [
+     -5.938,
+     3.072,
+     -2.055
+    ]
+   }
+  },
+  {
+   "node": "workshop__building",
+   "role": "variant",
+   "variant": "workshop.building",
+   "anim": "rise",
+   "building": "workshop",
+   "position": [
+    -9.0,
+    0.0,
+    -5.0
+   ],
+   "bounds": {
+    "min": [
+     -14.0,
+     -0.1,
+     -9.0
+    ],
+    "max": [
+     -5.78,
+     4.2,
+     -1.0
+    ]
+   }
+  },
+  {
+   "node": "workshop__building__lot",
+   "role": "part",
+   "parent": "workshop__building",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -14.0,
+     0.0,
+     -9.0
+    ],
+    "max": [
+     -12.0,
+     0.5,
+     -1.0
+    ]
+   }
+  },
+  {
+   "node": "workshop__building__shell",
+   "role": "part",
+   "parent": "workshop__building",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -12.22,
+     -0.1,
+     -8.22
+    ],
+    "max": [
+     -5.78,
+     4.2,
+     -1.78
+    ]
+   }
+  },
+  {
+   "node": "workshop__junction",
+   "role": "variant",
+   "variant": "workshop.junction",
+   "anim": "pop",
+   "level": "G",
+   "position": [
+    -6.0,
+    1.0,
+    -6.5
+   ],
+   "bounds": {
+    "min": [
+     -6.0,
+     0.75,
+     -6.72
+    ],
+    "max": [
+     -5.77,
+     2.3,
+     -6.28
+    ]
+   }
+  },
+  {
+   "node": "workshop__junction__box",
+   "role": "part",
+   "parent": "workshop__junction",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.0,
+     0.75,
+     -6.72
+    ],
+    "max": [
+     -5.788,
+     2.3,
+     -6.28
+    ]
+   }
+  },
+  {
+   "node": "workshop__junction__lever",
+   "role": "dynamic",
+   "dynamic": "junctionLever",
+   "parent": "workshop__junction",
+   "position": [
+    -5.82,
+    0.95,
+    -6.62
+   ],
+   "bounds": {
+    "min": [
+     -5.83,
+     0.95,
+     -6.655
+    ],
+    "max": [
+     -5.77,
+     1.21,
+     -6.585
+    ]
+   }
+  },
+  {
+   "node": "workshop__junction__lever__mesh",
+   "role": "part",
+   "parent": "workshop__junction__lever",
+   "position": [
+    -5.82,
+    0.95,
+    -6.62
+   ],
+   "bounds": {
+    "min": [
+     -5.83,
+     0.95,
+     -6.655
+    ],
+    "max": [
+     -5.77,
+     1.21,
+     -6.585
+    ]
+   }
+  }
+ ],
+ "animations": []
+}

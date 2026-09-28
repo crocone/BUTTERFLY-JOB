@@ -95,6 +95,7 @@ def reset_scene():
     scene.render.fps = 30
     _MATERIALS.clear()
     _TEXTURES.clear()
+    _FONTS.clear()
     return scene
 
 
@@ -911,3 +912,61 @@ def _jsonable(v):
 def load_json(name: str):
     with open(os.path.join(DATA_DIR, name)) as fh:
         return json.load(fh)
+
+
+_VARIANT_IDS: set | None = None
+_LAYOUT: dict | None = None
+
+
+def variant_ids() -> set:
+    global _VARIANT_IDS
+    if _VARIANT_IDS is None:
+        _VARIANT_IDS = set(load_json('variants.json')['variants'].keys())
+    return _VARIANT_IDS
+
+
+def layout() -> dict:
+    global _LAYOUT
+    if _LAYOUT is None:
+        _LAYOUT = load_json('layout.json')
+    return _LAYOUT
+
+
+def vroot(name: str, vid: str, loc: Vector | None = None, anim: str = 'fold', col=None, parent=None, **extra):
+    """Variant root node.  `vid` must be registered in src/data/variants.json."""
+    if vid not in variant_ids():
+        raise KeyError(f'variant "{vid}" is not registered in src/data/variants.json')
+    props = {'bj_role': 'variant', 'bj_variant': vid, 'bj_anim': anim}
+    for k, v in extra.items():
+        props['bj_' + k] = v
+    return empty(name, loc if loc is not None else Vector((0, 0, 0)), parent=parent, col=col, props=props)
+
+
+def group(name: str, parent=None, col=None, loc: Vector | None = None, **extra):
+    """Plain grouping node (optionally tagged with bj_* metadata such as level/side/building)."""
+    props = {('bj_' + k): v for k, v in extra.items()}
+    return empty(name, loc if loc is not None else Vector((0, 0, 0)), parent=parent, col=col, props=props or None)
+
+
+def rect_box(mb: 'MB', x0, z0, x1, z1, y0, y1, mat, col, inset=0.0, edge='edge', edge_col=None):
+    """Axis-aligned box covering the inclusive tile rect (grid coords), heights y0..y1."""
+    a = W(x0 + inset, z1 + 1 - inset)
+    b = W(x1 + 1 - inset, z0 + inset)
+    mb.box(a.x, a.y, y0, b.x, b.y, y1, mat, col, edge=edge, edge_col=edge_col)
+    return mb
+
+
+def anchor(name: str, anchor_id: str, loc: Vector, parent=None, col=None, **extra):
+    """Non-rendered helper node marking an interaction point / entrance / landing."""
+    props = {'bj_role': 'anchor', 'bj_anchor': anchor_id}
+    for k, v in extra.items():
+        props['bj_' + k] = v
+    return empty(name, loc, parent=parent, col=col, props=props, display='SPHERE', size=0.12)
+
+
+def proxy(name: str, proxy_id: str, center: Vector, size: Vector, parent=None, col=None, **extra):
+    """Lightweight collision / pick proxy exported as metadata (an empty with its box size)."""
+    props = {'bj_role': 'proxy', 'bj_proxy': proxy_id, 'bj_size': [round(size.x, 3), round(size.z, 3), round(size.y, 3)]}
+    for k, v in extra.items():
+        props['bj_' + k] = v
+    return empty(name, center, parent=parent, col=col, props=props, display='CUBE', size=0.5)

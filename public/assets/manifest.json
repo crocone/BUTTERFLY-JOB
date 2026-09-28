@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-09-28T21:00:26+00:00",
+ "generated": "2026-09-28T21:50:40+00:00",
  "blender": "5.0.1",
  "conventions": {
   "units": "1 unit = 1 tile = 1 m",
@@ -19,29 +19,6382 @@
   ]
  },
  "assets": {
+  "terrain": {
+   "asset": "terrain",
+   "file": "assets/models/terrain.glb",
+   "source": "blender/source/terrain.blend",
+   "blender": "5.0.1",
+   "stats": {
+    "objects": 48,
+    "triangles": 17267,
+    "materials": [
+     "bj_brick",
+     "bj_cobble",
+     "bj_edge",
+     "bj_foliage",
+     "bj_glass",
+     "bj_grass",
+     "bj_paper",
+     "bj_paving",
+     "bj_wood"
+    ],
+    "images": [
+     "bj_tex_brick",
+     "bj_tex_cobble",
+     "bj_tex_edge",
+     "bj_tex_foliage",
+     "bj_tex_glass",
+     "bj_tex_grain",
+     "bj_tex_grass",
+     "bj_tex_paving",
+     "bj_tex_wood"
+    ],
+    "glb_bytes": 241392
+   },
+   "nodes": [
+    {
+     "node": "anchor__portal_hatch_bottom",
+     "role": "anchor",
+     "anchor": "portal.hatch.a",
+     "parent": "sewer__hatchShaft",
+     "position": [
+      -2.5,
+      -3.6,
+      -2.5
+     ]
+    },
+    {
+     "node": "anchor__portal_manhole_bottom",
+     "role": "anchor",
+     "anchor": "portal.manhole.b",
+     "parent": "sewer__street",
+     "position": [
+      -6.5,
+      -3.6,
+      9.5
+     ]
+    },
+    {
+     "node": "anchor__portal_manhole_top",
+     "role": "anchor",
+     "anchor": "portal.manhole.a",
+     "parent": "sewer__street",
+     "position": [
+      -6.5,
+      0.0,
+      9.5
+     ]
+    },
+    {
+     "node": "anchor__site_drain",
+     "role": "anchor",
+     "anchor": "site.drain",
+     "position": [
+      -6.5,
+      0.4,
+      8.5
+     ]
+    },
+    {
+     "node": "drainworks__1986",
+     "role": "variant",
+     "variant": "drainworks.1986",
+     "anim": "pop",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -8.8,
+       -0.01,
+       7.6
+      ],
+      "max": [
+       -5.68,
+       0.7,
+       10.32
+      ]
+     }
+    },
+    {
+     "node": "drainworks__1986__site",
+     "role": "part",
+     "parent": "drainworks__1986",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -8.8,
+       -0.01,
+       7.6
+      ],
+      "max": [
+       -5.68,
+       0.7,
+       10.32
+      ]
+     }
+    },
+    {
+     "node": "ground__1946",
+     "role": "variant",
+     "variant": "ground.1946",
+     "anim": "flatten",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -15.0,
+       -0.07,
+       -11.0
+      ],
+      "max": [
+       15.0,
+       0.03,
+       11.0
+      ]
+     }
+    },
+    {
+     "node": "ground__1946__plates",
+     "role": "part",
+     "anim": "flatten",
+     "parent": "ground__1946",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -15.0,
+       -0.07,
+       -11.0
+      ],
+      "max": [
+       15.0,
+       0.03,
+       11.0
+      ]
+     }
+    },
+    {
+     "node": "ground__1986",
+     "role": "variant",
+     "variant": "ground.1986",
+     "anim": "flatten",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -15.0,
+       -0.07,
+       -11.0
+      ],
+      "max": [
+       15.0,
+       0.054,
+       11.0
+      ]
+     }
+    },
+    {
+     "node": "ground__1986__plates",
+     "role": "part",
+     "anim": "flatten",
+     "parent": "ground__1986",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -15.0,
+       -0.07,
+       -11.0
+      ],
+      "max": [
+       15.0,
+       0.054,
+       11.0
+      ]
+     }
+    },
+    {
+     "node": "ground__2026",
+     "role": "variant",
+     "variant": "ground.2026",
+     "anim": "flatten",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -15.0,
+       -0.07,
+       -11.0
+      ],
+      "max": [
+       15.0,
+       0.064,
+       11.0
+      ]
+     }
+    },
+    {
+     "node": "ground__2026__plates",
+     "role": "part",
+     "anim": "flatten",
+     "parent": "ground__2026",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -15.0,
+       -0.07,
+       -11.0
+      ],
+      "max": [
+       15.0,
+       0.064,
+       11.0
+      ]
+     }
+    },
+    {
+     "node": "ground__alley_1946",
+     "role": "variant",
+     "variant": "ground.alley.1946",
+     "anim": "flatten",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       -0.05,
+       -9.0
+      ],
+      "max": [
+       -4.0,
+       0.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "ground__alley_1946__plate",
+     "role": "part",
+     "parent": "ground__alley_1946",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       -0.05,
+       -9.0
+      ],
+      "max": [
+       -4.0,
+       0.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "ground__alley_kept",
+     "role": "variant",
+     "variant": "ground.alley.kept",
+     "anim": "flatten",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       -0.05,
+       -9.0
+      ],
+      "max": [
+       -4.0,
+       0.054,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "ground__alley_kept__plate",
+     "role": "part",
+     "parent": "ground__alley_kept",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       -0.05,
+       -9.0
+      ],
+      "max": [
+       -4.0,
+       0.054,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "ground__garden",
+     "role": "variant",
+     "variant": "ground.garden",
+     "anim": "unfurl",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       7.0,
+       -0.06,
+       -1.0
+      ],
+      "max": [
+       14.0,
+       0.066,
+       7.0
+      ]
+     }
+    },
+    {
+     "node": "ground__garden_1946",
+     "role": "variant",
+     "variant": "ground.garden.1946",
+     "anim": "flatten",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       7.0,
+       -0.05,
+       -1.0
+      ],
+      "max": [
+       14.0,
+       0.09,
+       7.0
+      ]
+     }
+    },
+    {
+     "node": "ground__garden_1946__plate",
+     "role": "part",
+     "parent": "ground__garden_1946",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       7.0,
+       -0.05,
+       -1.0
+      ],
+      "max": [
+       14.0,
+       0.09,
+       7.0
+      ]
+     }
+    },
+    {
+     "node": "ground__garden__plate",
+     "role": "part",
+     "parent": "ground__garden",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       7.0,
+       -0.06,
+       -1.0
+      ],
+      "max": [
+       14.0,
+       0.066,
+       7.0
+      ]
+     }
+    },
+    {
+     "node": "manhole__street",
+     "role": "variant",
+     "variant": "manhole.street",
+     "anim": "pop",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.86,
+       0.05,
+       9.14
+      ],
+      "max": [
+       -6.14,
+       0.085,
+       9.86
+      ]
+     }
+    },
+    {
+     "node": "manhole__street__cover",
+     "role": "part",
+     "parent": "manhole__street",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.86,
+       0.05,
+       9.14
+      ],
+      "max": [
+       -6.14,
+       0.085,
+       9.86
+      ]
+     }
+    },
+    {
+     "node": "proxy__manhole",
+     "role": "proxy",
+     "proxy": "site.drain",
+     "size": [
+      0.9,
+      0.4,
+      0.9
+     ],
+     "parent": "manhole__street",
+     "position": [
+      -6.5,
+      0.2,
+      9.5
+     ]
+    },
+    {
+     "node": "repair__creek",
+     "role": "variant",
+     "variant": "repair.creek",
+     "anim": "flatten",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.7,
+       0.0,
+       -4.0
+      ],
+      "max": [
+       -2.3,
+       0.072,
+       9.0
+      ]
+     }
+    },
+    {
+     "node": "repair__creek__patch",
+     "role": "part",
+     "parent": "repair__creek",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.7,
+       0.0,
+       -4.0
+      ],
+      "max": [
+       -2.3,
+       0.072,
+       9.0
+      ]
+     }
+    },
+    {
+     "node": "repair__street",
+     "role": "variant",
+     "variant": "repair.street",
+     "anim": "flatten",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -12.0,
+       0.0,
+       9.3
+      ],
+      "max": [
+       15.0,
+       0.072,
+       9.7
+      ]
+     }
+    },
+    {
+     "node": "repair__street__patch",
+     "role": "part",
+     "parent": "repair__street",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -12.0,
+       0.0,
+       9.3
+      ],
+      "max": [
+       15.0,
+       0.072,
+       9.7
+      ]
+     }
+    },
+    {
+     "node": "sewer__creek",
+     "role": "variant",
+     "variant": "sewer.creek",
+     "anim": "rise",
+     "level": "S",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -7.07,
+       -3.72,
+       -4.07
+      ],
+      "max": [
+       -1.93,
+       -2.35,
+       9.07
+      ]
+     }
+    },
+    {
+     "node": "sewer__creek__tunnel",
+     "role": "part",
+     "level": "S",
+     "parent": "sewer__creek",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -7.07,
+       -3.72,
+       -4.07
+      ],
+      "max": [
+       -1.93,
+       -2.35,
+       9.07
+      ]
+     }
+    },
+    {
+     "node": "sewer__hatchShaft",
+     "role": "variant",
+     "variant": "sewer.hatchShaft",
+     "anim": "rise",
+     "level": "S",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -2.88,
+       -2.35,
+       -2.88
+      ],
+      "max": [
+       -2.12,
+       -2.02,
+       -2.12
+      ]
+     }
+    },
+    {
+     "node": "sewer__hatchShaft__shaft",
+     "role": "part",
+     "level": "S",
+     "parent": "sewer__hatchShaft",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -2.88,
+       -2.35,
+       -2.88
+      ],
+      "max": [
+       -2.12,
+       -2.02,
+       -2.12
+      ]
+     }
+    },
+    {
+     "node": "sewer__street",
+     "role": "variant",
+     "variant": "sewer.street",
+     "anim": "rise",
+     "level": "S",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -12.07,
+       -3.72,
+       8.93
+      ],
+      "max": [
+       16.0,
+       -0.06,
+       10.07
+      ]
+     }
+    },
+    {
+     "node": "sewer__street__manholeShaft",
+     "role": "part",
+     "level": "S",
+     "parent": "sewer__street",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.88,
+       -3.6,
+       9.12
+      ],
+      "max": [
+       -6.12,
+       -0.06,
+       9.88
+      ]
+     }
+    },
+    {
+     "node": "sewer__street__tunnel",
+     "role": "part",
+     "level": "S",
+     "parent": "sewer__street",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -12.07,
+       -3.72,
+       8.93
+      ],
+      "max": [
+       16.0,
+       -2.35,
+       10.07
+      ]
+     }
+    },
+    {
+     "node": "survey__1946",
+     "role": "variant",
+     "variant": "survey.1946",
+     "anim": "pop",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -7.739,
+       -0.006,
+       -3.77
+      ],
+      "max": [
+       -2.55,
+       0.82,
+       8.27
+      ]
+     }
+    },
+    {
+     "node": "survey__1946__stakes",
+     "role": "part",
+     "parent": "survey__1946",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -7.739,
+       -0.006,
+       -3.77
+      ],
+      "max": [
+       -2.55,
+       0.82,
+       8.27
+      ]
+     }
+    },
+    {
+     "node": "terrain__hedges__west",
+     "role": "part",
+     "parent": "terrain__hedges",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -15.062,
+       0.041,
+       -9.046
+      ],
+      "max": [
+       -13.93,
+       0.831,
+       4.03
+      ]
+     }
+    },
+    {
+     "node": "terrain__plinth",
+     "role": "variant",
+     "variant": "terrain.plinth",
+     "anim": "none",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -15.74,
+       -4.46,
+       -11.83
+      ],
+      "max": [
+       15.74,
+       -0.012,
+       11.74
+      ]
+     }
+    },
+    {
+     "node": "terrain__plinth__body",
+     "role": "part",
+     "anim": "none",
+     "parent": "terrain__plinth",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -15.74,
+       -4.46,
+       -11.74
+      ],
+      "max": [
+       15.74,
+       -0.02,
+       11.74
+      ]
+     }
+    },
+    {
+     "node": "terrain__plinth__lettering",
+     "role": "part",
+     "parent": "terrain__plinth",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -7.244,
+       -1.396,
+       -1.967
+      ],
+      "max": [
+       15.72,
+       -1.135,
+       11.72
+      ]
+     }
+    },
+    {
+     "node": "terrain__plinth__marks",
+     "role": "part",
+     "parent": "terrain__plinth",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -15.033,
+       -0.019,
+       -11.83
+      ],
+      "max": [
+       15.45,
+       -0.012,
+       11.581
+      ]
+     }
+    },
+    {
+     "node": "trench__creek",
+     "role": "variant",
+     "variant": "trench.creek",
+     "anim": "fold",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -7.053,
+       -0.002,
+       -3.88
+      ],
+      "max": [
+       -1.967,
+       0.187,
+       8.88
+      ]
+     }
+    },
+    {
+     "node": "trench__creek__cut",
+     "role": "part",
+     "anim": "rise",
+     "parent": "trench__creek",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -7.053,
+       -0.002,
+       -3.88
+      ],
+      "max": [
+       -1.967,
+       0.187,
+       8.88
+      ]
+     }
+    },
+    {
+     "node": "trench__street",
+     "role": "variant",
+     "variant": "trench.street",
+     "anim": "fold",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -11.88,
+       -0.003,
+       8.955
+      ],
+      "max": [
+       14.88,
+       0.187,
+       10.048
+      ]
+     }
+    },
+    {
+     "node": "trench__street__cut",
+     "role": "part",
+     "anim": "rise",
+     "parent": "trench__street",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -11.88,
+       -0.003,
+       8.955
+      ],
+      "max": [
+       14.88,
+       0.187,
+       10.048
+      ]
+     }
+    },
+    {
+     "node": "utility__creek",
+     "role": "variant",
+     "variant": "utility.creek",
+     "anim": "flatten",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.57,
+       0.0,
+       -3.75
+      ],
+      "max": [
+       -2.43,
+       0.078,
+       8.75
+      ]
+     }
+    },
+    {
+     "node": "utility__creek__marks",
+     "role": "part",
+     "parent": "utility__creek",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.57,
+       0.0,
+       -3.75
+      ],
+      "max": [
+       -2.43,
+       0.078,
+       8.75
+      ]
+     }
+    }
+   ],
+   "animations": []
+  },
+  "bank": {
+   "asset": "bank",
+   "file": "assets/models/bank.glb",
+   "source": "blender/source/bank.blend",
+   "blender": "5.0.1",
+   "stats": {
+    "objects": 183,
+    "triangles": 27100,
+    "materials": [
+     "bj_brick",
+     "bj_edge",
+     "bj_glass",
+     "bj_paper",
+     "bj_paving",
+     "bj_plank",
+     "bj_wall",
+     "bj_wood"
+    ],
+    "images": [
+     "bj_tex_brick",
+     "bj_tex_edge",
+     "bj_tex_glass",
+     "bj_tex_grain",
+     "bj_tex_hatch",
+     "bj_tex_paving",
+     "bj_tex_plank",
+     "bj_tex_wood"
+    ],
+    "glb_bytes": 460636
+   },
+   "nodes": [
+    {
+     "node": "anchor__door_bank_archive",
+     "role": "anchor",
+     "anchor": "door.bank.archive",
+     "level": "B",
+     "kind": "open",
+     "parent": "bank__anchors",
+     "position": [
+      0.5,
+      -2.0,
+      -6.0
+     ]
+    },
+    {
+     "node": "anchor__door_bank_boiler",
+     "role": "anchor",
+     "anchor": "door.bank.boiler",
+     "level": "B",
+     "kind": "open",
+     "parent": "bank__anchors",
+     "position": [
+      -2.5,
+      -2.0,
+      -4.0
+     ]
+    },
+    {
+     "node": "anchor__door_bank_glass",
+     "role": "anchor",
+     "anchor": "door.bank.glass",
+     "level": "U",
+     "kind": "glass",
+     "parent": "bank__anchors",
+     "position": [
+      1.5,
+      2.0,
+      -6.0
+     ]
+    },
+    {
+     "node": "anchor__door_bank_lobby_office",
+     "role": "anchor",
+     "anchor": "door.bank.lobby_office",
+     "level": "G",
+     "kind": "locked",
+     "parent": "bank__anchors",
+     "position": [
+      2.5,
+      0.0,
+      -6.0
+     ]
+    },
+    {
+     "node": "anchor__door_bank_lobby_service",
+     "role": "anchor",
+     "anchor": "door.bank.lobby_service",
+     "level": "G",
+     "kind": "open",
+     "parent": "bank__anchors",
+     "position": [
+      -2.0,
+      0.0,
+      -3.5
+     ]
+    },
+    {
+     "node": "anchor__door_bank_main_a",
+     "role": "anchor",
+     "anchor": "door.bank.main.a",
+     "level": "G",
+     "kind": "locked",
+     "parent": "bank__anchors",
+     "position": [
+      0.5,
+      0.0,
+      -1.0
+     ]
+    },
+    {
+     "node": "anchor__door_bank_main_b",
+     "role": "anchor",
+     "anchor": "door.bank.main.b",
+     "level": "G",
+     "kind": "locked",
+     "parent": "bank__anchors",
+     "position": [
+      1.5,
+      0.0,
+      -1.0
+     ]
+    },
+    {
+     "node": "anchor__door_bank_plant",
+     "role": "anchor",
+     "anchor": "door.bank.plant",
+     "level": "G",
+     "kind": "open",
+     "parent": "bank__anchors",
+     "position": [
+      -4.0,
+      0.0,
+      -7.5
+     ]
+    },
+    {
+     "node": "anchor__door_bank_service_alley",
+     "role": "anchor",
+     "anchor": "door.bank.service_alley",
+     "level": "G",
+     "kind": "service",
+     "parent": "bank__anchors",
+     "position": [
+      -4.0,
+      0.0,
+      -3.5
+     ]
+    },
+    {
+     "node": "anchor__door_bank_service_front",
+     "role": "anchor",
+     "anchor": "door.bank.service_front",
+     "level": "G",
+     "kind": "service",
+     "parent": "bank__anchors",
+     "position": [
+      -2.5,
+      0.0,
+      -1.0
+     ]
+    },
+    {
+     "node": "anchor__door_bank_stair_B",
+     "role": "anchor",
+     "anchor": "door.bank.stair_B",
+     "level": "B",
+     "kind": "open",
+     "parent": "bank__anchors",
+     "position": [
+      -3.5,
+      -2.0,
+      -6.0
+     ]
+    },
+    {
+     "node": "anchor__door_bank_stair_G",
+     "role": "anchor",
+     "anchor": "door.bank.stair_G",
+     "level": "G",
+     "kind": "open",
+     "parent": "bank__anchors",
+     "position": [
+      -3.5,
+      0.0,
+      -6.0
+     ]
+    },
+    {
+     "node": "anchor__door_bank_stair_U",
+     "role": "anchor",
+     "anchor": "door.bank.stair_U",
+     "level": "U",
+     "kind": "open",
+     "parent": "bank__anchors",
+     "position": [
+      -3.5,
+      2.0,
+      -6.0
+     ]
+    },
+    {
+     "node": "anchor__door_bank_upper_service",
+     "role": "anchor",
+     "anchor": "door.bank.upper_service",
+     "level": "U",
+     "kind": "roofdoor",
+     "parent": "bank__anchors",
+     "position": [
+      6.0,
+      2.0,
+      -5.5
+     ]
+    },
+    {
+     "node": "anchor__door_bank_vault",
+     "role": "anchor",
+     "anchor": "door.bank.vault",
+     "level": "B",
+     "kind": "vault",
+     "parent": "bank__anchors",
+     "position": [
+      3.5,
+      -2.0,
+      -6.0
+     ]
+    },
+    {
+     "node": "anchor__door_upper_service",
+     "role": "anchor",
+     "anchor": "door.bank.upper_service",
+     "parent": "bank__annex",
+     "position": [
+      6.0,
+      2.0,
+      -5.5
+     ]
+    },
+    {
+     "node": "anchor__portal_hatch_a",
+     "role": "anchor",
+     "anchor": "portal.hatch.a",
+     "level": "S",
+     "kind": "ladder",
+     "parent": "bank__anchors",
+     "position": [
+      -2.5,
+      -3.6,
+      -2.5
+     ]
+    },
+    {
+     "node": "anchor__portal_hatch_b",
+     "role": "anchor",
+     "anchor": "portal.hatch.b",
+     "level": "B",
+     "kind": "ladder",
+     "parent": "bank__anchors",
+     "position": [
+      -2.5,
+      -2.0,
+      -2.5
+     ]
+    },
+    {
+     "node": "anchor__portal_hatch_top",
+     "role": "anchor",
+     "anchor": "portal.hatch.b",
+     "parent": "bank__hatch",
+     "position": [
+      -2.5,
+      -2.0,
+      -2.5
+     ]
+    },
+    {
+     "node": "anchor__portal_ladder_bottom",
+     "role": "anchor",
+     "anchor": "portal.roof_ladder.a",
+     "parent": "bank__annex",
+     "position": [
+      6.5,
+      2.0,
+      -2.5
+     ]
+    },
+    {
+     "node": "anchor__portal_manhole_a",
+     "role": "anchor",
+     "anchor": "portal.manhole.a",
+     "level": "G",
+     "kind": "ladder",
+     "parent": "bank__anchors",
+     "position": [
+      -6.5,
+      0.0,
+      9.5
+     ]
+    },
+    {
+     "node": "anchor__portal_manhole_b",
+     "role": "anchor",
+     "anchor": "portal.manhole.b",
+     "level": "S",
+     "kind": "ladder",
+     "parent": "bank__anchors",
+     "position": [
+      -6.5,
+      -3.6,
+      9.5
+     ]
+    },
+    {
+     "node": "anchor__portal_oak_a",
+     "role": "anchor",
+     "anchor": "portal.oak.a",
+     "level": "G",
+     "kind": "climb",
+     "parent": "bank__anchors",
+     "position": [
+      10.5,
+      0.0,
+      -5.5
+     ]
+    },
+    {
+     "node": "anchor__portal_oak_b",
+     "role": "anchor",
+     "anchor": "portal.oak.b",
+     "level": "U",
+     "kind": "climb",
+     "parent": "bank__anchors",
+     "position": [
+      8.5,
+      2.0,
+      -5.5
+     ]
+    },
+    {
+     "node": "anchor__portal_oak_top",
+     "role": "anchor",
+     "anchor": "portal.oak.b",
+     "parent": "bank__annex",
+     "position": [
+      8.5,
+      2.0,
+      -5.5
+     ]
+    },
+    {
+     "node": "anchor__portal_roof_ladder_a",
+     "role": "anchor",
+     "anchor": "portal.roof_ladder.a",
+     "level": "U",
+     "kind": "ladder",
+     "parent": "bank__anchors",
+     "position": [
+      6.5,
+      2.0,
+      -2.5
+     ]
+    },
+    {
+     "node": "anchor__portal_roof_ladder_b",
+     "role": "anchor",
+     "anchor": "portal.roof_ladder.b",
+     "level": "R",
+     "kind": "ladder",
+     "parent": "bank__anchors",
+     "position": [
+      5.5,
+      4.1,
+      -2.5
+     ]
+    },
+    {
+     "node": "anchor__portal_skylight_a",
+     "role": "anchor",
+     "anchor": "portal.skylight.a",
+     "level": "R",
+     "kind": "rope",
+     "parent": "bank__anchors",
+     "position": [
+      0.5,
+      4.1,
+      -7.5
+     ]
+    },
+    {
+     "node": "anchor__portal_skylight_b",
+     "role": "anchor",
+     "anchor": "portal.skylight.b",
+     "level": "U",
+     "kind": "rope",
+     "parent": "bank__anchors",
+     "position": [
+      0.5,
+      2.0,
+      -7.5
+     ]
+    },
+    {
+     "node": "anchor__portal_stair_BG_a",
+     "role": "anchor",
+     "anchor": "portal.stair_BG.a",
+     "level": "B",
+     "kind": "stairs",
+     "parent": "bank__anchors",
+     "position": [
+      -2.5,
+      -2.0,
+      -7.5
+     ]
+    },
+    {
+     "node": "anchor__portal_stair_BG_b",
+     "role": "anchor",
+     "anchor": "portal.stair_BG.b",
+     "level": "G",
+     "kind": "stairs",
+     "parent": "bank__anchors",
+     "position": [
+      -3.5,
+      0.0,
+      -7.5
+     ]
+    },
+    {
+     "node": "anchor__portal_stair_GU_a",
+     "role": "anchor",
+     "anchor": "portal.stair_GU.a",
+     "level": "G",
+     "kind": "stairs",
+     "parent": "bank__anchors",
+     "position": [
+      -2.5,
+      0.0,
+      -7.5
+     ]
+    },
+    {
+     "node": "anchor__portal_stair_GU_b",
+     "role": "anchor",
+     "anchor": "portal.stair_GU.b",
+     "level": "U",
+     "kind": "stairs",
+     "parent": "bank__anchors",
+     "position": [
+      -3.5,
+      2.0,
+      -7.5
+     ]
+    },
+    {
+     "node": "anchor__target_c1",
+     "role": "anchor",
+     "anchor": "target.c1",
+     "parent": "prop__lindenFile",
+     "position": [
+      -1.5,
+      -2.0,
+      -8.5
+     ]
+    },
+    {
+     "node": "anchor__target_c2",
+     "role": "anchor",
+     "anchor": "target.c2",
+     "parent": "prop__diamond",
+     "position": [
+      0.5,
+      2.0,
+      -7.5
+     ]
+    },
+    {
+     "node": "anchor__target_c3",
+     "role": "anchor",
+     "anchor": "target.c3",
+     "parent": "prop__depositBox",
+     "position": [
+      5.5,
+      -2.0,
+      -7.5
+     ]
+    },
+    {
+     "node": "annex__G",
+     "level": "G",
+     "building": "annex",
+     "role": "level",
+     "parent": "bank__annex",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       6.0,
+       -0.1,
+       -9.14
+      ],
+      "max": [
+       9.14,
+       1.9,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "annex__G__floor",
+     "role": "part",
+     "parent": "annex__G",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       6.0,
+       -0.1,
+       -9.0
+      ],
+      "max": [
+       9.0,
+       0.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "annex__G__wall_e",
+     "level": "G",
+     "side": "e",
+     "building": "annex",
+     "role": "side",
+     "parent": "annex__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       8.94,
+       0.0,
+       -9.0
+      ],
+      "max": [
+       9.14,
+       1.9,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "annex__G__wall_e__mesh",
+     "role": "part",
+     "parent": "annex__G__wall_e",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       8.94,
+       0.0,
+       -9.0
+      ],
+      "max": [
+       9.14,
+       1.9,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "annex__G__wall_n",
+     "level": "G",
+     "side": "n",
+     "building": "annex",
+     "role": "side",
+     "parent": "annex__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       6.0,
+       0.0,
+       -9.14
+      ],
+      "max": [
+       9.0,
+       1.9,
+       -8.94
+      ]
+     }
+    },
+    {
+     "node": "annex__G__wall_n__mesh",
+     "role": "part",
+     "parent": "annex__G__wall_n",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       6.0,
+       0.0,
+       -9.14
+      ],
+      "max": [
+       9.0,
+       1.9,
+       -8.94
+      ]
+     }
+    },
+    {
+     "node": "annex__G__wall_s",
+     "level": "G",
+     "side": "s",
+     "building": "annex",
+     "role": "side",
+     "parent": "annex__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       6.0,
+       0.0,
+       -1.06
+      ],
+      "max": [
+       9.0,
+       1.9,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "annex__G__wall_s__mesh",
+     "role": "part",
+     "parent": "annex__G__wall_s",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       6.0,
+       0.0,
+       -1.06
+      ],
+      "max": [
+       9.0,
+       1.9,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "annex__roof",
+     "level": "U",
+     "building": "annex",
+     "role": "roof",
+     "parent": "bank__annex",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       5.97,
+       1.9,
+       -9.03
+      ],
+      "max": [
+       9.03,
+       2.28,
+       -0.97
+      ]
+     }
+    },
+    {
+     "node": "annex__roof__deck",
+     "role": "part",
+     "parent": "annex__roof",
+     "position": [
+      -15.0,
+      2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       5.97,
+       1.9,
+       -9.03
+      ],
+      "max": [
+       9.03,
+       2.28,
+       -0.97
+      ]
+     }
+    },
+    {
+     "node": "bank__anchors",
+     "role": "anchors",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ]
+    },
+    {
+     "node": "bank__annex",
+     "role": "variant",
+     "variant": "bank.annex",
+     "anim": "rise",
+     "building": "annex",
+     "position": [
+      7.5,
+      0.0,
+      -5.0
+     ],
+     "bounds": {
+      "min": [
+       5.97,
+       -0.1,
+       -9.14
+      ],
+      "max": [
+       9.14,
+       2.28,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "bank__B",
+     "level": "B",
+     "building": "bank",
+     "role": "level",
+     "parent": "bank__main",
+     "position": [
+      0.0,
+      -2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.06,
+       -2.12,
+       -9.06
+      ],
+      "max": [
+       6.06,
+       0.0,
+       -0.94
+      ]
+     }
+    },
+    {
+     "node": "bank__B__floor",
+     "role": "part",
+     "parent": "bank__B",
+     "position": [
+      -15.0,
+      -2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.0,
+       -2.12,
+       -9.0
+      ],
+      "max": [
+       6.0,
+       -2.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "bank__B__furniture",
+     "role": "part",
+     "parent": "bank__B",
+     "position": [
+      -15.0,
+      -2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.0,
+       -2.0,
+       -8.95
+      ],
+      "max": [
+       5.88,
+       0.0,
+       -1.15
+      ]
+     }
+    },
+    {
+     "node": "bank__B__wall_e",
+     "level": "B",
+     "side": "e",
+     "building": "bank",
+     "role": "side",
+     "parent": "bank__B",
+     "position": [
+      0.0,
+      -2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       5.94,
+       -2.0,
+       -9.0
+      ],
+      "max": [
+       6.06,
+       -0.02,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "bank__B__wall_e__mesh",
+     "role": "part",
+     "parent": "bank__B__wall_e",
+     "position": [
+      -15.0,
+      -2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       5.94,
+       -2.0,
+       -9.0
+      ],
+      "max": [
+       6.06,
+       -0.02,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "bank__B__wall_n",
+     "level": "B",
+     "side": "n",
+     "building": "bank",
+     "role": "side",
+     "parent": "bank__B",
+     "position": [
+      0.0,
+      -2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.0,
+       -2.0,
+       -9.06
+      ],
+      "max": [
+       6.0,
+       -0.02,
+       -8.94
+      ]
+     }
+    },
+    {
+     "node": "bank__B__wall_n__mesh",
+     "role": "part",
+     "parent": "bank__B__wall_n",
+     "position": [
+      -15.0,
+      -2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.0,
+       -2.0,
+       -9.06
+      ],
+      "max": [
+       6.0,
+       -0.02,
+       -8.94
+      ]
+     }
+    },
+    {
+     "node": "bank__B__wall_s",
+     "level": "B",
+     "side": "s",
+     "building": "bank",
+     "role": "side",
+     "parent": "bank__B",
+     "position": [
+      0.0,
+      -2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.0,
+       -2.0,
+       -1.06
+      ],
+      "max": [
+       6.0,
+       -0.02,
+       -0.94
+      ]
+     }
+    },
+    {
+     "node": "bank__B__wall_s__mesh",
+     "role": "part",
+     "parent": "bank__B__wall_s",
+     "position": [
+      -15.0,
+      -2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.0,
+       -2.0,
+       -1.06
+      ],
+      "max": [
+       6.0,
+       -0.02,
+       -0.94
+      ]
+     }
+    },
+    {
+     "node": "bank__B__wall_w",
+     "level": "B",
+     "side": "w",
+     "building": "bank",
+     "role": "side",
+     "parent": "bank__B",
+     "position": [
+      0.0,
+      -2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.06,
+       -2.0,
+       -9.0
+      ],
+      "max": [
+       -3.94,
+       -0.02,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "bank__B__wall_w__mesh",
+     "role": "part",
+     "parent": "bank__B__wall_w",
+     "position": [
+      -15.0,
+      -2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.06,
+       -2.0,
+       -9.0
+      ],
+      "max": [
+       -3.94,
+       -0.02,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "bank__B__walls_int",
+     "role": "part",
+     "cut": 1,
+     "parent": "bank__B",
+     "position": [
+      -15.0,
+      -2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.0,
+       -2.0,
+       -9.0
+      ],
+      "max": [
+       6.0,
+       -0.02,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "bank__cam_C6",
+     "role": "variant",
+     "variant": "bank.cam.C6",
+     "anim": "pop",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       6.05,
+       3.22,
+       -8.59
+      ],
+      "max": [
+       6.52,
+       3.58,
+       -8.41
+      ]
+     }
+    },
+    {
+     "node": "bank__cams2026",
+     "role": "variant",
+     "variant": "bank.cams2026",
+     "anim": "pop",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       0.4,
+       -0.58,
+       -8.59
+      ],
+      "max": [
+       13.92,
+       3.82,
+       6.6
+      ]
+     }
+    },
+    {
+     "node": "bank__G",
+     "level": "G",
+     "building": "bank",
+     "role": "level",
+     "parent": "bank__main",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.55,
+       -0.1,
+       -9.14
+      ],
+      "max": [
+       6.07,
+       2.0,
+       -0.45
+      ]
+     }
+    },
+    {
+     "node": "bank__G__floor",
+     "role": "part",
+     "parent": "bank__G",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.0,
+       -0.1,
+       -9.0
+      ],
+      "max": [
+       6.0,
+       0.012,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "bank__G__furniture",
+     "role": "part",
+     "parent": "bank__G",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -3.78,
+       0.0,
+       -8.88
+      ],
+      "max": [
+       4.95,
+       2.0,
+       -1.22
+      ]
+     }
+    },
+    {
+     "node": "bank__G__wall_e",
+     "level": "G",
+     "side": "e",
+     "building": "bank",
+     "role": "side",
+     "parent": "bank__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       5.94,
+       0.0,
+       -9.0
+      ],
+      "max": [
+       6.06,
+       2.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "bank__G__wall_e__mesh",
+     "role": "part",
+     "parent": "bank__G__wall_e",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       5.94,
+       0.0,
+       -9.0
+      ],
+      "max": [
+       6.06,
+       2.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "bank__G__wall_n",
+     "level": "G",
+     "side": "n",
+     "building": "bank",
+     "role": "side",
+     "parent": "bank__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.0,
+       0.0,
+       -9.14
+      ],
+      "max": [
+       6.0,
+       2.0,
+       -8.94
+      ]
+     }
+    },
+    {
+     "node": "bank__G__wall_n__mesh",
+     "role": "part",
+     "parent": "bank__G__wall_n",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.0,
+       0.0,
+       -9.14
+      ],
+      "max": [
+       6.0,
+       2.0,
+       -8.94
+      ]
+     }
+    },
+    {
+     "node": "bank__G__wall_s",
+     "level": "G",
+     "side": "s",
+     "building": "bank",
+     "role": "side",
+     "parent": "bank__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.07,
+       0.0,
+       -1.15
+      ],
+      "max": [
+       6.07,
+       2.0,
+       -0.45
+      ]
+     }
+    },
+    {
+     "node": "bank__G__wall_s__mesh",
+     "role": "part",
+     "parent": "bank__G__wall_s",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.07,
+       0.0,
+       -1.06
+      ],
+      "max": [
+       6.07,
+       2.0,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "bank__G__wall_w",
+     "level": "G",
+     "side": "w",
+     "building": "bank",
+     "role": "side",
+     "parent": "bank__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.55,
+       0.0,
+       -9.0
+      ],
+      "max": [
+       -3.85,
+       2.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "bank__G__wall_w__mesh",
+     "role": "part",
+     "parent": "bank__G__wall_w",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.06,
+       0.0,
+       -9.0
+      ],
+      "max": [
+       -3.94,
+       2.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "bank__G__walls_int",
+     "role": "part",
+     "cut": 1,
+     "parent": "bank__G",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.0,
+       0.0,
+       -9.0
+      ],
+      "max": [
+       6.0,
+       1.95,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "bank__gardenwing",
+     "role": "variant",
+     "variant": "bank.gardenwing",
+     "anim": "rise",
+     "building": "gardenwing",
+     "position": [
+      10.5,
+      0.0,
+      3.0
+     ],
+     "bounds": {
+      "min": [
+       6.86,
+       -0.1,
+       -1.14
+      ],
+      "max": [
+       14.14,
+       2.7,
+       7.14
+      ]
+     }
+    },
+    {
+     "node": "bank__hatch",
+     "role": "variant",
+     "variant": "bank.hatch",
+     "anim": "pop",
+     "level": "B",
+     "position": [
+      -2.5,
+      -2.0,
+      -2.5
+     ],
+     "bounds": {
+      "min": [
+       -2.88,
+       -2.0,
+       -2.88
+      ],
+      "max": [
+       -2.12,
+       -1.915,
+       -2.12
+      ]
+     }
+    },
+    {
+     "node": "bank__hatch__frame",
+     "role": "part",
+     "parent": "bank__hatch",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -2.88,
+       -2.0,
+       -2.88
+      ],
+      "max": [
+       -2.12,
+       -1.97,
+       -2.12
+      ]
+     }
+    },
+    {
+     "node": "bank__hatch__lid",
+     "role": "dynamic",
+     "dynamic": "hatchLid",
+     "parent": "bank__hatch",
+     "position": [
+      -2.84,
+      -1.97,
+      -2.5
+     ],
+     "bounds": {
+      "min": [
+       -2.84,
+       -1.97,
+       -2.84
+      ],
+      "max": [
+       -2.16,
+       -1.915,
+       -2.16
+      ]
+     }
+    },
+    {
+     "node": "bank__hatch__lid__mesh",
+     "role": "part",
+     "parent": "bank__hatch__lid",
+     "position": [
+      -2.84,
+      -1.97,
+      -2.5
+     ],
+     "bounds": {
+      "min": [
+       -2.84,
+       -1.97,
+       -2.84
+      ],
+      "max": [
+       -2.16,
+       -1.915,
+       -2.16
+      ]
+     }
+    },
+    {
+     "node": "bank__laser",
+     "role": "variant",
+     "variant": "bank.laser",
+     "anim": "pop",
+     "position": [
+      1.5,
+      2.0,
+      -6.0
+     ],
+     "bounds": {
+      "min": [
+       1.14,
+       2.0,
+       -6.05
+      ],
+      "max": [
+       1.86,
+       3.35,
+       -5.95
+      ]
+     }
+    },
+    {
+     "node": "bank__laser__beams",
+     "role": "dynamic",
+     "dynamic": "laserBeams",
+     "parent": "bank__laser",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       1.22,
+       2.2,
+       -6.008
+      ],
+      "max": [
+       1.78,
+       3.256,
+       -5.992
+      ]
+     }
+    },
+    {
+     "node": "bank__laser__beams__mesh",
+     "role": "part",
+     "parent": "bank__laser__beams",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       1.22,
+       2.2,
+       -6.008
+      ],
+      "max": [
+       1.78,
+       3.256,
+       -5.992
+      ]
+     }
+    },
+    {
+     "node": "bank__laser__emitters",
+     "role": "part",
+     "parent": "bank__laser",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       1.14,
+       2.0,
+       -6.05
+      ],
+      "max": [
+       1.86,
+       3.35,
+       -5.95
+      ]
+     }
+    },
+    {
+     "node": "bank__main",
+     "role": "variant",
+     "variant": "bank.main",
+     "anim": "rise",
+     "building": "bank",
+     "position": [
+      1.0,
+      0.0,
+      -5.0
+     ],
+     "bounds": {
+      "min": [
+       -4.55,
+       -2.12,
+       -9.14
+      ],
+      "max": [
+       6.14,
+       4.65,
+       -0.45
+      ]
+     }
+    },
+    {
+     "node": "bank__R",
+     "level": "R",
+     "building": "bank",
+     "role": "level",
+     "parent": "bank__main",
+     "position": [
+      0.0,
+      4.1,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.14,
+       3.88,
+       -9.14
+      ],
+      "max": [
+       6.14,
+       4.65,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "bank__R__deck",
+     "role": "part",
+     "parent": "bank__R",
+     "position": [
+      -15.0,
+      4.1,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.14,
+       3.88,
+       -9.14
+      ],
+      "max": [
+       6.14,
+       4.65,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "bank__servicedoor_alley",
+     "role": "dynamic",
+     "dynamic": "serviceDoor.alley",
+     "parent": "bank__G",
+     "position": [
+      -4.0,
+      0.0,
+      -3.8
+     ],
+     "bounds": {
+      "min": [
+       -3.98,
+       0.0,
+       -3.8
+      ],
+      "max": [
+       -3.94,
+       1.34,
+       -3.2
+      ]
+     }
+    },
+    {
+     "node": "bank__servicedoor_alley__leaf",
+     "role": "part",
+     "parent": "bank__servicedoor_alley",
+     "position": [
+      -4.0,
+      0.0,
+      -3.8
+     ],
+     "bounds": {
+      "min": [
+       -3.98,
+       0.0,
+       -3.8
+      ],
+      "max": [
+       -3.94,
+       1.34,
+       -3.2
+      ]
+     }
+    },
+    {
+     "node": "bank__servicedoor_front",
+     "role": "dynamic",
+     "dynamic": "serviceDoor.front",
+     "parent": "bank__G",
+     "position": [
+      -2.8,
+      0.0,
+      -1.0
+     ],
+     "bounds": {
+      "min": [
+       -2.8,
+       0.0,
+       -1.06
+      ],
+      "max": [
+       -2.2,
+       1.34,
+       -1.02
+      ]
+     }
+    },
+    {
+     "node": "bank__servicedoor_front__leaf",
+     "role": "part",
+     "parent": "bank__servicedoor_front",
+     "position": [
+      -2.8,
+      0.0,
+      -1.0
+     ],
+     "bounds": {
+      "min": [
+       -2.8,
+       0.0,
+       -1.06
+      ],
+      "max": [
+       -2.2,
+       1.34,
+       -1.02
+      ]
+     }
+    },
+    {
+     "node": "bank__site1946",
+     "role": "variant",
+     "variant": "bank.site1946",
+     "anim": "rise",
+     "building": "bank",
+     "position": [
+      1.0,
+      0.0,
+      -5.0
+     ],
+     "bounds": {
+      "min": [
+       -4.5,
+       -2.0,
+       -9.75
+      ],
+      "max": [
+       9.0,
+       5.56,
+       -0.75
+      ]
+     }
+    },
+    {
+     "node": "bank__site1946__crane",
+     "role": "part",
+     "anim": "rise",
+     "parent": "bank__site1946",
+     "position": [
+      7.5,
+      0.0,
+      -3.5
+     ],
+     "bounds": {
+      "min": [
+       3.0,
+       0.0,
+       -3.75
+      ],
+      "max": [
+       9.0,
+       5.56,
+       -3.25
+      ]
+     }
+    },
+    {
+     "node": "bank__site1946__crane__mesh",
+     "role": "part",
+     "parent": "bank__site1946__crane",
+     "position": [
+      7.5,
+      0.0,
+      -3.5
+     ],
+     "bounds": {
+      "min": [
+       3.0,
+       0.0,
+       -3.75
+      ],
+      "max": [
+       9.0,
+       5.56,
+       -3.25
+      ]
+     }
+    },
+    {
+     "node": "bank__site1946__works",
+     "role": "part",
+     "anim": "rise",
+     "parent": "bank__site1946",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.5,
+       -2.0,
+       -9.75
+      ],
+      "max": [
+       7.8,
+       2.6,
+       -0.75
+      ]
+     }
+    },
+    {
+     "node": "bank__slot_alley_door",
+     "role": "variant",
+     "variant": "bank.slot.alley.door",
+     "anim": "fold",
+     "side": "w",
+     "parent": "bank__G__wall_w",
+     "position": [
+      -4.0,
+      0.0,
+      -3.5
+     ],
+     "bounds": {
+      "min": [
+       -4.55,
+       0.0,
+       -4.0
+      ],
+      "max": [
+       -3.85,
+       2.0,
+       -3.0
+      ]
+     }
+    },
+    {
+     "node": "bank__slot_alley_door__mesh",
+     "role": "part",
+     "parent": "bank__slot_alley_door",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.55,
+       0.0,
+       -4.0
+      ],
+      "max": [
+       -3.85,
+       2.0,
+       -3.0
+      ]
+     }
+    },
+    {
+     "node": "bank__slot_alley_plain__mesh",
+     "role": "part",
+     "parent": "bank__slot_alley_wall",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.06,
+       0.0,
+       -4.0
+      ],
+      "max": [
+       -3.94,
+       2.0,
+       -3.0
+      ]
+     }
+    },
+    {
+     "node": "bank__slot_alley_wall",
+     "role": "variant",
+     "variant": "bank.slot.alley.wall",
+     "anim": "fold",
+     "side": "w",
+     "parent": "bank__G__wall_w",
+     "position": [
+      -4.0,
+      0.0,
+      -3.5
+     ],
+     "bounds": {
+      "min": [
+       -4.06,
+       0.0,
+       -4.0
+      ],
+      "max": [
+       -3.94,
+       2.0,
+       -3.0
+      ]
+     }
+    },
+    {
+     "node": "bank__slot_front_door",
+     "role": "variant",
+     "variant": "bank.slot.front.door",
+     "anim": "fold",
+     "side": "s",
+     "parent": "bank__G__wall_s",
+     "position": [
+      -2.5,
+      0.0,
+      -1.0
+     ],
+     "bounds": {
+      "min": [
+       -3.0,
+       0.0,
+       -1.15
+      ],
+      "max": [
+       -2.0,
+       2.0,
+       -0.45
+      ]
+     }
+    },
+    {
+     "node": "bank__slot_front_door__mesh",
+     "role": "part",
+     "parent": "bank__slot_front_door",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -3.0,
+       0.0,
+       -1.15
+      ],
+      "max": [
+       -2.0,
+       2.0,
+       -0.45
+      ]
+     }
+    },
+    {
+     "node": "bank__slot_front_wall",
+     "role": "variant",
+     "variant": "bank.slot.front.wall",
+     "anim": "fold",
+     "side": "s",
+     "parent": "bank__G__wall_s",
+     "position": [
+      -2.5,
+      0.0,
+      -1.0
+     ],
+     "bounds": {
+      "min": [
+       -3.0,
+       0.0,
+       -1.06
+      ],
+      "max": [
+       -2.0,
+       2.0,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "bank__slot_front_window__mesh",
+     "role": "part",
+     "parent": "bank__slot_front_wall",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -3.0,
+       0.0,
+       -1.06
+      ],
+      "max": [
+       -2.0,
+       2.0,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "bank__slot_plant_door",
+     "role": "variant",
+     "variant": "bank.slot.plant.door",
+     "anim": "fold",
+     "side": "w",
+     "parent": "bank__G__wall_w",
+     "position": [
+      -4.0,
+      0.0,
+      -7.5
+     ],
+     "bounds": {
+      "min": [
+       -4.55,
+       0.0,
+       -8.0
+      ],
+      "max": [
+       -3.85,
+       2.0,
+       -7.0
+      ]
+     }
+    },
+    {
+     "node": "bank__slot_plant_door__mesh",
+     "role": "part",
+     "parent": "bank__slot_plant_door",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.55,
+       0.0,
+       -8.0
+      ],
+      "max": [
+       -3.85,
+       2.0,
+       -7.0
+      ]
+     }
+    },
+    {
+     "node": "bank__slot_plant_plain__mesh",
+     "role": "part",
+     "parent": "bank__slot_plant_wall",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.06,
+       0.0,
+       -8.0
+      ],
+      "max": [
+       -3.94,
+       2.0,
+       -7.0
+      ]
+     }
+    },
+    {
+     "node": "bank__slot_plant_wall",
+     "role": "variant",
+     "variant": "bank.slot.plant.wall",
+     "anim": "fold",
+     "side": "w",
+     "parent": "bank__G__wall_w",
+     "position": [
+      -4.0,
+      0.0,
+      -7.5
+     ],
+     "bounds": {
+      "min": [
+       -4.06,
+       0.0,
+       -8.0
+      ],
+      "max": [
+       -3.94,
+       2.0,
+       -7.0
+      ]
+     }
+    },
+    {
+     "node": "bank__trim1986",
+     "role": "variant",
+     "variant": "bank.trim1986",
+     "anim": "unfurl",
+     "building": "bank",
+     "position": [
+      1.0,
+      0.0,
+      -1.0
+     ],
+     "bounds": {
+      "min": [
+       -4.12,
+       0.0,
+       -9.12
+      ],
+      "max": [
+       6.12,
+       4.53,
+       -0.05
+      ]
+     }
+    },
+    {
+     "node": "bank__trim1986__mesh",
+     "role": "part",
+     "parent": "bank__trim1986",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.12,
+       0.0,
+       -9.12
+      ],
+      "max": [
+       6.12,
+       4.53,
+       -0.05
+      ]
+     }
+    },
+    {
+     "node": "bank__trim2026",
+     "role": "variant",
+     "variant": "bank.trim2026",
+     "anim": "unfurl",
+     "building": "bank",
+     "position": [
+      1.0,
+      0.0,
+      -1.0
+     ],
+     "bounds": {
+      "min": [
+       -4.12,
+       0.0,
+       -9.12
+      ],
+      "max": [
+       6.12,
+       4.53,
+       -0.05
+      ]
+     }
+    },
+    {
+     "node": "bank__trim2026__mesh",
+     "role": "part",
+     "parent": "bank__trim2026",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.12,
+       0.0,
+       -9.12
+      ],
+      "max": [
+       6.12,
+       4.53,
+       -0.05
+      ]
+     }
+    },
+    {
+     "node": "bank__U",
+     "level": "U",
+     "building": "bank",
+     "role": "level",
+     "parent": "bank__main",
+     "position": [
+      0.0,
+      2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.1,
+       1.9,
+       -9.14
+      ],
+      "max": [
+       6.14,
+       4.65,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "bank__U__floor",
+     "role": "part",
+     "parent": "bank__U",
+     "position": [
+      -15.0,
+      2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.0,
+       1.9,
+       -9.0
+      ],
+      "max": [
+       6.0,
+       2.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "bank__U__furniture",
+     "role": "part",
+     "parent": "bank__U",
+     "position": [
+      -15.0,
+      2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -2.97,
+       2.0,
+       -8.94
+      ],
+      "max": [
+       5.85,
+       3.4,
+       -2.15
+      ]
+     }
+    },
+    {
+     "node": "bank__U__wall_e",
+     "level": "U",
+     "side": "e",
+     "building": "bank",
+     "role": "side",
+     "parent": "bank__U",
+     "position": [
+      0.0,
+      2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       5.94,
+       2.0,
+       -9.07
+      ],
+      "max": [
+       6.14,
+       4.65,
+       -0.93
+      ]
+     }
+    },
+    {
+     "node": "bank__U__wall_e__mesh",
+     "role": "part",
+     "parent": "bank__U__wall_e",
+     "position": [
+      -15.0,
+      2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       5.94,
+       2.0,
+       -9.07
+      ],
+      "max": [
+       6.14,
+       4.65,
+       -0.93
+      ]
+     }
+    },
+    {
+     "node": "bank__U__wall_n",
+     "level": "U",
+     "side": "n",
+     "building": "bank",
+     "role": "side",
+     "parent": "bank__U",
+     "position": [
+      0.0,
+      2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.07,
+       2.0,
+       -9.14
+      ],
+      "max": [
+       6.07,
+       4.0,
+       -8.94
+      ]
+     }
+    },
+    {
+     "node": "bank__U__wall_n__mesh",
+     "role": "part",
+     "parent": "bank__U__wall_n",
+     "position": [
+      -15.0,
+      2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.07,
+       2.0,
+       -9.14
+      ],
+      "max": [
+       6.07,
+       4.0,
+       -8.94
+      ]
+     }
+    },
+    {
+     "node": "bank__U__wall_s",
+     "level": "U",
+     "side": "s",
+     "building": "bank",
+     "role": "side",
+     "parent": "bank__U",
+     "position": [
+      0.0,
+      2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.07,
+       2.0,
+       -1.06
+      ],
+      "max": [
+       6.07,
+       4.0,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "bank__U__wall_s__mesh",
+     "role": "part",
+     "parent": "bank__U__wall_s",
+     "position": [
+      -15.0,
+      2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.07,
+       2.0,
+       -1.06
+      ],
+      "max": [
+       6.07,
+       4.0,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "bank__U__wall_w",
+     "level": "U",
+     "side": "w",
+     "building": "bank",
+     "role": "side",
+     "parent": "bank__U",
+     "position": [
+      0.0,
+      2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.1,
+       2.0,
+       -9.07
+      ],
+      "max": [
+       -3.94,
+       4.0,
+       -0.93
+      ]
+     }
+    },
+    {
+     "node": "bank__U__wall_w__mesh",
+     "role": "part",
+     "parent": "bank__U__wall_w",
+     "position": [
+      -15.0,
+      2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.1,
+       2.0,
+       -9.07
+      ],
+      "max": [
+       -3.94,
+       4.0,
+       -0.93
+      ]
+     }
+    },
+    {
+     "node": "bank__U__walls_int",
+     "role": "part",
+     "cut": 1,
+     "parent": "bank__U",
+     "position": [
+      -15.0,
+      2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -4.0,
+       2.0,
+       -9.0
+      ],
+      "max": [
+       6.0,
+       3.95,
+       -3.95
+      ]
+     }
+    },
+    {
+     "node": "bank__vaultdoor",
+     "role": "dynamic",
+     "dynamic": "vaultDoor",
+     "parent": "bank__B",
+     "position": [
+      3.12,
+      -2.0,
+      -6.0
+     ],
+     "bounds": {
+      "min": [
+       2.88,
+       -1.87,
+       -6.1
+      ],
+      "max": [
+       4.12,
+       -0.63,
+       -5.94
+      ]
+     }
+    },
+    {
+     "node": "bank__vaultdoor__leaf",
+     "role": "part",
+     "parent": "bank__vaultdoor",
+     "position": [
+      3.12,
+      -2.0,
+      -6.0
+     ],
+     "bounds": {
+      "min": [
+       2.88,
+       -1.87,
+       -6.1
+      ],
+      "max": [
+       4.12,
+       -0.63,
+       -5.94
+      ]
+     }
+    },
+    {
+     "node": "bank__westwing",
+     "role": "variant",
+     "variant": "bank.westwing",
+     "anim": "rise",
+     "building": "westwing",
+     "position": [
+      -5.0,
+      0.0,
+      -5.0
+     ],
+     "bounds": {
+      "min": [
+       -6.06,
+       -0.1,
+       -9.14
+      ],
+      "max": [
+       -3.97,
+       4.3,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "cam__C1",
+     "role": "camera",
+     "camera": "C1",
+     "level": "G",
+     "yaw0": 0,
+     "parent": "bank__cams2026",
+     "position": [
+      5.85,
+      1.75,
+      -5.85
+     ],
+     "bounds": {
+      "min": [
+       5.8,
+       1.57,
+       -5.94
+      ],
+      "max": [
+       6.27,
+       1.8,
+       -5.76
+      ]
+     }
+    },
+    {
+     "node": "cam__C1__head",
+     "role": "part",
+     "parent": "cam__C1",
+     "position": [
+      5.85,
+      1.75,
+      -5.85
+     ],
+     "bounds": {
+      "min": [
+       5.8,
+       1.57,
+       -5.94
+      ],
+      "max": [
+       6.27,
+       1.8,
+       -5.76
+      ]
+     }
+    },
+    {
+     "node": "cam__C1__mount",
+     "role": "part",
+     "parent": "bank__cams2026",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       5.81,
+       1.75,
+       -5.89
+      ],
+      "max": [
+       5.89,
+       1.93,
+       -5.81
+      ]
+     }
+    },
+    {
+     "node": "cam__C2",
+     "role": "camera",
+     "camera": "C2",
+     "level": "B",
+     "yaw0": 0,
+     "parent": "bank__cams2026",
+     "position": [
+      5.9,
+      -0.4,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       5.85,
+       -0.58,
+       -5.59
+      ],
+      "max": [
+       6.32,
+       -0.35,
+       -5.41
+      ]
+     }
+    },
+    {
+     "node": "cam__C2__head",
+     "role": "part",
+     "parent": "cam__C2",
+     "position": [
+      5.9,
+      -0.4,
+      -5.5
+     ],
+     "bounds": {
+      "min": [
+       5.85,
+       -0.58,
+       -5.59
+      ],
+      "max": [
+       6.32,
+       -0.35,
+       -5.41
+      ]
+     }
+    },
+    {
+     "node": "cam__C2__mount",
+     "role": "part",
+     "parent": "bank__cams2026",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       5.86,
+       -0.4,
+       -5.54
+      ],
+      "max": [
+       5.94,
+       -0.22,
+       -5.46
+      ]
+     }
+    },
+    {
+     "node": "cam__C3",
+     "role": "camera",
+     "camera": "C3",
+     "level": "G",
+     "yaw0": 0,
+     "parent": "bank__cams2026",
+     "position": [
+      13.5,
+      1.9,
+      -8.5
+     ],
+     "bounds": {
+      "min": [
+       13.45,
+       1.72,
+       -8.59
+      ],
+      "max": [
+       13.92,
+       1.95,
+       -8.41
+      ]
+     }
+    },
+    {
+     "node": "cam__C3__head",
+     "role": "part",
+     "parent": "cam__C3",
+     "position": [
+      13.5,
+      1.9,
+      -8.5
+     ],
+     "bounds": {
+      "min": [
+       13.45,
+       1.72,
+       -8.59
+      ],
+      "max": [
+       13.92,
+       1.95,
+       -8.41
+      ]
+     }
+    },
+    {
+     "node": "cam__C3__mount",
+     "role": "part",
+     "parent": "bank__cams2026",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       13.45,
+       0.0,
+       -8.543
+      ],
+      "max": [
+       13.55,
+       1.9,
+       -8.457
+      ]
+     }
+    },
+    {
+     "node": "cam__C4",
+     "role": "camera",
+     "camera": "C4",
+     "level": "U",
+     "yaw0": 0,
+     "parent": "bank__cams2026",
+     "position": [
+      2.5,
+      3.8,
+      -7.5
+     ],
+     "bounds": {
+      "min": [
+       2.36,
+       3.646,
+       -7.633
+      ],
+      "max": [
+       2.64,
+       3.82,
+       -7.367
+      ]
+     }
+    },
+    {
+     "node": "cam__C4__head",
+     "role": "part",
+     "parent": "cam__C4",
+     "position": [
+      2.5,
+      3.8,
+      -7.5
+     ],
+     "bounds": {
+      "min": [
+       2.36,
+       3.646,
+       -7.633
+      ],
+      "max": [
+       2.64,
+       3.82,
+       -7.367
+      ]
+     }
+    },
+    {
+     "node": "cam__C5",
+     "role": "camera",
+     "camera": "C5",
+     "level": "G",
+     "yaw0": 0,
+     "parent": "bank__cams2026",
+     "position": [
+      0.5,
+      2.6,
+      6.5
+     ],
+     "bounds": {
+      "min": [
+       0.45,
+       2.42,
+       6.41
+      ],
+      "max": [
+       0.92,
+       2.65,
+       6.59
+      ]
+     }
+    },
+    {
+     "node": "cam__C5__head",
+     "role": "part",
+     "parent": "cam__C5",
+     "position": [
+      0.5,
+      2.6,
+      6.5
+     ],
+     "bounds": {
+      "min": [
+       0.45,
+       2.42,
+       6.41
+      ],
+      "max": [
+       0.92,
+       2.65,
+       6.59
+      ]
+     }
+    },
+    {
+     "node": "cam__C5__mount",
+     "role": "part",
+     "parent": "bank__cams2026",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       0.4,
+       0.0,
+       6.4
+      ],
+      "max": [
+       0.6,
+       2.6,
+       6.6
+      ]
+     }
+    },
+    {
+     "node": "cam__C6",
+     "role": "camera",
+     "camera": "C6",
+     "level": "U",
+     "yaw0": 0,
+     "parent": "bank__cam_C6",
+     "position": [
+      6.1,
+      3.4,
+      -8.5
+     ],
+     "bounds": {
+      "min": [
+       6.05,
+       3.22,
+       -8.59
+      ],
+      "max": [
+       6.52,
+       3.45,
+       -8.41
+      ]
+     }
+    },
+    {
+     "node": "cam__C6__head",
+     "role": "part",
+     "parent": "cam__C6",
+     "position": [
+      6.1,
+      3.4,
+      -8.5
+     ],
+     "bounds": {
+      "min": [
+       6.05,
+       3.22,
+       -8.59
+      ],
+      "max": [
+       6.52,
+       3.45,
+       -8.41
+      ]
+     }
+    },
+    {
+     "node": "cam__C6__mount",
+     "role": "part",
+     "parent": "bank__cam_C6",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       6.06,
+       3.4,
+       -8.54
+      ],
+      "max": [
+       6.14,
+       3.58,
+       -8.46
+      ]
+     }
+    },
+    {
+     "node": "gardenwing__G",
+     "level": "G",
+     "building": "gardenwing",
+     "role": "level",
+     "parent": "bank__gardenwing",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       6.86,
+       -0.1,
+       -1.14
+      ],
+      "max": [
+       14.14,
+       2.2,
+       7.14
+      ]
+     }
+    },
+    {
+     "node": "gardenwing__G__floor",
+     "role": "part",
+     "parent": "gardenwing__G",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       7.0,
+       -0.1,
+       -1.0
+      ],
+      "max": [
+       14.0,
+       0.0,
+       7.0
+      ]
+     }
+    },
+    {
+     "node": "gardenwing__G__wall_e",
+     "level": "G",
+     "side": "e",
+     "building": "gardenwing",
+     "role": "side",
+     "parent": "gardenwing__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       13.94,
+       0.0,
+       -1.0
+      ],
+      "max": [
+       14.14,
+       2.2,
+       7.0
+      ]
+     }
+    },
+    {
+     "node": "gardenwing__G__wall_e__mesh",
+     "role": "part",
+     "parent": "gardenwing__G__wall_e",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       13.94,
+       0.0,
+       -1.0
+      ],
+      "max": [
+       14.14,
+       2.2,
+       7.0
+      ]
+     }
+    },
+    {
+     "node": "gardenwing__G__wall_n",
+     "level": "G",
+     "side": "n",
+     "building": "gardenwing",
+     "role": "side",
+     "parent": "gardenwing__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       7.0,
+       0.0,
+       -1.14
+      ],
+      "max": [
+       14.0,
+       2.2,
+       -0.94
+      ]
+     }
+    },
+    {
+     "node": "gardenwing__G__wall_n__mesh",
+     "role": "part",
+     "parent": "gardenwing__G__wall_n",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       7.0,
+       0.0,
+       -1.14
+      ],
+      "max": [
+       14.0,
+       2.2,
+       -0.94
+      ]
+     }
+    },
+    {
+     "node": "gardenwing__G__wall_s",
+     "level": "G",
+     "side": "s",
+     "building": "gardenwing",
+     "role": "side",
+     "parent": "gardenwing__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       7.0,
+       0.0,
+       6.94
+      ],
+      "max": [
+       14.0,
+       2.2,
+       7.14
+      ]
+     }
+    },
+    {
+     "node": "gardenwing__G__wall_s__mesh",
+     "role": "part",
+     "parent": "gardenwing__G__wall_s",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       7.0,
+       0.0,
+       6.94
+      ],
+      "max": [
+       14.0,
+       2.2,
+       7.14
+      ]
+     }
+    },
+    {
+     "node": "gardenwing__G__wall_w",
+     "level": "G",
+     "side": "w",
+     "building": "gardenwing",
+     "role": "side",
+     "parent": "gardenwing__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       6.86,
+       0.0,
+       -1.0
+      ],
+      "max": [
+       7.06,
+       2.2,
+       7.0
+      ]
+     }
+    },
+    {
+     "node": "gardenwing__G__wall_w__mesh",
+     "role": "part",
+     "parent": "gardenwing__G__wall_w",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       6.86,
+       0.0,
+       -1.0
+      ],
+      "max": [
+       7.06,
+       2.2,
+       7.0
+      ]
+     }
+    },
+    {
+     "node": "gardenwing__roof",
+     "level": "R",
+     "building": "gardenwing",
+     "role": "roof",
+     "parent": "bank__gardenwing",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       6.97,
+       1.534,
+       -1.03
+      ],
+      "max": [
+       14.03,
+       2.7,
+       7.042
+      ]
+     }
+    },
+    {
+     "node": "gardenwing__roof__deck",
+     "role": "part",
+     "parent": "gardenwing__roof",
+     "position": [
+      -15.0,
+      2.3,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       6.97,
+       1.534,
+       -1.03
+      ],
+      "max": [
+       14.03,
+       2.7,
+       7.042
+      ]
+     }
+    },
+    {
+     "node": "prop__depositBox",
+     "role": "variant",
+     "variant": "prop.depositBox",
+     "anim": "pop",
+     "position": [
+      5.4,
+      -1.2,
+      -7.5
+     ],
+     "bounds": {
+      "min": [
+       5.28,
+       -1.2,
+       -7.62
+      ],
+      "max": [
+       5.55,
+       -1.08,
+       -7.38
+      ]
+     }
+    },
+    {
+     "node": "prop__depositBox__box",
+     "role": "part",
+     "parent": "prop__depositBox",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       5.28,
+       -1.2,
+       -7.62
+      ],
+      "max": [
+       5.55,
+       -1.08,
+       -7.38
+      ]
+     }
+    },
+    {
+     "node": "prop__diamond",
+     "role": "variant",
+     "variant": "prop.diamond",
+     "anim": "pop",
+     "position": [
+      0.5,
+      2.95,
+      -8.5
+     ],
+     "bounds": {
+      "min": [
+       0.39,
+       2.81,
+       -8.61
+      ],
+      "max": [
+       0.61,
+       3.0,
+       -8.39
+      ]
+     }
+    },
+    {
+     "node": "prop__diamond__gem",
+     "role": "part",
+     "spin": 1,
+     "parent": "prop__diamond",
+     "position": [
+      0.5,
+      2.95,
+      -8.5
+     ],
+     "bounds": {
+      "min": [
+       0.39,
+       2.81,
+       -8.61
+      ],
+      "max": [
+       0.61,
+       3.0,
+       -8.39
+      ]
+     }
+    },
+    {
+     "node": "prop__lindenFile",
+     "role": "variant",
+     "variant": "prop.lindenFile",
+     "anim": "pop",
+     "position": [
+      -1.5,
+      -1.05,
+      -8.45
+     ],
+     "bounds": {
+      "min": [
+       -1.69,
+       -1.055,
+       -8.57
+      ],
+      "max": [
+       -1.31,
+       -0.745,
+       -8.33
+      ]
+     }
+    },
+    {
+     "node": "prop__lindenFile__box",
+     "role": "part",
+     "parent": "prop__lindenFile",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -1.69,
+       -1.055,
+       -8.57
+      ],
+      "max": [
+       -1.31,
+       -0.745,
+       -8.33
+      ]
+     }
+    },
+    {
+     "node": "proxy__annexRoof",
+     "role": "proxy",
+     "proxy": "site.annex",
+     "size": [
+      3.0,
+      0.4,
+      8.0
+     ],
+     "parent": "bank__anchors",
+     "position": [
+      7.5,
+      2.1,
+      -5.0
+     ]
+    },
+    {
+     "node": "proxy__bank",
+     "role": "proxy",
+     "proxy": "site.bank",
+     "size": [
+      10.0,
+      4.4,
+      8.0
+     ],
+     "parent": "bank__anchors",
+     "position": [
+      1.0,
+      2.2,
+      -5.0
+     ]
+    },
+    {
+     "node": "proxy__bankService",
+     "role": "proxy",
+     "proxy": "site.bankService",
+     "size": [
+      1.2,
+      1.6,
+      0.8
+     ],
+     "parent": "bank__anchors",
+     "position": [
+      -2.5,
+      0.8,
+      -0.7
+     ]
+    },
+    {
+     "node": "westwing__G",
+     "level": "G",
+     "building": "westwing",
+     "role": "level",
+     "parent": "bank__westwing",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.06,
+       -0.1,
+       -9.14
+      ],
+      "max": [
+       -4.0,
+       2.0,
+       -0.94
+      ]
+     }
+    },
+    {
+     "node": "westwing__G__floor",
+     "role": "part",
+     "parent": "westwing__G",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       -0.1,
+       -9.0
+      ],
+      "max": [
+       -4.0,
+       0.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "westwing__G__wall_n",
+     "level": "G",
+     "side": "n",
+     "building": "westwing",
+     "role": "side",
+     "parent": "westwing__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       0.0,
+       -9.14
+      ],
+      "max": [
+       -4.0,
+       2.0,
+       -8.94
+      ]
+     }
+    },
+    {
+     "node": "westwing__G__wall_n__mesh",
+     "role": "part",
+     "parent": "westwing__G__wall_n",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       0.0,
+       -9.14
+      ],
+      "max": [
+       -4.0,
+       2.0,
+       -8.94
+      ]
+     }
+    },
+    {
+     "node": "westwing__G__wall_s",
+     "level": "G",
+     "side": "s",
+     "building": "westwing",
+     "role": "side",
+     "parent": "westwing__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       0.0,
+       -1.06
+      ],
+      "max": [
+       -4.0,
+       2.0,
+       -0.94
+      ]
+     }
+    },
+    {
+     "node": "westwing__G__wall_s__mesh",
+     "role": "part",
+     "parent": "westwing__G__wall_s",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       0.0,
+       -1.06
+      ],
+      "max": [
+       -4.0,
+       2.0,
+       -0.94
+      ]
+     }
+    },
+    {
+     "node": "westwing__G__wall_w",
+     "level": "G",
+     "side": "w",
+     "building": "westwing",
+     "role": "side",
+     "parent": "westwing__G",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.06,
+       0.0,
+       -9.0
+      ],
+      "max": [
+       -5.94,
+       2.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "westwing__G__wall_w__mesh",
+     "role": "part",
+     "parent": "westwing__G__wall_w",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -6.06,
+       0.0,
+       -9.0
+      ],
+      "max": [
+       -5.94,
+       2.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "westwing__G__walls_int",
+     "role": "part",
+     "cut": 1,
+     "parent": "westwing__G",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       0.0,
+       -8.9
+      ],
+      "max": [
+       -4.0,
+       1.95,
+       -4.95
+      ]
+     }
+    },
+    {
+     "node": "westwing__roof",
+     "level": "R",
+     "building": "westwing",
+     "role": "roof",
+     "parent": "bank__westwing",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.03,
+       3.95,
+       -9.03
+      ],
+      "max": [
+       -3.97,
+       4.3,
+       -0.97
+      ]
+     }
+    },
+    {
+     "node": "westwing__roof__deck",
+     "role": "part",
+     "parent": "westwing__roof",
+     "position": [
+      -15.0,
+      4.05,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -6.03,
+       3.95,
+       -9.03
+      ],
+      "max": [
+       -3.97,
+       4.3,
+       -0.97
+      ]
+     }
+    },
+    {
+     "node": "westwing__sign",
+     "role": "part",
+     "parent": "bank__westwing",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -5.638,
+       3.04,
+       -1.03
+      ],
+      "max": [
+       -4.362,
+       3.36,
+       -0.958
+      ]
+     }
+    },
+    {
+     "node": "westwing__U",
+     "level": "U",
+     "building": "westwing",
+     "role": "level",
+     "parent": "bank__westwing",
+     "position": [
+      0.0,
+      2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.06,
+       1.9,
+       -9.14
+      ],
+      "max": [
+       -4.0,
+       4.0,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "westwing__U__floor",
+     "role": "part",
+     "parent": "westwing__U",
+     "position": [
+      -15.0,
+      2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       1.9,
+       -9.0
+      ],
+      "max": [
+       -4.0,
+       2.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "westwing__U__wall_n",
+     "level": "U",
+     "side": "n",
+     "building": "westwing",
+     "role": "side",
+     "parent": "westwing__U",
+     "position": [
+      0.0,
+      2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       2.0,
+       -9.14
+      ],
+      "max": [
+       -4.0,
+       4.0,
+       -8.94
+      ]
+     }
+    },
+    {
+     "node": "westwing__U__wall_n__mesh",
+     "role": "part",
+     "parent": "westwing__U__wall_n",
+     "position": [
+      -15.0,
+      2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       2.0,
+       -9.14
+      ],
+      "max": [
+       -4.0,
+       4.0,
+       -8.94
+      ]
+     }
+    },
+    {
+     "node": "westwing__U__wall_s",
+     "level": "U",
+     "side": "s",
+     "building": "westwing",
+     "role": "side",
+     "parent": "westwing__U",
+     "position": [
+      0.0,
+      2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       2.0,
+       -1.06
+      ],
+      "max": [
+       -4.0,
+       4.0,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "westwing__U__wall_s__mesh",
+     "role": "part",
+     "parent": "westwing__U__wall_s",
+     "position": [
+      -15.0,
+      2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       2.0,
+       -1.06
+      ],
+      "max": [
+       -4.0,
+       4.0,
+       -0.86
+      ]
+     }
+    },
+    {
+     "node": "westwing__U__wall_w",
+     "level": "U",
+     "side": "w",
+     "building": "westwing",
+     "role": "side",
+     "parent": "westwing__U",
+     "position": [
+      0.0,
+      2.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.06,
+       2.0,
+       -9.0
+      ],
+      "max": [
+       -5.94,
+       4.0,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "westwing__U__wall_w__mesh",
+     "role": "part",
+     "parent": "westwing__U__wall_w",
+     "position": [
+      -15.0,
+      2.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -6.06,
+       2.0,
+       -9.0
+      ],
+      "max": [
+       -5.94,
+       4.0,
+       -1.0
+      ]
+     }
+    }
+   ],
+   "animations": []
+  },
+  "cafe": {
+   "asset": "cafe",
+   "file": "assets/models/cafe.glb",
+   "source": "blender/source/cafe.blend",
+   "blender": "5.0.1",
+   "stats": {
+    "objects": 19,
+    "triangles": 14844,
+    "materials": [
+     "bj_brick",
+     "bj_edge",
+     "bj_foliage",
+     "bj_glass",
+     "bj_paper",
+     "bj_plank",
+     "bj_roof",
+     "bj_wall",
+     "bj_wood"
+    ],
+    "images": [
+     "bj_tex_brick",
+     "bj_tex_edge",
+     "bj_tex_foliage",
+     "bj_tex_glass",
+     "bj_tex_grain",
+     "bj_tex_hatch",
+     "bj_tex_plank",
+     "bj_tex_roof",
+     "bj_tex_wood"
+    ],
+    "glb_bytes": 199856
+   },
+   "nodes": [
+    {
+     "node": "cafe__building",
+     "role": "variant",
+     "variant": "cafe.building",
+     "anim": "rise",
+     "building": "cafe",
+     "position": [
+      -10.0,
+      0.0,
+      1.5
+     ],
+     "bounds": {
+      "min": [
+       -13.65,
+       -0.1,
+       -1.2
+      ],
+      "max": [
+       -5.8,
+       5.3,
+       4.2
+      ]
+     }
+    },
+    {
+     "node": "cafe__building__passage",
+     "role": "part",
+     "parent": "cafe__building",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -13.65,
+       0.0,
+       -0.65
+      ],
+      "max": [
+       -13.35,
+       0.9,
+       3.65
+      ]
+     }
+    },
+    {
+     "node": "cafe__building__shell",
+     "role": "part",
+     "anim": "rise",
+     "parent": "cafe__building",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -13.2,
+       -0.1,
+       -1.2
+      ],
+      "max": [
+       -5.8,
+       5.3,
+       4.2
+      ]
+     }
+    },
+    {
+     "node": "cafe__flood_closed",
+     "role": "variant",
+     "variant": "cafe.closed.flood",
+     "anim": "fold",
+     "position": [
+      -6.0,
+      0.0,
+      1.5
+     ],
+     "bounds": {
+      "min": [
+       -6.02,
+       0.34,
+       -0.95
+      ],
+      "max": [
+       -5.928,
+       2.448,
+       3.95
+      ]
+     }
+    },
+    {
+     "node": "cafe__flood_closed__front",
+     "role": "part",
+     "parent": "cafe__flood_closed",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.02,
+       0.34,
+       -0.95
+      ],
+      "max": [
+       -5.928,
+       2.448,
+       3.95
+      ]
+     }
+    },
+    {
+     "node": "cafe__lot1946",
+     "role": "variant",
+     "variant": "cafe.lot1946",
+     "anim": "pop",
+     "position": [
+      -10.0,
+      0.0,
+      1.5
+     ],
+     "bounds": {
+      "min": [
+       -12.9,
+       0.0,
+       -0.95
+      ],
+      "max": [
+       -5.978,
+       1.2,
+       3.95
+      ]
+     }
+    },
+    {
+     "node": "cafe__lot1946__site",
+     "role": "part",
+     "parent": "cafe__lot1946",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -12.9,
+       0.0,
+       -0.95
+      ],
+      "max": [
+       -5.978,
+       1.2,
+       3.95
+      ]
+     }
+    },
+    {
+     "node": "cafe__open1986",
+     "role": "variant",
+     "variant": "cafe.open1986",
+     "anim": "unfurl",
+     "position": [
+      -6.0,
+      1.9,
+      1.5
+     ],
+     "bounds": {
+      "min": [
+       -6.02,
+       1.28,
+       -0.9
+      ],
+      "max": [
+       -5.109,
+       2.448,
+       3.9
+      ]
+     }
+    },
+    {
+     "node": "cafe__open1986__front",
+     "role": "part",
+     "parent": "cafe__open1986",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.02,
+       1.28,
+       -0.9
+      ],
+      "max": [
+       -5.109,
+       2.448,
+       3.9
+      ]
+     }
+    },
+    {
+     "node": "cafe__open2026",
+     "role": "variant",
+     "variant": "cafe.open2026",
+     "anim": "pop",
+     "position": [
+      -5.5,
+      0.0,
+      1.5
+     ],
+     "bounds": {
+      "min": [
+       -6.25,
+       0.0,
+       -0.9
+      ],
+      "max": [
+       -4.08,
+       2.448,
+       3.9
+      ]
+     }
+    },
+    {
+     "node": "cafe__terrace1986",
+     "role": "variant",
+     "variant": "cafe.terrace1986",
+     "anim": "pop",
+     "position": [
+      -5.5,
+      0.0,
+      1.5
+     ],
+     "bounds": {
+      "min": [
+       -6.25,
+       0.0,
+       -0.25
+      ],
+      "max": [
+       -4.75,
+       1.71,
+       3.25
+      ]
+     }
+    },
+    {
+     "node": "cafe__terrace1986__set",
+     "role": "part",
+     "parent": "cafe__terrace1986",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.25,
+       0.0,
+       -0.25
+      ],
+      "max": [
+       -4.75,
+       1.71,
+       3.25
+      ]
+     }
+    },
+    {
+     "node": "cafe__terrace2026__set",
+     "role": "part",
+     "parent": "cafe__open2026",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.25,
+       0.0,
+       -0.9
+      ],
+      "max": [
+       -4.08,
+       2.448,
+       3.9
+      ]
+     }
+    },
+    {
+     "node": "cafe__terrace_closed",
+     "role": "variant",
+     "variant": "cafe.closed.terrace",
+     "anim": "fold",
+     "position": [
+      -6.0,
+      0.0,
+      1.5
+     ],
+     "bounds": {
+      "min": [
+       -6.02,
+       0.34,
+       -0.95
+      ],
+      "max": [
+       -5.928,
+       2.448,
+       3.95
+      ]
+     }
+    },
+    {
+     "node": "cafe__terrace_closed__front",
+     "role": "part",
+     "parent": "cafe__terrace_closed",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.02,
+       0.34,
+       -0.95
+      ],
+      "max": [
+       -5.928,
+       2.448,
+       3.95
+      ]
+     }
+    },
+    {
+     "node": "cafe__valve",
+     "role": "variant",
+     "variant": "cafe.valve",
+     "anim": "pop",
+     "level": "S",
+     "position": [
+      -6.5,
+      -2.6,
+      1.5
+     ],
+     "bounds": {
+      "min": [
+       -6.68,
+       -2.95,
+       1.25
+      ],
+      "max": [
+       -6.32,
+       -2.25,
+       1.75
+      ]
+     }
+    },
+    {
+     "node": "cafe__valve__fitting",
+     "role": "part",
+     "parent": "cafe__valve",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.68,
+       -2.95,
+       1.25
+      ],
+      "max": [
+       -6.32,
+       -2.25,
+       1.75
+      ]
+     }
+    },
+    {
+     "node": "proxy__cafe",
+     "role": "proxy",
+     "proxy": "site.cafe",
+     "size": [
+      7.0,
+      3.6,
+      5.0
+     ],
+     "parent": "cafe__building",
+     "position": [
+      -10.0,
+      1.8,
+      1.5
+     ]
+    },
+    {
+     "node": "proxy__cafe1946",
+     "role": "proxy",
+     "proxy": "site.cafe",
+     "size": [
+      7.0,
+      1.0,
+      5.0
+     ],
+     "parent": "cafe__lot1946",
+     "position": [
+      -10.0,
+      0.5,
+      1.5
+     ]
+    }
+   ],
+   "animations": []
+  },
+  "workshop": {
+   "asset": "workshop",
+   "file": "assets/models/workshop.glb",
+   "source": "blender/source/workshop.blend",
+   "blender": "5.0.1",
+   "stats": {
+    "objects": 16,
+    "triangles": 7964,
+    "materials": [
+     "bj_brick",
+     "bj_edge",
+     "bj_foliage",
+     "bj_glass",
+     "bj_paper",
+     "bj_paving",
+     "bj_roof",
+     "bj_wall",
+     "bj_wood"
+    ],
+    "images": [
+     "bj_tex_brick",
+     "bj_tex_edge",
+     "bj_tex_foliage",
+     "bj_tex_glass",
+     "bj_tex_grain",
+     "bj_tex_hatch",
+     "bj_tex_paving",
+     "bj_tex_roof",
+     "bj_tex_wood"
+    ],
+    "glb_bytes": 131300
+   },
+   "nodes": [
+    {
+     "node": "anchor__junction",
+     "role": "anchor",
+     "anchor": "junction",
+     "parent": "workshop__junction",
+     "position": [
+      -5.5,
+      0.0,
+      -6.5
+     ]
+    },
+    {
+     "node": "proxy__junction",
+     "role": "proxy",
+     "proxy": "site.junction",
+     "size": [
+      0.5,
+      0.8,
+      0.6
+     ],
+     "parent": "workshop__junction",
+     "position": [
+      -5.9,
+      1.0,
+      -6.5
+     ]
+    },
+    {
+     "node": "proxy__workshop",
+     "role": "proxy",
+     "proxy": "site.workshop",
+     "size": [
+      6.0,
+      3.2,
+      6.0
+     ],
+     "parent": "workshop__building",
+     "position": [
+      -9.0,
+      1.6,
+      -5.0
+     ]
+    },
+    {
+     "node": "workshop__1946",
+     "role": "variant",
+     "variant": "workshop.1946",
+     "anim": "unfurl",
+     "position": [
+      -6.0,
+      2.6,
+      -5.0
+     ],
+     "bounds": {
+      "min": [
+       -13.77,
+       -0.102,
+       -9.457
+      ],
+      "max": [
+       8.35,
+       3.4,
+       -3.2
+      ]
+     }
+    },
+    {
+     "node": "workshop__1946__dressing",
+     "role": "part",
+     "parent": "workshop__1946",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -13.77,
+       -0.102,
+       -9.457
+      ],
+      "max": [
+       8.35,
+       3.4,
+       -3.2
+      ]
+     }
+    },
+    {
+     "node": "workshop__1986",
+     "role": "variant",
+     "variant": "workshop.1986",
+     "anim": "unfurl",
+     "position": [
+      -6.0,
+      2.6,
+      -5.0
+     ],
+     "bounds": {
+      "min": [
+       -7.84,
+       0.0,
+       -8.728
+      ],
+      "max": [
+       -5.938,
+       3.072,
+       -3.2
+      ]
+     }
+    },
+    {
+     "node": "workshop__1986__dressing",
+     "role": "part",
+     "parent": "workshop__1986",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -7.84,
+       0.0,
+       -8.728
+      ],
+      "max": [
+       -5.938,
+       3.072,
+       -3.2
+      ]
+     }
+    },
+    {
+     "node": "workshop__2026",
+     "role": "variant",
+     "variant": "workshop.2026",
+     "anim": "unfurl",
+     "position": [
+      -6.0,
+      2.6,
+      -5.0
+     ],
+     "bounds": {
+      "min": [
+       -13.834,
+       0.0,
+       -8.2
+      ],
+      "max": [
+       -5.938,
+       3.072,
+       -2.055
+      ]
+     }
+    },
+    {
+     "node": "workshop__2026__dressing",
+     "role": "part",
+     "parent": "workshop__2026",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -13.834,
+       0.0,
+       -8.2
+      ],
+      "max": [
+       -5.938,
+       3.072,
+       -2.055
+      ]
+     }
+    },
+    {
+     "node": "workshop__building",
+     "role": "variant",
+     "variant": "workshop.building",
+     "anim": "rise",
+     "building": "workshop",
+     "position": [
+      -9.0,
+      0.0,
+      -5.0
+     ],
+     "bounds": {
+      "min": [
+       -14.0,
+       -0.1,
+       -9.0
+      ],
+      "max": [
+       -5.78,
+       4.2,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "workshop__building__lot",
+     "role": "part",
+     "parent": "workshop__building",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -14.0,
+       0.0,
+       -9.0
+      ],
+      "max": [
+       -12.0,
+       0.5,
+       -1.0
+      ]
+     }
+    },
+    {
+     "node": "workshop__building__shell",
+     "role": "part",
+     "parent": "workshop__building",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -12.22,
+       -0.1,
+       -8.22
+      ],
+      "max": [
+       -5.78,
+       4.2,
+       -1.78
+      ]
+     }
+    },
+    {
+     "node": "workshop__junction",
+     "role": "variant",
+     "variant": "workshop.junction",
+     "anim": "pop",
+     "level": "G",
+     "position": [
+      -6.0,
+      1.0,
+      -6.5
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       0.75,
+       -6.72
+      ],
+      "max": [
+       -5.77,
+       2.3,
+       -6.28
+      ]
+     }
+    },
+    {
+     "node": "workshop__junction__box",
+     "role": "part",
+     "parent": "workshop__junction",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -6.0,
+       0.75,
+       -6.72
+      ],
+      "max": [
+       -5.788,
+       2.3,
+       -6.28
+      ]
+     }
+    },
+    {
+     "node": "workshop__junction__lever",
+     "role": "dynamic",
+     "dynamic": "junctionLever",
+     "parent": "workshop__junction",
+     "position": [
+      -5.82,
+      0.95,
+      -6.62
+     ],
+     "bounds": {
+      "min": [
+       -5.83,
+       0.95,
+       -6.655
+      ],
+      "max": [
+       -5.77,
+       1.21,
+       -6.585
+      ]
+     }
+    },
+    {
+     "node": "workshop__junction__lever__mesh",
+     "role": "part",
+     "parent": "workshop__junction__lever",
+     "position": [
+      -5.82,
+      0.95,
+      -6.62
+     ],
+     "bounds": {
+      "min": [
+       -5.83,
+       0.95,
+       -6.655
+      ],
+      "max": [
+       -5.77,
+       1.21,
+       -6.585
+      ]
+     }
+    }
+   ],
+   "animations": []
+  },
+  "townhouses": {
+   "asset": "townhouses",
+   "file": "assets/models/townhouses.glb",
+   "source": "blender/source/townhouses.blend",
+   "blender": "5.0.1",
+   "stats": {
+    "objects": 13,
+    "triangles": 13416,
+    "materials": [
+     "bj_brick",
+     "bj_edge",
+     "bj_foliage",
+     "bj_glass",
+     "bj_paper",
+     "bj_plank",
+     "bj_roof",
+     "bj_wall",
+     "bj_wood"
+    ],
+    "images": [
+     "bj_tex_brick",
+     "bj_tex_edge",
+     "bj_tex_foliage",
+     "bj_tex_glass",
+     "bj_tex_grain",
+     "bj_tex_hatch",
+     "bj_tex_plank",
+     "bj_tex_roof",
+     "bj_tex_wood"
+    ],
+    "glb_bytes": 214468
+   },
+   "nodes": [
+    {
+     "node": "proxy__townhouses",
+     "role": "proxy",
+     "proxy": "site.townhouses",
+     "size": [
+      9.0,
+      4.4,
+      4.0
+     ],
+     "position": [
+      -10.5,
+      2.2,
+      6.0
+     ]
+    },
+    {
+     "node": "townhouses__1946",
+     "role": "variant",
+     "variant": "townhouses.1946",
+     "anim": "rise",
+     "building": "townhouses",
+     "position": [
+      -10.5,
+      0.0,
+      6.0
+     ],
+     "bounds": {
+      "min": [
+       -15.12,
+       0.0,
+       3.86
+      ],
+      "max": [
+       -5.94,
+       5.4,
+       8.57
+      ]
+     }
+    },
+    {
+     "node": "townhouses__1946__house0",
+     "role": "part",
+     "anim": "rise",
+     "order": 0,
+     "parent": "townhouses__1946",
+     "position": [
+      -13.5,
+      0.0,
+      8.0
+     ],
+     "bounds": {
+      "min": [
+       -15.12,
+       0.0,
+       3.86
+      ],
+      "max": [
+       -11.88,
+       5.4,
+       8.57
+      ]
+     }
+    },
+    {
+     "node": "townhouses__1946__house1",
+     "role": "part",
+     "anim": "rise",
+     "order": 1,
+     "parent": "townhouses__1946",
+     "position": [
+      -10.5,
+      0.0,
+      8.0
+     ],
+     "bounds": {
+      "min": [
+       -12.12,
+       0.0,
+       3.86
+      ],
+      "max": [
+       -8.88,
+       5.4,
+       8.57
+      ]
+     }
+    },
+    {
+     "node": "townhouses__1946__house2",
+     "role": "part",
+     "anim": "rise",
+     "order": 2,
+     "parent": "townhouses__1946",
+     "position": [
+      -7.5,
+      0.0,
+      8.0
+     ],
+     "bounds": {
+      "min": [
+       -9.06,
+       0.0,
+       3.86
+      ],
+      "max": [
+       -5.94,
+       2.4,
+       8.45
+      ]
+     }
+    },
+    {
+     "node": "townhouses__1986",
+     "role": "variant",
+     "variant": "townhouses.1986",
+     "anim": "rise",
+     "building": "townhouses",
+     "position": [
+      -10.5,
+      0.0,
+      6.0
+     ],
+     "bounds": {
+      "min": [
+       -15.12,
+       0.0,
+       3.86
+      ],
+      "max": [
+       -5.88,
+       5.4,
+       8.57
+      ]
+     }
+    },
+    {
+     "node": "townhouses__1986__house0",
+     "role": "part",
+     "anim": "rise",
+     "order": 0,
+     "parent": "townhouses__1986",
+     "position": [
+      -13.5,
+      0.0,
+      8.0
+     ],
+     "bounds": {
+      "min": [
+       -15.12,
+       0.0,
+       3.86
+      ],
+      "max": [
+       -11.88,
+       5.4,
+       8.57
+      ]
+     }
+    },
+    {
+     "node": "townhouses__1986__house1",
+     "role": "part",
+     "anim": "rise",
+     "order": 1,
+     "parent": "townhouses__1986",
+     "position": [
+      -10.5,
+      0.0,
+      8.0
+     ],
+     "bounds": {
+      "min": [
+       -12.12,
+       0.0,
+       3.86
+      ],
+      "max": [
+       -8.88,
+       5.4,
+       8.57
+      ]
+     }
+    },
+    {
+     "node": "townhouses__1986__house2",
+     "role": "part",
+     "anim": "rise",
+     "order": 2,
+     "parent": "townhouses__1986",
+     "position": [
+      -7.5,
+      0.0,
+      8.0
+     ],
+     "bounds": {
+      "min": [
+       -9.12,
+       0.0,
+       3.86
+      ],
+      "max": [
+       -5.88,
+       5.4,
+       8.57
+      ]
+     }
+    },
+    {
+     "node": "townhouses__2026",
+     "role": "variant",
+     "variant": "townhouses.2026",
+     "anim": "rise",
+     "building": "townhouses",
+     "position": [
+      -10.5,
+      0.0,
+      6.0
+     ],
+     "bounds": {
+      "min": [
+       -15.12,
+       0.0,
+       3.86
+      ],
+      "max": [
+       -5.88,
+       5.4,
+       8.57
+      ]
+     }
+    },
+    {
+     "node": "townhouses__2026__house0",
+     "role": "part",
+     "anim": "rise",
+     "order": 0,
+     "parent": "townhouses__2026",
+     "position": [
+      -13.5,
+      0.0,
+      8.0
+     ],
+     "bounds": {
+      "min": [
+       -15.12,
+       0.0,
+       3.86
+      ],
+      "max": [
+       -11.88,
+       5.4,
+       8.57
+      ]
+     }
+    },
+    {
+     "node": "townhouses__2026__house1",
+     "role": "part",
+     "anim": "rise",
+     "order": 1,
+     "parent": "townhouses__2026",
+     "position": [
+      -10.5,
+      0.0,
+      8.0
+     ],
+     "bounds": {
+      "min": [
+       -12.12,
+       0.0,
+       3.86
+      ],
+      "max": [
+       -8.88,
+       5.4,
+       8.57
+      ]
+     }
+    },
+    {
+     "node": "townhouses__2026__house2",
+     "role": "part",
+     "anim": "rise",
+     "order": 2,
+     "parent": "townhouses__2026",
+     "position": [
+      -7.5,
+      0.0,
+      8.0
+     ],
+     "bounds": {
+      "min": [
+       -9.12,
+       0.0,
+       3.86
+      ],
+      "max": [
+       -5.88,
+       5.4,
+       8.57
+      ]
+     }
+    }
+   ],
+   "animations": []
+  },
   "trees": {
    "asset": "trees",
    "file": "assets/models/trees.glb",
    "source": "blender/source/trees.blend",
    "blender": "5.0.1",
    "stats": {
-    "objects": 111,
-    "triangles": 7704,
+    "objects": 204,
+    "triangles": 15288,
     "materials": [
      "bj_edge",
      "bj_foliage",
+     "bj_glass",
      "bj_paper",
+     "bj_plank",
+     "bj_roof",
      "bj_wood"
     ],
     "images": [
      "bj_tex_edge",
      "bj_tex_foliage",
+     "bj_tex_glass",
      "bj_tex_grain",
+     "bj_tex_plank",
+     "bj_tex_roof",
      "bj_tex_wood"
     ],
-    "glb_bytes": 289472
+    "glb_bytes": 528000
    },
    "nodes": [
+    {
+     "node": "fence__garden",
+     "role": "variant",
+     "variant": "fence.garden",
+     "anim": "fold",
+     "position": [
+      10.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       6.31,
+       0.0,
+       -1.69
+      ],
+      "max": [
+       14.075,
+       0.56,
+       7.69
+      ]
+     }
+    },
+    {
+     "node": "fence__garden__iron",
+     "role": "part",
+     "parent": "fence__garden",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       6.31,
+       0.0,
+       -1.69
+      ],
+      "max": [
+       14.075,
+       0.56,
+       7.69
+      ]
+     }
+    },
+    {
+     "node": "garden__plants",
+     "role": "variant",
+     "variant": "garden.plants",
+     "anim": "unfurl",
+     "position": [
+      10.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       7.001,
+       -0.05,
+       -0.896
+      ],
+      "max": [
+       14.12,
+       1.9,
+       7.12
+      ]
+     }
+    },
+    {
+     "node": "garden__plants__bed0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "garden__plants",
+     "position": [
+      8.5,
+      0.0,
+      5.5
+     ],
+     "bounds": {
+      "min": [
+       8.06,
+       0.0,
+       5.06
+      ],
+      "max": [
+       8.94,
+       0.32,
+       5.94
+      ]
+     }
+    },
+    {
+     "node": "garden__plants__bed1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "garden__plants",
+     "position": [
+      13.5,
+      0.0,
+      0.5
+     ],
+     "bounds": {
+      "min": [
+       13.06,
+       0.0,
+       0.06
+      ],
+      "max": [
+       13.94,
+       0.334,
+       0.94
+      ]
+     }
+    },
+    {
+     "node": "garden__plants__furniture",
+     "role": "part",
+     "parent": "garden__plants",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       7.001,
+       -0.05,
+       -0.896
+      ],
+      "max": [
+       13.85,
+       0.6,
+       6.894
+      ]
+     }
+    },
+    {
+     "node": "garden__plaque",
+     "role": "variant",
+     "variant": "garden.plaque",
+     "anim": "pop",
+     "position": [
+      6.8,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       6.455,
+       0.0,
+       2.57
+      ],
+      "max": [
+       7.145,
+       0.724,
+       2.672
+      ]
+     }
+    },
+    {
+     "node": "garden__plaque__sign",
+     "role": "part",
+     "parent": "garden__plaque",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       6.455,
+       0.0,
+       2.57
+      ],
+      "max": [
+       7.145,
+       0.724,
+       2.672
+      ]
+     }
+    },
+    {
+     "node": "garden__plot1946",
+     "role": "variant",
+     "variant": "garden.plot1946",
+     "anim": "pop",
+     "position": [
+      10.5,
+      0.0,
+      2.5
+     ],
+     "bounds": {
+      "min": [
+       8.1,
+       0.0,
+       0.3
+      ],
+      "max": [
+       13.04,
+       0.42,
+       5.38
+      ]
+     }
+    },
+    {
+     "node": "garden__plot1946__tools",
+     "role": "part",
+     "parent": "garden__plot1946",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       8.1,
+       0.0,
+       0.3
+      ],
+      "max": [
+       13.04,
+       0.42,
+       5.38
+      ]
+     }
+    },
+    {
+     "node": "garden__shed",
+     "role": "part",
+     "anim": "rise",
+     "parent": "garden__plants",
+     "position": [
+      13.0,
+      0.0,
+      6.0
+     ],
+     "bounds": {
+      "min": [
+       11.88,
+       0.0,
+       4.88
+      ],
+      "max": [
+       14.12,
+       1.9,
+       7.12
+      ]
+     }
+    },
+    {
+     "node": "garden__shed__mesh",
+     "role": "part",
+     "parent": "garden__shed",
+     "position": [
+      13.0,
+      0.0,
+      6.0
+     ],
+     "bounds": {
+      "min": [
+       11.88,
+       0.0,
+       4.88
+      ],
+      "max": [
+       14.12,
+       1.9,
+       7.12
+      ]
+     }
+    },
     {
      "node": "oak__garden_1946",
      "role": "variant",
@@ -987,7 +7340,7 @@
       "max": [
        1.242,
        2.143,
-       3.175
+       3.285
       ]
      }
     },
@@ -1147,14 +7500,14 @@
      ],
      "bounds": {
       "min": [
-       0.085,
+       -0.012,
        0.0,
-       2.314
+       2.23
       ],
       "max": [
-       0.998,
+       1.166,
        1.37,
-       2.656
+       3.285
       ]
      }
     },
@@ -1985,7 +8338,7 @@
       "max": [
        10.205,
        2.157,
-       -4.784
+       -4.725
       ]
      }
     },
@@ -2145,14 +8498,14 @@
      ],
      "bounds": {
       "min": [
-       9.32,
+       8.988,
        0.0,
-       -5.703
+       -5.77
       ],
       "max": [
-       9.868,
+       10.188,
        1.391,
-       -5.04
+       -4.725
       ]
      }
     },
@@ -2677,9 +9030,2769 @@
        -4.93
       ]
      }
+    },
+    {
+     "node": "trees__1946",
+     "role": "variant",
+     "variant": "trees.1946",
+     "anim": "unfurl",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -15.661,
+       0.0,
+       -11.674
+      ],
+      "max": [
+       15.633,
+       1.345,
+       9.075
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__c0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "trees__1946",
+     "position": [
+      -13.8,
+      1.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       -14.053,
+       0.717,
+       -11.556
+      ],
+      "max": [
+       -13.559,
+       1.274,
+       -11.089
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__c1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "trees__1946",
+     "position": [
+      -10.4,
+      1.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       -10.64,
+       0.737,
+       -11.652
+      ],
+      "max": [
+       -10.136,
+       1.28,
+       -11.145
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__c10",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 10,
+     "parent": "trees__1946",
+     "position": [
+      15.4,
+      1.0,
+      1.0
+     ],
+     "bounds": {
+      "min": [
+       15.164,
+       0.657,
+       0.731
+      ],
+      "max": [
+       15.632,
+       1.277,
+       1.273
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__c11",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 11,
+     "parent": "trees__1946",
+     "position": [
+      -13.4,
+      1.0,
+      -8.4
+     ],
+     "bounds": {
+      "min": [
+       -13.658,
+       0.657,
+       -8.642
+      ],
+      "max": [
+       -13.162,
+       1.274,
+       -8.136
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__c12",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 12,
+     "parent": "trees__1946",
+     "position": [
+      -13.4,
+      1.0,
+      -2.5
+     ],
+     "bounds": {
+      "min": [
+       -13.659,
+       0.703,
+       -2.718
+      ],
+      "max": [
+       -13.132,
+       1.266,
+       -2.231
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__c2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "trees__1946",
+     "position": [
+      -6.6,
+      1.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       -6.865,
+       0.694,
+       -11.601
+      ],
+      "max": [
+       -6.364,
+       1.319,
+       -11.082
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__c3",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 3,
+     "parent": "trees__1946",
+     "position": [
+      -2.0,
+      1.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       -2.234,
+       0.685,
+       -11.63
+      ],
+      "max": [
+       -1.774,
+       1.339,
+       -11.127
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__c4",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 4,
+     "parent": "trees__1946",
+     "position": [
+      3.2,
+      1.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       2.969,
+       0.734,
+       -11.612
+      ],
+      "max": [
+       3.43,
+       1.345,
+       -11.086
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__c5",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 5,
+     "parent": "trees__1946",
+     "position": [
+      9.6,
+      1.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       9.332,
+       0.709,
+       -11.674
+      ],
+      "max": [
+       9.874,
+       1.344,
+       -11.176
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__c6",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 6,
+     "parent": "trees__1946",
+     "position": [
+      13.3,
+      1.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       13.049,
+       0.714,
+       -11.626
+      ],
+      "max": [
+       13.566,
+       1.296,
+       -11.132
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__c7",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 7,
+     "parent": "trees__1946",
+     "position": [
+      -15.4,
+      1.0,
+      5.2
+     ],
+     "bounds": {
+      "min": [
+       -15.661,
+       0.69,
+       4.933
+      ],
+      "max": [
+       -15.139,
+       1.297,
+       5.448
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__c8",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 8,
+     "parent": "trees__1946",
+     "position": [
+      -15.4,
+      1.0,
+      8.8
+     ],
+     "bounds": {
+      "min": [
+       -15.633,
+       0.675,
+       8.566
+      ],
+      "max": [
+       -15.164,
+       1.319,
+       9.075
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__c9",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 9,
+     "parent": "trees__1946",
+     "position": [
+      15.4,
+      1.0,
+      -6.0
+     ],
+     "bounds": {
+      "min": [
+       15.111,
+       0.718,
+       -6.243
+      ],
+      "max": [
+       15.633,
+       1.333,
+       -5.77
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__t0",
+     "role": "part",
+     "anim": "rise",
+     "order": 0,
+     "parent": "trees__1946",
+     "position": [
+      -13.8,
+      0.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       -13.84,
+       0.0,
+       -11.386
+      ],
+      "max": [
+       -13.69,
+       0.9,
+       -11.31
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__t1",
+     "role": "part",
+     "anim": "rise",
+     "order": 1,
+     "parent": "trees__1946",
+     "position": [
+      -10.4,
+      0.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       -10.44,
+       0.0,
+       -11.436
+      ],
+      "max": [
+       -10.29,
+       0.9,
+       -11.36
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__t10",
+     "role": "part",
+     "anim": "rise",
+     "order": 10,
+     "parent": "trees__1946",
+     "position": [
+      15.4,
+      0.0,
+      1.0
+     ],
+     "bounds": {
+      "min": [
+       15.36,
+       0.0,
+       0.964
+      ],
+      "max": [
+       15.51,
+       0.9,
+       1.04
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__t11",
+     "role": "part",
+     "anim": "rise",
+     "order": 11,
+     "parent": "trees__1946",
+     "position": [
+      -13.4,
+      0.0,
+      -8.4
+     ],
+     "bounds": {
+      "min": [
+       -13.44,
+       0.0,
+       -8.436
+      ],
+      "max": [
+       -13.29,
+       0.9,
+       -8.36
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__t12",
+     "role": "part",
+     "anim": "rise",
+     "order": 12,
+     "parent": "trees__1946",
+     "position": [
+      -13.4,
+      0.0,
+      -2.5
+     ],
+     "bounds": {
+      "min": [
+       -13.44,
+       0.0,
+       -2.536
+      ],
+      "max": [
+       -13.29,
+       0.9,
+       -2.46
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__t2",
+     "role": "part",
+     "anim": "rise",
+     "order": 2,
+     "parent": "trees__1946",
+     "position": [
+      -6.6,
+      0.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       -6.64,
+       0.0,
+       -11.386
+      ],
+      "max": [
+       -6.49,
+       0.9,
+       -11.31
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__t3",
+     "role": "part",
+     "anim": "rise",
+     "order": 3,
+     "parent": "trees__1946",
+     "position": [
+      -2.0,
+      0.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       -2.04,
+       0.0,
+       -11.436
+      ],
+      "max": [
+       -1.89,
+       0.9,
+       -11.36
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__t4",
+     "role": "part",
+     "anim": "rise",
+     "order": 4,
+     "parent": "trees__1946",
+     "position": [
+      3.2,
+      0.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       3.16,
+       0.0,
+       -11.386
+      ],
+      "max": [
+       3.31,
+       0.9,
+       -11.31
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__t5",
+     "role": "part",
+     "anim": "rise",
+     "order": 5,
+     "parent": "trees__1946",
+     "position": [
+      9.6,
+      0.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       9.56,
+       0.0,
+       -11.436
+      ],
+      "max": [
+       9.71,
+       0.9,
+       -11.36
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__t6",
+     "role": "part",
+     "anim": "rise",
+     "order": 6,
+     "parent": "trees__1946",
+     "position": [
+      13.3,
+      0.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       13.26,
+       0.0,
+       -11.386
+      ],
+      "max": [
+       13.41,
+       0.9,
+       -11.31
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__t7",
+     "role": "part",
+     "anim": "rise",
+     "order": 7,
+     "parent": "trees__1946",
+     "position": [
+      -15.4,
+      0.0,
+      5.2
+     ],
+     "bounds": {
+      "min": [
+       -15.44,
+       0.0,
+       5.164
+      ],
+      "max": [
+       -15.29,
+       0.9,
+       5.24
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__t8",
+     "role": "part",
+     "anim": "rise",
+     "order": 8,
+     "parent": "trees__1946",
+     "position": [
+      -15.4,
+      0.0,
+      8.8
+     ],
+     "bounds": {
+      "min": [
+       -15.44,
+       0.0,
+       8.764
+      ],
+      "max": [
+       -15.29,
+       0.9,
+       8.84
+      ]
+     }
+    },
+    {
+     "node": "trees__1946__t9",
+     "role": "part",
+     "anim": "rise",
+     "order": 9,
+     "parent": "trees__1946",
+     "position": [
+      15.4,
+      0.0,
+      -6.0
+     ],
+     "bounds": {
+      "min": [
+       15.36,
+       0.0,
+       -6.036
+      ],
+      "max": [
+       15.51,
+       0.9,
+       -5.96
+      ]
+     }
+    },
+    {
+     "node": "trees__1986",
+     "role": "variant",
+     "variant": "trees.1986",
+     "anim": "unfurl",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -16.029,
+       0.0,
+       -12.091
+      ],
+      "max": [
+       16.017,
+       2.545,
+       9.498
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__c0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "trees__1986",
+     "position": [
+      -13.8,
+      1.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       -14.351,
+       0.992,
+       -11.991
+      ],
+      "max": [
+       -13.155,
+       1.859,
+       -10.701
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__c1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "trees__1986",
+     "position": [
+      -10.4,
+      1.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       -10.689,
+       0.569,
+       -11.704
+      ],
+      "max": [
+       -10.082,
+       2.335,
+       -11.093
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__c10",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 10,
+     "parent": "trees__1986",
+     "position": [
+      15.4,
+      1.0,
+      1.0
+     ],
+     "bounds": {
+      "min": [
+       15.115,
+       0.311,
+       0.675
+      ],
+      "max": [
+       15.68,
+       2.325,
+       1.329
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__c11",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 11,
+     "parent": "trees__1986",
+     "position": [
+      -13.4,
+      1.0,
+      -8.4
+     ],
+     "bounds": {
+      "min": [
+       -14.039,
+       0.965,
+       -9.033
+      ],
+      "max": [
+       -12.718,
+       1.821,
+       -7.718
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__c12",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 12,
+     "parent": "trees__1986",
+     "position": [
+      -13.4,
+      1.0,
+      -2.5
+     ],
+     "bounds": {
+      "min": [
+       -14.072,
+       0.986,
+       -3.137
+      ],
+      "max": [
+       -12.778,
+       1.798,
+       -1.91
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__c2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "trees__1986",
+     "position": [
+      -6.6,
+      1.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       -7.244,
+       0.982,
+       -11.96
+      ],
+      "max": [
+       -5.998,
+       1.888,
+       -10.726
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__c3",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 3,
+     "parent": "trees__1986",
+     "position": [
+      -2.0,
+      1.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       -2.539,
+       0.978,
+       -12.005
+      ],
+      "max": [
+       -1.395,
+       1.906,
+       -10.762
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__c4",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 4,
+     "parent": "trees__1986",
+     "position": [
+      3.2,
+      1.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       2.922,
+       0.559,
+       -11.665
+      ],
+      "max": [
+       3.478,
+       2.545,
+       -11.031
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__c5",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 5,
+     "parent": "trees__1986",
+     "position": [
+      9.6,
+      1.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       8.973,
+       0.988,
+       -12.091
+      ],
+      "max": [
+       10.24,
+       1.914,
+       -10.71
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__c6",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 6,
+     "parent": "trees__1986",
+     "position": [
+      13.3,
+      1.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       12.661,
+       0.99,
+       -11.972
+      ],
+      "max": [
+       13.949,
+       1.858,
+       -10.741
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__c7",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 7,
+     "parent": "trees__1986",
+     "position": [
+      -15.4,
+      1.0,
+      5.2
+     ],
+     "bounds": {
+      "min": [
+       -15.714,
+       0.417,
+       4.878
+      ],
+      "max": [
+       -15.086,
+       2.39,
+       5.499
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__c8",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 8,
+     "parent": "trees__1986",
+     "position": [
+      -15.4,
+      1.0,
+      8.8
+     ],
+     "bounds": {
+      "min": [
+       -16.029,
+       0.974,
+       8.178
+      ],
+      "max": [
+       -14.849,
+       1.875,
+       9.498
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__c9",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 9,
+     "parent": "trees__1986",
+     "position": [
+      15.4,
+      1.0,
+      -6.0
+     ],
+     "bounds": {
+      "min": [
+       14.739,
+       0.991,
+       -6.685
+      ],
+      "max": [
+       16.017,
+       1.896,
+       -5.311
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__t0",
+     "role": "part",
+     "anim": "rise",
+     "order": 0,
+     "parent": "trees__1986",
+     "position": [
+      -13.8,
+      0.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       -13.874,
+       0.0,
+       -11.417
+      ],
+      "max": [
+       -13.733,
+       0.825,
+       -11.276
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__t1",
+     "role": "part",
+     "anim": "rise",
+     "order": 1,
+     "parent": "trees__1986",
+     "position": [
+      -10.4,
+      0.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       -10.459,
+       0.0,
+       -11.453
+      ],
+      "max": [
+       -10.347,
+       0.6,
+       -11.341
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__t10",
+     "role": "part",
+     "anim": "rise",
+     "order": 10,
+     "parent": "trees__1986",
+     "position": [
+      15.4,
+      0.0,
+      1.0
+     ],
+     "bounds": {
+      "min": [
+       15.341,
+       0.0,
+       0.947
+      ],
+      "max": [
+       15.453,
+       0.6,
+       1.059
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__t11",
+     "role": "part",
+     "anim": "rise",
+     "order": 11,
+     "parent": "trees__1986",
+     "position": [
+      -13.4,
+      0.0,
+      -8.4
+     ],
+     "bounds": {
+      "min": [
+       -13.474,
+       0.0,
+       -8.467
+      ],
+      "max": [
+       -13.333,
+       0.825,
+       -8.326
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__t12",
+     "role": "part",
+     "anim": "rise",
+     "order": 12,
+     "parent": "trees__1986",
+     "position": [
+      -13.4,
+      0.0,
+      -2.5
+     ],
+     "bounds": {
+      "min": [
+       -13.474,
+       0.0,
+       -2.567
+      ],
+      "max": [
+       -13.333,
+       0.825,
+       -2.426
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__t2",
+     "role": "part",
+     "anim": "rise",
+     "order": 2,
+     "parent": "trees__1986",
+     "position": [
+      -6.6,
+      0.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       -6.674,
+       0.0,
+       -11.417
+      ],
+      "max": [
+       -6.533,
+       0.825,
+       -11.276
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__t3",
+     "role": "part",
+     "anim": "rise",
+     "order": 3,
+     "parent": "trees__1986",
+     "position": [
+      -2.0,
+      0.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       -2.074,
+       0.0,
+       -11.467
+      ],
+      "max": [
+       -1.933,
+       0.825,
+       -11.326
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__t4",
+     "role": "part",
+     "anim": "rise",
+     "order": 4,
+     "parent": "trees__1986",
+     "position": [
+      3.2,
+      0.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       3.141,
+       0.0,
+       -11.403
+      ],
+      "max": [
+       3.253,
+       0.6,
+       -11.291
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__t5",
+     "role": "part",
+     "anim": "rise",
+     "order": 5,
+     "parent": "trees__1986",
+     "position": [
+      9.6,
+      0.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       9.526,
+       0.0,
+       -11.467
+      ],
+      "max": [
+       9.667,
+       0.825,
+       -11.326
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__t6",
+     "role": "part",
+     "anim": "rise",
+     "order": 6,
+     "parent": "trees__1986",
+     "position": [
+      13.3,
+      0.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       13.226,
+       0.0,
+       -11.417
+      ],
+      "max": [
+       13.367,
+       0.825,
+       -11.276
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__t7",
+     "role": "part",
+     "anim": "rise",
+     "order": 7,
+     "parent": "trees__1986",
+     "position": [
+      -15.4,
+      0.0,
+      5.2
+     ],
+     "bounds": {
+      "min": [
+       -15.459,
+       0.0,
+       5.147
+      ],
+      "max": [
+       -15.347,
+       0.6,
+       5.259
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__t8",
+     "role": "part",
+     "anim": "rise",
+     "order": 8,
+     "parent": "trees__1986",
+     "position": [
+      -15.4,
+      0.0,
+      8.8
+     ],
+     "bounds": {
+      "min": [
+       -15.474,
+       0.0,
+       8.733
+      ],
+      "max": [
+       -15.333,
+       0.825,
+       8.874
+      ]
+     }
+    },
+    {
+     "node": "trees__1986__t9",
+     "role": "part",
+     "anim": "rise",
+     "order": 9,
+     "parent": "trees__1986",
+     "position": [
+      15.4,
+      0.0,
+      -6.0
+     ],
+     "bounds": {
+      "min": [
+       15.326,
+       0.0,
+       -6.067
+      ],
+      "max": [
+       15.467,
+       0.825,
+       -5.926
+      ]
+     }
+    },
+    {
+     "node": "trees__2026",
+     "role": "variant",
+     "variant": "trees.2026",
+     "anim": "unfurl",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -16.238,
+       0.0,
+       -12.322
+      ],
+      "max": [
+       16.223,
+       3.394,
+       9.73
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__c0",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 0,
+     "parent": "trees__2026",
+     "position": [
+      -13.8,
+      1.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       -14.535,
+       1.322,
+       -12.204
+      ],
+      "max": [
+       -12.94,
+       2.478,
+       -10.485
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__c1",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 1,
+     "parent": "trees__2026",
+     "position": [
+      -10.4,
+      1.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       -10.786,
+       0.759,
+       -11.805
+      ],
+      "max": [
+       -9.975,
+       3.113,
+       -10.99
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__c10",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 10,
+     "parent": "trees__2026",
+     "position": [
+      15.4,
+      1.0,
+      1.0
+     ],
+     "bounds": {
+      "min": [
+       15.02,
+       0.415,
+       0.567
+      ],
+      "max": [
+       15.773,
+       3.1,
+       1.438
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__c11",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 11,
+     "parent": "trees__2026",
+     "position": [
+      -13.4,
+      1.0,
+      -8.4
+     ],
+     "bounds": {
+      "min": [
+       -14.252,
+       1.287,
+       -9.244
+      ],
+      "max": [
+       -12.49,
+       2.428,
+       -7.491
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__c12",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 12,
+     "parent": "trees__2026",
+     "position": [
+      -13.4,
+      1.0,
+      -2.5
+     ],
+     "bounds": {
+      "min": [
+       -14.296,
+       1.315,
+       -3.349
+      ],
+      "max": [
+       -12.571,
+       2.398,
+       -1.713
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__c2",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 2,
+     "parent": "trees__2026",
+     "position": [
+      -6.6,
+      1.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       -7.459,
+       1.309,
+       -12.163
+      ],
+      "max": [
+       -5.797,
+       2.517,
+       -10.519
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__c3",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 3,
+     "parent": "trees__2026",
+     "position": [
+      -2.0,
+      1.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       -2.719,
+       1.304,
+       -12.207
+      ],
+      "max": [
+       -1.193,
+       2.541,
+       -10.549
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__c4",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 4,
+     "parent": "trees__2026",
+     "position": [
+      3.2,
+      1.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       2.829,
+       0.746,
+       -11.771
+      ],
+      "max": [
+       3.57,
+       3.394,
+       -10.925
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__c5",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 5,
+     "parent": "trees__2026",
+     "position": [
+      9.6,
+      1.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       8.763,
+       1.318,
+       -12.322
+      ],
+      "max": [
+       10.453,
+       2.552,
+       -10.48
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__c6",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 6,
+     "parent": "trees__2026",
+     "position": [
+      13.3,
+      1.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       12.448,
+       1.321,
+       -12.18
+      ],
+      "max": [
+       14.165,
+       2.478,
+       -10.537
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__c7",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 7,
+     "parent": "trees__2026",
+     "position": [
+      -15.4,
+      1.0,
+      5.2
+     ],
+     "bounds": {
+      "min": [
+       -15.819,
+       0.555,
+       4.77
+      ],
+      "max": [
+       -14.981,
+       3.187,
+       5.599
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__c8",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 8,
+     "parent": "trees__2026",
+     "position": [
+      -15.4,
+      1.0,
+      8.8
+     ],
+     "bounds": {
+      "min": [
+       -16.238,
+       1.298,
+       7.971
+      ],
+      "max": [
+       -14.665,
+       2.5,
+       9.73
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__c9",
+     "role": "part",
+     "anim": "unfurl",
+     "order": 9,
+     "parent": "trees__2026",
+     "position": [
+      15.4,
+      1.0,
+      -6.0
+     ],
+     "bounds": {
+      "min": [
+       14.519,
+       1.321,
+       -6.913
+      ],
+      "max": [
+       16.223,
+       2.528,
+       -5.082
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__t0",
+     "role": "part",
+     "anim": "rise",
+     "order": 0,
+     "parent": "trees__2026",
+     "position": [
+      -13.8,
+      0.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       -13.899,
+       0.0,
+       -11.439
+      ],
+      "max": [
+       -13.711,
+       1.1,
+       -11.251
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__t1",
+     "role": "part",
+     "anim": "rise",
+     "order": 1,
+     "parent": "trees__2026",
+     "position": [
+      -10.4,
+      0.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       -10.479,
+       0.0,
+       -11.471
+      ],
+      "max": [
+       -10.329,
+       0.8,
+       -11.321
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__t10",
+     "role": "part",
+     "anim": "rise",
+     "order": 10,
+     "parent": "trees__2026",
+     "position": [
+      15.4,
+      0.0,
+      1.0
+     ],
+     "bounds": {
+      "min": [
+       15.321,
+       0.0,
+       0.929
+      ],
+      "max": [
+       15.471,
+       0.8,
+       1.079
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__t11",
+     "role": "part",
+     "anim": "rise",
+     "order": 11,
+     "parent": "trees__2026",
+     "position": [
+      -13.4,
+      0.0,
+      -8.4
+     ],
+     "bounds": {
+      "min": [
+       -13.499,
+       0.0,
+       -8.489
+      ],
+      "max": [
+       -13.311,
+       1.1,
+       -8.301
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__t12",
+     "role": "part",
+     "anim": "rise",
+     "order": 12,
+     "parent": "trees__2026",
+     "position": [
+      -13.4,
+      0.0,
+      -2.5
+     ],
+     "bounds": {
+      "min": [
+       -13.499,
+       0.0,
+       -2.589
+      ],
+      "max": [
+       -13.311,
+       1.1,
+       -2.401
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__t2",
+     "role": "part",
+     "anim": "rise",
+     "order": 2,
+     "parent": "trees__2026",
+     "position": [
+      -6.6,
+      0.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       -6.699,
+       0.0,
+       -11.439
+      ],
+      "max": [
+       -6.511,
+       1.1,
+       -11.251
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__t3",
+     "role": "part",
+     "anim": "rise",
+     "order": 3,
+     "parent": "trees__2026",
+     "position": [
+      -2.0,
+      0.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       -2.099,
+       0.0,
+       -11.489
+      ],
+      "max": [
+       -1.911,
+       1.1,
+       -11.301
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__t4",
+     "role": "part",
+     "anim": "rise",
+     "order": 4,
+     "parent": "trees__2026",
+     "position": [
+      3.2,
+      0.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       3.121,
+       0.0,
+       -11.421
+      ],
+      "max": [
+       3.271,
+       0.8,
+       -11.271
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__t5",
+     "role": "part",
+     "anim": "rise",
+     "order": 5,
+     "parent": "trees__2026",
+     "position": [
+      9.6,
+      0.0,
+      -11.4
+     ],
+     "bounds": {
+      "min": [
+       9.501,
+       0.0,
+       -11.489
+      ],
+      "max": [
+       9.689,
+       1.1,
+       -11.301
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__t6",
+     "role": "part",
+     "anim": "rise",
+     "order": 6,
+     "parent": "trees__2026",
+     "position": [
+      13.3,
+      0.0,
+      -11.35
+     ],
+     "bounds": {
+      "min": [
+       13.201,
+       0.0,
+       -11.439
+      ],
+      "max": [
+       13.389,
+       1.1,
+       -11.251
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__t7",
+     "role": "part",
+     "anim": "rise",
+     "order": 7,
+     "parent": "trees__2026",
+     "position": [
+      -15.4,
+      0.0,
+      5.2
+     ],
+     "bounds": {
+      "min": [
+       -15.479,
+       0.0,
+       5.129
+      ],
+      "max": [
+       -15.329,
+       0.8,
+       5.279
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__t8",
+     "role": "part",
+     "anim": "rise",
+     "order": 8,
+     "parent": "trees__2026",
+     "position": [
+      -15.4,
+      0.0,
+      8.8
+     ],
+     "bounds": {
+      "min": [
+       -15.499,
+       0.0,
+       8.711
+      ],
+      "max": [
+       -15.311,
+       1.1,
+       8.899
+      ]
+     }
+    },
+    {
+     "node": "trees__2026__t9",
+     "role": "part",
+     "anim": "rise",
+     "order": 9,
+     "parent": "trees__2026",
+     "position": [
+      15.4,
+      0.0,
+      -6.0
+     ],
+     "bounds": {
+      "min": [
+       15.301,
+       0.0,
+       -6.089
+      ],
+      "max": [
+       15.489,
+       1.1,
+       -5.901
+      ]
+     }
     }
    ],
    "animations": []
+  },
+  "props": {
+   "asset": "props",
+   "file": "assets/models/props.glb",
+   "source": "blender/source/props.blend",
+   "blender": "5.0.1",
+   "stats": {
+    "objects": 26,
+    "triangles": 15686,
+    "materials": [
+     "bj_edge",
+     "bj_foliage",
+     "bj_glass",
+     "bj_paper",
+     "bj_plank",
+     "bj_roof",
+     "bj_wall",
+     "bj_wood"
+    ],
+    "images": [
+     "bj_tex_edge",
+     "bj_tex_foliage",
+     "bj_tex_glass",
+     "bj_tex_grain",
+     "bj_tex_hatch",
+     "bj_tex_plank",
+     "bj_tex_roof",
+     "bj_tex_wood"
+    ],
+    "glb_bytes": 205428
+   },
+   "nodes": [
+    {
+     "node": "anchor__exit",
+     "role": "anchor",
+     "anchor": "exit",
+     "parent": "bike__getaway",
+     "position": [
+      -13.5,
+      0.0,
+      9.5
+     ]
+    },
+    {
+     "node": "bike__getaway",
+     "role": "variant",
+     "variant": "bike.getaway",
+     "anim": "pop",
+     "position": [
+      -14.45,
+      0.0,
+      9.6
+     ],
+     "bounds": {
+      "min": [
+       -14.63,
+       0.0,
+       9.0
+      ],
+      "max": [
+       -14.27,
+       0.78,
+       10.2
+      ]
+     }
+    },
+    {
+     "node": "bike__getaway__bike",
+     "role": "part",
+     "parent": "bike__getaway",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -14.63,
+       0.0,
+       9.0
+      ],
+      "max": [
+       -14.27,
+       0.78,
+       10.2
+      ]
+     }
+    },
+    {
+     "node": "car__lane",
+     "role": "variant",
+     "variant": "car.lane",
+     "anim": "pop",
+     "position": [
+      8.0,
+      0.0,
+      -10.5
+     ],
+     "bounds": {
+      "min": [
+       7.15,
+       0.0,
+       -10.9
+      ],
+      "max": [
+       8.85,
+       0.94,
+       -10.1
+      ]
+     }
+    },
+    {
+     "node": "car__lane__body",
+     "role": "part",
+     "parent": "car__lane",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       7.15,
+       0.0,
+       -10.9
+      ],
+      "max": [
+       8.85,
+       0.94,
+       -10.1
+      ]
+     }
+    },
+    {
+     "node": "car__yard",
+     "role": "variant",
+     "variant": "car.yard",
+     "anim": "pop",
+     "position": [
+      12.5,
+      0.0,
+      -4.0
+     ],
+     "bounds": {
+      "min": [
+       12.1,
+       0.0,
+       -4.85
+      ],
+      "max": [
+       12.9,
+       0.94,
+       -3.15
+      ]
+     }
+    },
+    {
+     "node": "car__yard__body",
+     "role": "part",
+     "parent": "car__yard",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       12.1,
+       0.0,
+       -4.85
+      ],
+      "max": [
+       12.9,
+       0.94,
+       -3.15
+      ]
+     }
+    },
+    {
+     "node": "props__1946",
+     "role": "variant",
+     "variant": "props.1946",
+     "anim": "pop",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -8.66,
+       0.0,
+       -10.83
+      ],
+      "max": [
+       11.66,
+       2.04,
+       10.73
+      ]
+     }
+    },
+    {
+     "node": "props__1946__set",
+     "role": "part",
+     "parent": "props__1946",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -8.66,
+       0.0,
+       -10.83
+      ],
+      "max": [
+       11.66,
+       2.04,
+       10.73
+      ]
+     }
+    },
+    {
+     "node": "props__1986",
+     "role": "variant",
+     "variant": "props.1986",
+     "anim": "pop",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -11.6,
+       0.0,
+       -10.77
+      ],
+      "max": [
+       12.91,
+       2.05,
+       10.67
+      ]
+     }
+    },
+    {
+     "node": "props__1986__set",
+     "role": "part",
+     "parent": "props__1986",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -11.6,
+       0.0,
+       -10.77
+      ],
+      "max": [
+       12.91,
+       2.05,
+       10.67
+      ]
+     }
+    },
+    {
+     "node": "props__2026",
+     "role": "variant",
+     "variant": "props.2026",
+     "anim": "pop",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -12.0,
+       0.0,
+       -10.8
+      ],
+      "max": [
+       11.6,
+       2.019,
+       10.7
+      ]
+     }
+    },
+    {
+     "node": "props__2026__set",
+     "role": "part",
+     "parent": "props__2026",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -12.0,
+       0.0,
+       -10.8
+      ],
+      "max": [
+       11.6,
+       2.019,
+       10.7
+      ]
+     }
+    },
+    {
+     "node": "proxy__alleyNotice",
+     "role": "proxy",
+     "proxy": "site.alley",
+     "size": [
+      1.0,
+      1.6,
+      0.4
+     ],
+     "parent": "site__alleyNotice1986",
+     "position": [
+      -4.4,
+      0.8,
+      -0.6
+     ]
+    },
+    {
+     "node": "proxy__blueprint",
+     "role": "proxy",
+     "proxy": "site.bankService",
+     "size": [
+      0.9,
+      1.2,
+      0.5
+     ],
+     "parent": "site__blueprint1986",
+     "position": [
+      -1.6,
+      0.6,
+      -0.3
+     ]
+    },
+    {
+     "node": "proxy__petition",
+     "role": "proxy",
+     "proxy": "site.garden",
+     "size": [
+      1.2,
+      1.3,
+      0.8
+     ],
+     "parent": "site__petition1986",
+     "position": [
+      5.6,
+      0.6,
+      2.4
+     ]
+    },
+    {
+     "node": "site__alleyNotice1986",
+     "role": "variant",
+     "variant": "site.alleyNotice1986",
+     "anim": "fold",
+     "position": [
+      -4.4,
+      0.0,
+      -0.6
+     ],
+     "bounds": {
+      "min": [
+       -4.85,
+       0.0,
+       -0.625
+      ],
+      "max": [
+       -3.95,
+       1.3,
+       -0.54
+      ]
+     }
+    },
+    {
+     "node": "site__alleyNotice1986__board",
+     "role": "part",
+     "parent": "site__alleyNotice1986",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -4.85,
+       0.0,
+       -0.625
+      ],
+      "max": [
+       -3.95,
+       1.3,
+       -0.54
+      ]
+     }
+    },
+    {
+     "node": "site__blueprint1986",
+     "role": "variant",
+     "variant": "site.blueprint1986",
+     "anim": "fold",
+     "position": [
+      -1.6,
+      0.0,
+      -0.3
+     ],
+     "bounds": {
+      "min": [
+       -2.0,
+       0.0,
+       -0.415
+      ],
+      "max": [
+       -1.2,
+       1.1,
+       -0.035
+      ]
+     }
+    },
+    {
+     "node": "site__blueprint1986__easel",
+     "role": "part",
+     "parent": "site__blueprint1986",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -2.0,
+       0.0,
+       -0.415
+      ],
+      "max": [
+       -1.2,
+       1.1,
+       -0.035
+      ]
+     }
+    },
+    {
+     "node": "site__petition1986",
+     "role": "variant",
+     "variant": "site.petition1986",
+     "anim": "fold",
+     "position": [
+      5.6,
+      0.0,
+      2.4
+     ],
+     "bounds": {
+      "min": [
+       5.03,
+       0.0,
+       2.05
+      ],
+      "max": [
+       6.17,
+       1.35,
+       2.68
+      ]
+     }
+    },
+    {
+     "node": "site__petition1986__table",
+     "role": "part",
+     "parent": "site__petition1986",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       5.03,
+       0.0,
+       2.05
+      ],
+      "max": [
+       6.17,
+       1.35,
+       2.68
+      ]
+     }
+    },
+    {
+     "node": "site__petitionSigned",
+     "role": "variant",
+     "variant": "site.petitionSigned",
+     "anim": "unfurl",
+     "position": [
+      5.6,
+      1.5,
+      2.4
+     ],
+     "bounds": {
+      "min": [
+       4.9,
+       1.31,
+       2.7
+      ],
+      "max": [
+       6.4,
+       1.52,
+       2.7
+      ]
+     }
+    },
+    {
+     "node": "site__petitionSigned__bunting",
+     "role": "part",
+     "parent": "site__petitionSigned",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       4.9,
+       1.31,
+       2.7
+      ],
+      "max": [
+       6.4,
+       1.52,
+       2.7
+      ]
+     }
+    },
+    {
+     "node": "van__delivery",
+     "role": "dynamic",
+     "dynamic": "van",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -15.95,
+       0.0,
+       -11.43
+      ],
+      "max": [
+       -14.05,
+       1.25,
+       -10.55
+      ]
+     }
+    },
+    {
+     "node": "van__delivery__body",
+     "role": "part",
+     "parent": "van__delivery",
+     "position": [
+      -15.0,
+      0.0,
+      -11.0
+     ],
+     "bounds": {
+      "min": [
+       -15.95,
+       0.0,
+       -11.43
+      ],
+      "max": [
+       -14.05,
+       1.25,
+       -10.55
+      ]
+     }
+    }
+   ],
+   "animations": []
+  },
+  "characters": {
+   "asset": "characters",
+   "file": "assets/models/characters.glb",
+   "source": "blender/source/characters.blend",
+   "blender": "5.0.1",
+   "stats": {
+    "objects": 9,
+    "triangles": 1776,
+    "materials": [
+     "bj_paper"
+    ],
+    "images": [
+     "bj_tex_grain"
+    ],
+    "glb_bytes": 71552
+   },
+   "nodes": [
+    {
+     "node": "char__civA",
+     "role": "character",
+     "character": "civA",
+     "parent": "char__rig",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -0.103,
+       0.0,
+       -0.225
+      ],
+      "max": [
+       0.1,
+       0.926,
+       0.225
+      ]
+     }
+    },
+    {
+     "node": "char__civB",
+     "role": "character",
+     "character": "civB",
+     "parent": "char__rig",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -0.103,
+       0.0,
+       -0.225
+      ],
+      "max": [
+       0.1,
+       0.926,
+       0.225
+      ]
+     }
+    },
+    {
+     "node": "char__civC",
+     "role": "character",
+     "character": "civC",
+     "parent": "char__rig",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -0.16,
+       0.0,
+       -0.225
+      ],
+      "max": [
+       0.16,
+       0.986,
+       0.225
+      ]
+     }
+    },
+    {
+     "node": "char__courier",
+     "role": "character",
+     "character": "courier",
+     "parent": "char__rig",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -0.1,
+       0.0,
+       -0.225
+      ],
+      "max": [
+       0.3,
+       0.931,
+       0.225
+      ]
+     }
+    },
+    {
+     "node": "char__gardener",
+     "role": "character",
+     "character": "gardener",
+     "parent": "char__rig",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -0.19,
+       0.0,
+       -0.225
+      ],
+      "max": [
+       0.19,
+       0.951,
+       0.225
+      ]
+     }
+    },
+    {
+     "node": "char__guard",
+     "role": "character",
+     "character": "guard",
+     "parent": "char__rig",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -0.1,
+       0.0,
+       -0.225
+      ],
+      "max": [
+       0.17,
+       0.931,
+       0.225
+      ]
+     }
+    },
+    {
+     "node": "char__rig",
+     "role": "rig",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -0.19,
+       0.0,
+       -0.225
+      ],
+      "max": [
+       0.3,
+       0.986,
+       0.225
+      ]
+     }
+    },
+    {
+     "node": "char__thief",
+     "role": "character",
+     "character": "thief",
+     "parent": "char__rig",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -0.18,
+       0.0,
+       -0.225
+      ],
+      "max": [
+       0.16,
+       0.986,
+       0.225
+      ]
+     }
+    },
+    {
+     "node": "char__worker",
+     "role": "character",
+     "character": "worker",
+     "parent": "char__rig",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "bounds": {
+      "min": [
+       -0.13,
+       0.0,
+       -0.225
+      ],
+      "max": [
+       0.13,
+       0.965,
+       0.225
+      ]
+     }
+    }
+   ],
+   "animations": [
+    "climb",
+    "crouch",
+    "idle",
+    "interact",
+    "sit",
+    "walk"
+   ]
   }
  }
 }

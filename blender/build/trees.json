@@ -4,23 +4,302 @@
  "source": "blender/source/trees.blend",
  "blender": "5.0.1",
  "stats": {
-  "objects": 111,
-  "triangles": 7704,
+  "objects": 204,
+  "triangles": 15288,
   "materials": [
    "bj_edge",
    "bj_foliage",
+   "bj_glass",
    "bj_paper",
+   "bj_plank",
+   "bj_roof",
    "bj_wood"
   ],
   "images": [
    "bj_tex_edge",
    "bj_tex_foliage",
+   "bj_tex_glass",
    "bj_tex_grain",
+   "bj_tex_plank",
+   "bj_tex_roof",
    "bj_tex_wood"
   ],
-  "glb_bytes": 289472
+  "glb_bytes": 528000
  },
  "nodes": [
+  {
+   "node": "fence__garden",
+   "role": "variant",
+   "variant": "fence.garden",
+   "anim": "fold",
+   "position": [
+    10.5,
+    0.0,
+    2.5
+   ],
+   "bounds": {
+    "min": [
+     6.31,
+     0.0,
+     -1.69
+    ],
+    "max": [
+     14.075,
+     0.56,
+     7.69
+    ]
+   }
+  },
+  {
+   "node": "fence__garden__iron",
+   "role": "part",
+   "parent": "fence__garden",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     6.31,
+     0.0,
+     -1.69
+    ],
+    "max": [
+     14.075,
+     0.56,
+     7.69
+    ]
+   }
+  },
+  {
+   "node": "garden__plants",
+   "role": "variant",
+   "variant": "garden.plants",
+   "anim": "unfurl",
+   "position": [
+    10.5,
+    0.0,
+    2.5
+   ],
+   "bounds": {
+    "min": [
+     7.001,
+     -0.05,
+     -0.896
+    ],
+    "max": [
+     14.12,
+     1.9,
+     7.12
+    ]
+   }
+  },
+  {
+   "node": "garden__plants__bed0",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 0,
+   "parent": "garden__plants",
+   "position": [
+    8.5,
+    0.0,
+    5.5
+   ],
+   "bounds": {
+    "min": [
+     8.06,
+     0.0,
+     5.06
+    ],
+    "max": [
+     8.94,
+     0.32,
+     5.94
+    ]
+   }
+  },
+  {
+   "node": "garden__plants__bed1",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 1,
+   "parent": "garden__plants",
+   "position": [
+    13.5,
+    0.0,
+    0.5
+   ],
+   "bounds": {
+    "min": [
+     13.06,
+     0.0,
+     0.06
+    ],
+    "max": [
+     13.94,
+     0.334,
+     0.94
+    ]
+   }
+  },
+  {
+   "node": "garden__plants__furniture",
+   "role": "part",
+   "parent": "garden__plants",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     7.001,
+     -0.05,
+     -0.896
+    ],
+    "max": [
+     13.85,
+     0.6,
+     6.894
+    ]
+   }
+  },
+  {
+   "node": "garden__plaque",
+   "role": "variant",
+   "variant": "garden.plaque",
+   "anim": "pop",
+   "position": [
+    6.8,
+    0.0,
+    2.5
+   ],
+   "bounds": {
+    "min": [
+     6.455,
+     0.0,
+     2.57
+    ],
+    "max": [
+     7.145,
+     0.724,
+     2.672
+    ]
+   }
+  },
+  {
+   "node": "garden__plaque__sign",
+   "role": "part",
+   "parent": "garden__plaque",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     6.455,
+     0.0,
+     2.57
+    ],
+    "max": [
+     7.145,
+     0.724,
+     2.672
+    ]
+   }
+  },
+  {
+   "node": "garden__plot1946",
+   "role": "variant",
+   "variant": "garden.plot1946",
+   "anim": "pop",
+   "position": [
+    10.5,
+    0.0,
+    2.5
+   ],
+   "bounds": {
+    "min": [
+     8.1,
+     0.0,
+     0.3
+    ],
+    "max": [
+     13.04,
+     0.42,
+     5.38
+    ]
+   }
+  },
+  {
+   "node": "garden__plot1946__tools",
+   "role": "part",
+   "parent": "garden__plot1946",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     8.1,
+     0.0,
+     0.3
+    ],
+    "max": [
+     13.04,
+     0.42,
+     5.38
+    ]
+   }
+  },
+  {
+   "node": "garden__shed",
+   "role": "part",
+   "anim": "rise",
+   "parent": "garden__plants",
+   "position": [
+    13.0,
+    0.0,
+    6.0
+   ],
+   "bounds": {
+    "min": [
+     11.88,
+     0.0,
+     4.88
+    ],
+    "max": [
+     14.12,
+     1.9,
+     7.12
+    ]
+   }
+  },
+  {
+   "node": "garden__shed__mesh",
+   "role": "part",
+   "parent": "garden__shed",
+   "position": [
+    13.0,
+    0.0,
+    6.0
+   ],
+   "bounds": {
+    "min": [
+     11.88,
+     0.0,
+     4.88
+    ],
+    "max": [
+     14.12,
+     1.9,
+     7.12
+    ]
+   }
+  },
   {
    "node": "oak__garden_1946",
    "role": "variant",
@@ -966,7 +1245,7 @@
     "max": [
      1.242,
      2.143,
-     3.175
+     3.285
     ]
    }
   },
@@ -1126,14 +1405,14 @@
    ],
    "bounds": {
     "min": [
-     0.085,
+     -0.012,
      0.0,
-     2.314
+     2.23
     ],
     "max": [
-     0.998,
+     1.166,
      1.37,
-     2.656
+     3.285
     ]
    }
   },
@@ -1964,7 +2243,7 @@
     "max": [
      10.205,
      2.157,
-     -4.784
+     -4.725
     ]
    }
   },
@@ -2124,14 +2403,14 @@
    ],
    "bounds": {
     "min": [
-     9.32,
+     8.988,
      0.0,
-     -5.703
+     -5.77
     ],
     "max": [
-     9.868,
+     10.188,
      1.391,
-     -5.04
+     -4.725
     ]
    }
   },
@@ -2654,6 +2933,1947 @@
      10.614,
      0.225,
      -4.93
+    ]
+   }
+  },
+  {
+   "node": "trees__1946",
+   "role": "variant",
+   "variant": "trees.1946",
+   "anim": "unfurl",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -15.661,
+     0.0,
+     -11.674
+    ],
+    "max": [
+     15.633,
+     1.345,
+     9.075
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__c0",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 0,
+   "parent": "trees__1946",
+   "position": [
+    -13.8,
+    1.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     -14.053,
+     0.717,
+     -11.556
+    ],
+    "max": [
+     -13.559,
+     1.274,
+     -11.089
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__c1",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 1,
+   "parent": "trees__1946",
+   "position": [
+    -10.4,
+    1.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     -10.64,
+     0.737,
+     -11.652
+    ],
+    "max": [
+     -10.136,
+     1.28,
+     -11.145
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__c10",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 10,
+   "parent": "trees__1946",
+   "position": [
+    15.4,
+    1.0,
+    1.0
+   ],
+   "bounds": {
+    "min": [
+     15.164,
+     0.657,
+     0.731
+    ],
+    "max": [
+     15.632,
+     1.277,
+     1.273
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__c11",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 11,
+   "parent": "trees__1946",
+   "position": [
+    -13.4,
+    1.0,
+    -8.4
+   ],
+   "bounds": {
+    "min": [
+     -13.658,
+     0.657,
+     -8.642
+    ],
+    "max": [
+     -13.162,
+     1.274,
+     -8.136
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__c12",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 12,
+   "parent": "trees__1946",
+   "position": [
+    -13.4,
+    1.0,
+    -2.5
+   ],
+   "bounds": {
+    "min": [
+     -13.659,
+     0.703,
+     -2.718
+    ],
+    "max": [
+     -13.132,
+     1.266,
+     -2.231
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__c2",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 2,
+   "parent": "trees__1946",
+   "position": [
+    -6.6,
+    1.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     -6.865,
+     0.694,
+     -11.601
+    ],
+    "max": [
+     -6.364,
+     1.319,
+     -11.082
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__c3",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 3,
+   "parent": "trees__1946",
+   "position": [
+    -2.0,
+    1.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     -2.234,
+     0.685,
+     -11.63
+    ],
+    "max": [
+     -1.774,
+     1.339,
+     -11.127
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__c4",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 4,
+   "parent": "trees__1946",
+   "position": [
+    3.2,
+    1.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     2.969,
+     0.734,
+     -11.612
+    ],
+    "max": [
+     3.43,
+     1.345,
+     -11.086
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__c5",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 5,
+   "parent": "trees__1946",
+   "position": [
+    9.6,
+    1.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     9.332,
+     0.709,
+     -11.674
+    ],
+    "max": [
+     9.874,
+     1.344,
+     -11.176
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__c6",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 6,
+   "parent": "trees__1946",
+   "position": [
+    13.3,
+    1.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     13.049,
+     0.714,
+     -11.626
+    ],
+    "max": [
+     13.566,
+     1.296,
+     -11.132
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__c7",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 7,
+   "parent": "trees__1946",
+   "position": [
+    -15.4,
+    1.0,
+    5.2
+   ],
+   "bounds": {
+    "min": [
+     -15.661,
+     0.69,
+     4.933
+    ],
+    "max": [
+     -15.139,
+     1.297,
+     5.448
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__c8",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 8,
+   "parent": "trees__1946",
+   "position": [
+    -15.4,
+    1.0,
+    8.8
+   ],
+   "bounds": {
+    "min": [
+     -15.633,
+     0.675,
+     8.566
+    ],
+    "max": [
+     -15.164,
+     1.319,
+     9.075
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__c9",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 9,
+   "parent": "trees__1946",
+   "position": [
+    15.4,
+    1.0,
+    -6.0
+   ],
+   "bounds": {
+    "min": [
+     15.111,
+     0.718,
+     -6.243
+    ],
+    "max": [
+     15.633,
+     1.333,
+     -5.77
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__t0",
+   "role": "part",
+   "anim": "rise",
+   "order": 0,
+   "parent": "trees__1946",
+   "position": [
+    -13.8,
+    0.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     -13.84,
+     0.0,
+     -11.386
+    ],
+    "max": [
+     -13.69,
+     0.9,
+     -11.31
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__t1",
+   "role": "part",
+   "anim": "rise",
+   "order": 1,
+   "parent": "trees__1946",
+   "position": [
+    -10.4,
+    0.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     -10.44,
+     0.0,
+     -11.436
+    ],
+    "max": [
+     -10.29,
+     0.9,
+     -11.36
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__t10",
+   "role": "part",
+   "anim": "rise",
+   "order": 10,
+   "parent": "trees__1946",
+   "position": [
+    15.4,
+    0.0,
+    1.0
+   ],
+   "bounds": {
+    "min": [
+     15.36,
+     0.0,
+     0.964
+    ],
+    "max": [
+     15.51,
+     0.9,
+     1.04
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__t11",
+   "role": "part",
+   "anim": "rise",
+   "order": 11,
+   "parent": "trees__1946",
+   "position": [
+    -13.4,
+    0.0,
+    -8.4
+   ],
+   "bounds": {
+    "min": [
+     -13.44,
+     0.0,
+     -8.436
+    ],
+    "max": [
+     -13.29,
+     0.9,
+     -8.36
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__t12",
+   "role": "part",
+   "anim": "rise",
+   "order": 12,
+   "parent": "trees__1946",
+   "position": [
+    -13.4,
+    0.0,
+    -2.5
+   ],
+   "bounds": {
+    "min": [
+     -13.44,
+     0.0,
+     -2.536
+    ],
+    "max": [
+     -13.29,
+     0.9,
+     -2.46
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__t2",
+   "role": "part",
+   "anim": "rise",
+   "order": 2,
+   "parent": "trees__1946",
+   "position": [
+    -6.6,
+    0.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     -6.64,
+     0.0,
+     -11.386
+    ],
+    "max": [
+     -6.49,
+     0.9,
+     -11.31
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__t3",
+   "role": "part",
+   "anim": "rise",
+   "order": 3,
+   "parent": "trees__1946",
+   "position": [
+    -2.0,
+    0.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     -2.04,
+     0.0,
+     -11.436
+    ],
+    "max": [
+     -1.89,
+     0.9,
+     -11.36
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__t4",
+   "role": "part",
+   "anim": "rise",
+   "order": 4,
+   "parent": "trees__1946",
+   "position": [
+    3.2,
+    0.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     3.16,
+     0.0,
+     -11.386
+    ],
+    "max": [
+     3.31,
+     0.9,
+     -11.31
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__t5",
+   "role": "part",
+   "anim": "rise",
+   "order": 5,
+   "parent": "trees__1946",
+   "position": [
+    9.6,
+    0.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     9.56,
+     0.0,
+     -11.436
+    ],
+    "max": [
+     9.71,
+     0.9,
+     -11.36
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__t6",
+   "role": "part",
+   "anim": "rise",
+   "order": 6,
+   "parent": "trees__1946",
+   "position": [
+    13.3,
+    0.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     13.26,
+     0.0,
+     -11.386
+    ],
+    "max": [
+     13.41,
+     0.9,
+     -11.31
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__t7",
+   "role": "part",
+   "anim": "rise",
+   "order": 7,
+   "parent": "trees__1946",
+   "position": [
+    -15.4,
+    0.0,
+    5.2
+   ],
+   "bounds": {
+    "min": [
+     -15.44,
+     0.0,
+     5.164
+    ],
+    "max": [
+     -15.29,
+     0.9,
+     5.24
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__t8",
+   "role": "part",
+   "anim": "rise",
+   "order": 8,
+   "parent": "trees__1946",
+   "position": [
+    -15.4,
+    0.0,
+    8.8
+   ],
+   "bounds": {
+    "min": [
+     -15.44,
+     0.0,
+     8.764
+    ],
+    "max": [
+     -15.29,
+     0.9,
+     8.84
+    ]
+   }
+  },
+  {
+   "node": "trees__1946__t9",
+   "role": "part",
+   "anim": "rise",
+   "order": 9,
+   "parent": "trees__1946",
+   "position": [
+    15.4,
+    0.0,
+    -6.0
+   ],
+   "bounds": {
+    "min": [
+     15.36,
+     0.0,
+     -6.036
+    ],
+    "max": [
+     15.51,
+     0.9,
+     -5.96
+    ]
+   }
+  },
+  {
+   "node": "trees__1986",
+   "role": "variant",
+   "variant": "trees.1986",
+   "anim": "unfurl",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -16.029,
+     0.0,
+     -12.091
+    ],
+    "max": [
+     16.017,
+     2.545,
+     9.498
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__c0",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 0,
+   "parent": "trees__1986",
+   "position": [
+    -13.8,
+    1.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     -14.351,
+     0.992,
+     -11.991
+    ],
+    "max": [
+     -13.155,
+     1.859,
+     -10.701
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__c1",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 1,
+   "parent": "trees__1986",
+   "position": [
+    -10.4,
+    1.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     -10.689,
+     0.569,
+     -11.704
+    ],
+    "max": [
+     -10.082,
+     2.335,
+     -11.093
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__c10",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 10,
+   "parent": "trees__1986",
+   "position": [
+    15.4,
+    1.0,
+    1.0
+   ],
+   "bounds": {
+    "min": [
+     15.115,
+     0.311,
+     0.675
+    ],
+    "max": [
+     15.68,
+     2.325,
+     1.329
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__c11",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 11,
+   "parent": "trees__1986",
+   "position": [
+    -13.4,
+    1.0,
+    -8.4
+   ],
+   "bounds": {
+    "min": [
+     -14.039,
+     0.965,
+     -9.033
+    ],
+    "max": [
+     -12.718,
+     1.821,
+     -7.718
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__c12",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 12,
+   "parent": "trees__1986",
+   "position": [
+    -13.4,
+    1.0,
+    -2.5
+   ],
+   "bounds": {
+    "min": [
+     -14.072,
+     0.986,
+     -3.137
+    ],
+    "max": [
+     -12.778,
+     1.798,
+     -1.91
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__c2",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 2,
+   "parent": "trees__1986",
+   "position": [
+    -6.6,
+    1.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     -7.244,
+     0.982,
+     -11.96
+    ],
+    "max": [
+     -5.998,
+     1.888,
+     -10.726
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__c3",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 3,
+   "parent": "trees__1986",
+   "position": [
+    -2.0,
+    1.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     -2.539,
+     0.978,
+     -12.005
+    ],
+    "max": [
+     -1.395,
+     1.906,
+     -10.762
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__c4",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 4,
+   "parent": "trees__1986",
+   "position": [
+    3.2,
+    1.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     2.922,
+     0.559,
+     -11.665
+    ],
+    "max": [
+     3.478,
+     2.545,
+     -11.031
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__c5",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 5,
+   "parent": "trees__1986",
+   "position": [
+    9.6,
+    1.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     8.973,
+     0.988,
+     -12.091
+    ],
+    "max": [
+     10.24,
+     1.914,
+     -10.71
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__c6",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 6,
+   "parent": "trees__1986",
+   "position": [
+    13.3,
+    1.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     12.661,
+     0.99,
+     -11.972
+    ],
+    "max": [
+     13.949,
+     1.858,
+     -10.741
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__c7",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 7,
+   "parent": "trees__1986",
+   "position": [
+    -15.4,
+    1.0,
+    5.2
+   ],
+   "bounds": {
+    "min": [
+     -15.714,
+     0.417,
+     4.878
+    ],
+    "max": [
+     -15.086,
+     2.39,
+     5.499
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__c8",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 8,
+   "parent": "trees__1986",
+   "position": [
+    -15.4,
+    1.0,
+    8.8
+   ],
+   "bounds": {
+    "min": [
+     -16.029,
+     0.974,
+     8.178
+    ],
+    "max": [
+     -14.849,
+     1.875,
+     9.498
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__c9",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 9,
+   "parent": "trees__1986",
+   "position": [
+    15.4,
+    1.0,
+    -6.0
+   ],
+   "bounds": {
+    "min": [
+     14.739,
+     0.991,
+     -6.685
+    ],
+    "max": [
+     16.017,
+     1.896,
+     -5.311
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__t0",
+   "role": "part",
+   "anim": "rise",
+   "order": 0,
+   "parent": "trees__1986",
+   "position": [
+    -13.8,
+    0.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     -13.874,
+     0.0,
+     -11.417
+    ],
+    "max": [
+     -13.733,
+     0.825,
+     -11.276
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__t1",
+   "role": "part",
+   "anim": "rise",
+   "order": 1,
+   "parent": "trees__1986",
+   "position": [
+    -10.4,
+    0.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     -10.459,
+     0.0,
+     -11.453
+    ],
+    "max": [
+     -10.347,
+     0.6,
+     -11.341
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__t10",
+   "role": "part",
+   "anim": "rise",
+   "order": 10,
+   "parent": "trees__1986",
+   "position": [
+    15.4,
+    0.0,
+    1.0
+   ],
+   "bounds": {
+    "min": [
+     15.341,
+     0.0,
+     0.947
+    ],
+    "max": [
+     15.453,
+     0.6,
+     1.059
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__t11",
+   "role": "part",
+   "anim": "rise",
+   "order": 11,
+   "parent": "trees__1986",
+   "position": [
+    -13.4,
+    0.0,
+    -8.4
+   ],
+   "bounds": {
+    "min": [
+     -13.474,
+     0.0,
+     -8.467
+    ],
+    "max": [
+     -13.333,
+     0.825,
+     -8.326
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__t12",
+   "role": "part",
+   "anim": "rise",
+   "order": 12,
+   "parent": "trees__1986",
+   "position": [
+    -13.4,
+    0.0,
+    -2.5
+   ],
+   "bounds": {
+    "min": [
+     -13.474,
+     0.0,
+     -2.567
+    ],
+    "max": [
+     -13.333,
+     0.825,
+     -2.426
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__t2",
+   "role": "part",
+   "anim": "rise",
+   "order": 2,
+   "parent": "trees__1986",
+   "position": [
+    -6.6,
+    0.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     -6.674,
+     0.0,
+     -11.417
+    ],
+    "max": [
+     -6.533,
+     0.825,
+     -11.276
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__t3",
+   "role": "part",
+   "anim": "rise",
+   "order": 3,
+   "parent": "trees__1986",
+   "position": [
+    -2.0,
+    0.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     -2.074,
+     0.0,
+     -11.467
+    ],
+    "max": [
+     -1.933,
+     0.825,
+     -11.326
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__t4",
+   "role": "part",
+   "anim": "rise",
+   "order": 4,
+   "parent": "trees__1986",
+   "position": [
+    3.2,
+    0.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     3.141,
+     0.0,
+     -11.403
+    ],
+    "max": [
+     3.253,
+     0.6,
+     -11.291
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__t5",
+   "role": "part",
+   "anim": "rise",
+   "order": 5,
+   "parent": "trees__1986",
+   "position": [
+    9.6,
+    0.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     9.526,
+     0.0,
+     -11.467
+    ],
+    "max": [
+     9.667,
+     0.825,
+     -11.326
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__t6",
+   "role": "part",
+   "anim": "rise",
+   "order": 6,
+   "parent": "trees__1986",
+   "position": [
+    13.3,
+    0.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     13.226,
+     0.0,
+     -11.417
+    ],
+    "max": [
+     13.367,
+     0.825,
+     -11.276
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__t7",
+   "role": "part",
+   "anim": "rise",
+   "order": 7,
+   "parent": "trees__1986",
+   "position": [
+    -15.4,
+    0.0,
+    5.2
+   ],
+   "bounds": {
+    "min": [
+     -15.459,
+     0.0,
+     5.147
+    ],
+    "max": [
+     -15.347,
+     0.6,
+     5.259
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__t8",
+   "role": "part",
+   "anim": "rise",
+   "order": 8,
+   "parent": "trees__1986",
+   "position": [
+    -15.4,
+    0.0,
+    8.8
+   ],
+   "bounds": {
+    "min": [
+     -15.474,
+     0.0,
+     8.733
+    ],
+    "max": [
+     -15.333,
+     0.825,
+     8.874
+    ]
+   }
+  },
+  {
+   "node": "trees__1986__t9",
+   "role": "part",
+   "anim": "rise",
+   "order": 9,
+   "parent": "trees__1986",
+   "position": [
+    15.4,
+    0.0,
+    -6.0
+   ],
+   "bounds": {
+    "min": [
+     15.326,
+     0.0,
+     -6.067
+    ],
+    "max": [
+     15.467,
+     0.825,
+     -5.926
+    ]
+   }
+  },
+  {
+   "node": "trees__2026",
+   "role": "variant",
+   "variant": "trees.2026",
+   "anim": "unfurl",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -16.238,
+     0.0,
+     -12.322
+    ],
+    "max": [
+     16.223,
+     3.394,
+     9.73
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__c0",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 0,
+   "parent": "trees__2026",
+   "position": [
+    -13.8,
+    1.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     -14.535,
+     1.322,
+     -12.204
+    ],
+    "max": [
+     -12.94,
+     2.478,
+     -10.485
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__c1",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 1,
+   "parent": "trees__2026",
+   "position": [
+    -10.4,
+    1.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     -10.786,
+     0.759,
+     -11.805
+    ],
+    "max": [
+     -9.975,
+     3.113,
+     -10.99
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__c10",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 10,
+   "parent": "trees__2026",
+   "position": [
+    15.4,
+    1.0,
+    1.0
+   ],
+   "bounds": {
+    "min": [
+     15.02,
+     0.415,
+     0.567
+    ],
+    "max": [
+     15.773,
+     3.1,
+     1.438
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__c11",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 11,
+   "parent": "trees__2026",
+   "position": [
+    -13.4,
+    1.0,
+    -8.4
+   ],
+   "bounds": {
+    "min": [
+     -14.252,
+     1.287,
+     -9.244
+    ],
+    "max": [
+     -12.49,
+     2.428,
+     -7.491
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__c12",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 12,
+   "parent": "trees__2026",
+   "position": [
+    -13.4,
+    1.0,
+    -2.5
+   ],
+   "bounds": {
+    "min": [
+     -14.296,
+     1.315,
+     -3.349
+    ],
+    "max": [
+     -12.571,
+     2.398,
+     -1.713
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__c2",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 2,
+   "parent": "trees__2026",
+   "position": [
+    -6.6,
+    1.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     -7.459,
+     1.309,
+     -12.163
+    ],
+    "max": [
+     -5.797,
+     2.517,
+     -10.519
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__c3",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 3,
+   "parent": "trees__2026",
+   "position": [
+    -2.0,
+    1.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     -2.719,
+     1.304,
+     -12.207
+    ],
+    "max": [
+     -1.193,
+     2.541,
+     -10.549
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__c4",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 4,
+   "parent": "trees__2026",
+   "position": [
+    3.2,
+    1.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     2.829,
+     0.746,
+     -11.771
+    ],
+    "max": [
+     3.57,
+     3.394,
+     -10.925
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__c5",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 5,
+   "parent": "trees__2026",
+   "position": [
+    9.6,
+    1.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     8.763,
+     1.318,
+     -12.322
+    ],
+    "max": [
+     10.453,
+     2.552,
+     -10.48
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__c6",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 6,
+   "parent": "trees__2026",
+   "position": [
+    13.3,
+    1.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     12.448,
+     1.321,
+     -12.18
+    ],
+    "max": [
+     14.165,
+     2.478,
+     -10.537
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__c7",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 7,
+   "parent": "trees__2026",
+   "position": [
+    -15.4,
+    1.0,
+    5.2
+   ],
+   "bounds": {
+    "min": [
+     -15.819,
+     0.555,
+     4.77
+    ],
+    "max": [
+     -14.981,
+     3.187,
+     5.599
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__c8",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 8,
+   "parent": "trees__2026",
+   "position": [
+    -15.4,
+    1.0,
+    8.8
+   ],
+   "bounds": {
+    "min": [
+     -16.238,
+     1.298,
+     7.971
+    ],
+    "max": [
+     -14.665,
+     2.5,
+     9.73
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__c9",
+   "role": "part",
+   "anim": "unfurl",
+   "order": 9,
+   "parent": "trees__2026",
+   "position": [
+    15.4,
+    1.0,
+    -6.0
+   ],
+   "bounds": {
+    "min": [
+     14.519,
+     1.321,
+     -6.913
+    ],
+    "max": [
+     16.223,
+     2.528,
+     -5.082
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__t0",
+   "role": "part",
+   "anim": "rise",
+   "order": 0,
+   "parent": "trees__2026",
+   "position": [
+    -13.8,
+    0.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     -13.899,
+     0.0,
+     -11.439
+    ],
+    "max": [
+     -13.711,
+     1.1,
+     -11.251
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__t1",
+   "role": "part",
+   "anim": "rise",
+   "order": 1,
+   "parent": "trees__2026",
+   "position": [
+    -10.4,
+    0.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     -10.479,
+     0.0,
+     -11.471
+    ],
+    "max": [
+     -10.329,
+     0.8,
+     -11.321
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__t10",
+   "role": "part",
+   "anim": "rise",
+   "order": 10,
+   "parent": "trees__2026",
+   "position": [
+    15.4,
+    0.0,
+    1.0
+   ],
+   "bounds": {
+    "min": [
+     15.321,
+     0.0,
+     0.929
+    ],
+    "max": [
+     15.471,
+     0.8,
+     1.079
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__t11",
+   "role": "part",
+   "anim": "rise",
+   "order": 11,
+   "parent": "trees__2026",
+   "position": [
+    -13.4,
+    0.0,
+    -8.4
+   ],
+   "bounds": {
+    "min": [
+     -13.499,
+     0.0,
+     -8.489
+    ],
+    "max": [
+     -13.311,
+     1.1,
+     -8.301
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__t12",
+   "role": "part",
+   "anim": "rise",
+   "order": 12,
+   "parent": "trees__2026",
+   "position": [
+    -13.4,
+    0.0,
+    -2.5
+   ],
+   "bounds": {
+    "min": [
+     -13.499,
+     0.0,
+     -2.589
+    ],
+    "max": [
+     -13.311,
+     1.1,
+     -2.401
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__t2",
+   "role": "part",
+   "anim": "rise",
+   "order": 2,
+   "parent": "trees__2026",
+   "position": [
+    -6.6,
+    0.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     -6.699,
+     0.0,
+     -11.439
+    ],
+    "max": [
+     -6.511,
+     1.1,
+     -11.251
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__t3",
+   "role": "part",
+   "anim": "rise",
+   "order": 3,
+   "parent": "trees__2026",
+   "position": [
+    -2.0,
+    0.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     -2.099,
+     0.0,
+     -11.489
+    ],
+    "max": [
+     -1.911,
+     1.1,
+     -11.301
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__t4",
+   "role": "part",
+   "anim": "rise",
+   "order": 4,
+   "parent": "trees__2026",
+   "position": [
+    3.2,
+    0.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     3.121,
+     0.0,
+     -11.421
+    ],
+    "max": [
+     3.271,
+     0.8,
+     -11.271
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__t5",
+   "role": "part",
+   "anim": "rise",
+   "order": 5,
+   "parent": "trees__2026",
+   "position": [
+    9.6,
+    0.0,
+    -11.4
+   ],
+   "bounds": {
+    "min": [
+     9.501,
+     0.0,
+     -11.489
+    ],
+    "max": [
+     9.689,
+     1.1,
+     -11.301
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__t6",
+   "role": "part",
+   "anim": "rise",
+   "order": 6,
+   "parent": "trees__2026",
+   "position": [
+    13.3,
+    0.0,
+    -11.35
+   ],
+   "bounds": {
+    "min": [
+     13.201,
+     0.0,
+     -11.439
+    ],
+    "max": [
+     13.389,
+     1.1,
+     -11.251
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__t7",
+   "role": "part",
+   "anim": "rise",
+   "order": 7,
+   "parent": "trees__2026",
+   "position": [
+    -15.4,
+    0.0,
+    5.2
+   ],
+   "bounds": {
+    "min": [
+     -15.479,
+     0.0,
+     5.129
+    ],
+    "max": [
+     -15.329,
+     0.8,
+     5.279
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__t8",
+   "role": "part",
+   "anim": "rise",
+   "order": 8,
+   "parent": "trees__2026",
+   "position": [
+    -15.4,
+    0.0,
+    8.8
+   ],
+   "bounds": {
+    "min": [
+     -15.499,
+     0.0,
+     8.711
+    ],
+    "max": [
+     -15.311,
+     1.1,
+     8.899
+    ]
+   }
+  },
+  {
+   "node": "trees__2026__t9",
+   "role": "part",
+   "anim": "rise",
+   "order": 9,
+   "parent": "trees__2026",
+   "position": [
+    15.4,
+    0.0,
+    -6.0
+   ],
+   "bounds": {
+    "min": [
+     15.301,
+     0.0,
+     -6.089
+    ],
+    "max": [
+     15.489,
+     1.1,
+     -5.901
     ]
    }
   }

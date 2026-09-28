@@ -1,0 +1,809 @@
+{
+  "comment": "Visibility rules for Blender-authored variant nodes (bj_variant). eras: shown only in these eras (omitted = all). when: [fact, op, value] conditions on the timeline facts (src/sim/causality.ts). contracts: shown only in these contracts. The Blender build asserts that every bj_variant it emits is listed here; tests assert every entry exists in the manifest.",
+  "variants": {
+    "terrain.plinth": {},
+    "ground.1946": {
+      "eras": [
+        1946
+      ]
+    },
+    "ground.1986": {
+      "eras": [
+        1986
+      ]
+    },
+    "ground.2026": {
+      "eras": [
+        2026
+      ]
+    },
+    "ground.alley.1946": {
+      "eras": [
+        1946
+      ]
+    },
+    "ground.alley.kept": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "alley.kept",
+          "==",
+          true
+        ]
+      ]
+    },
+    "ground.garden.1946": {
+      "eras": [
+        1946
+      ]
+    },
+    "ground.garden": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "garden.exists",
+          "==",
+          true
+        ]
+      ]
+    },
+    "trench.street": {
+      "eras": [
+        1946
+      ],
+      "when": [
+        [
+          "drain.route",
+          "==",
+          "street"
+        ]
+      ]
+    },
+    "trench.creek": {
+      "eras": [
+        1946
+      ],
+      "when": [
+        [
+          "drain.route",
+          "==",
+          "creek"
+        ]
+      ]
+    },
+    "survey.1946": {
+      "eras": [
+        1946
+      ]
+    },
+    "sewer.street": {
+      "eras": [
+        1986,
+        2026
+      ]
+    },
+    "sewer.creek": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "sewer.creek",
+          "==",
+          true
+        ]
+      ]
+    },
+    "sewer.hatchShaft": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "drain.hatch",
+          "==",
+          true
+        ]
+      ]
+    },
+    "repair.street": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "drain.route",
+          "==",
+          "street"
+        ]
+      ]
+    },
+    "repair.creek": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "drain.route",
+          "==",
+          "creek"
+        ]
+      ]
+    },
+    "utility.creek": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "sewer.creek",
+          "==",
+          true
+        ]
+      ]
+    },
+    "manhole.street": {
+      "eras": [
+        1986,
+        2026
+      ]
+    },
+    "drainworks.1986": {
+      "eras": [
+        1986
+      ]
+    },
+    "bank.site1946": {
+      "eras": [
+        1946
+      ]
+    },
+    "bank.main": {
+      "eras": [
+        1986,
+        2026
+      ]
+    },
+    "bank.trim1986": {
+      "eras": [
+        1986
+      ]
+    },
+    "bank.trim2026": {
+      "eras": [
+        2026
+      ]
+    },
+    "bank.slot.front.door": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "service.door",
+          "==",
+          "front"
+        ]
+      ]
+    },
+    "bank.slot.front.wall": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "service.door",
+          "!=",
+          "front"
+        ]
+      ]
+    },
+    "bank.slot.alley.door": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "service.door",
+          "==",
+          "alley"
+        ]
+      ]
+    },
+    "bank.slot.alley.wall": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "service.door",
+          "!=",
+          "alley"
+        ]
+      ]
+    },
+    "bank.slot.plant.door": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "bank.expansion",
+          "==",
+          "alley"
+        ]
+      ]
+    },
+    "bank.slot.plant.wall": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "bank.expansion",
+          "!=",
+          "alley"
+        ]
+      ]
+    },
+    "bank.westwing": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "bank.expansion",
+          "==",
+          "alley"
+        ]
+      ]
+    },
+    "bank.gardenwing": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "bank.expansion",
+          "==",
+          "garden"
+        ]
+      ]
+    },
+    "bank.hatch": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "drain.hatch",
+          "==",
+          true
+        ]
+      ]
+    },
+    "bank.cams2026": {
+      "eras": [
+        2026
+      ]
+    },
+    "bank.cam.C6": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "roof.camera",
+          "==",
+          true
+        ]
+      ]
+    },
+    "bank.laser": {
+      "eras": [
+        2026
+      ],
+      "contracts": [
+        "c2"
+      ]
+    },
+    "prop.lindenFile": {
+      "eras": [
+        2026
+      ],
+      "contracts": [
+        "c1"
+      ]
+    },
+    "prop.diamond": {
+      "eras": [
+        2026
+      ],
+      "contracts": [
+        "c2"
+      ]
+    },
+    "prop.depositBox": {
+      "eras": [
+        2026
+      ],
+      "contracts": [
+        "c3"
+      ]
+    },
+    "bank.annex": {
+      "eras": [
+        1986,
+        2026
+      ]
+    },
+    "cafe.lot1946": {
+      "eras": [
+        1946
+      ]
+    },
+    "cafe.building": {
+      "eras": [
+        1986,
+        2026
+      ]
+    },
+    "cafe.open1986": {
+      "eras": [
+        1986
+      ]
+    },
+    "cafe.terrace1986": {
+      "eras": [
+        1986
+      ],
+      "when": [
+        [
+          "cafe.terrace1986",
+          "==",
+          true
+        ]
+      ]
+    },
+    "cafe.open2026": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "cafe.open",
+          "==",
+          true
+        ]
+      ]
+    },
+    "cafe.closed.flood": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "cafe.state",
+          "==",
+          "closed_flood"
+        ]
+      ]
+    },
+    "cafe.closed.terrace": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "cafe.state",
+          "==",
+          "closed_terrace"
+        ]
+      ]
+    },
+    "cafe.valve": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "cafe.valve",
+          "==",
+          true
+        ]
+      ]
+    },
+    "workshop.building": {},
+    "workshop.1946": {
+      "eras": [
+        1946
+      ]
+    },
+    "workshop.1986": {
+      "eras": [
+        1986
+      ]
+    },
+    "workshop.2026": {
+      "eras": [
+        2026
+      ]
+    },
+    "workshop.junction": {
+      "when": [
+        [
+          "alarm.feed",
+          "==",
+          "workshop"
+        ]
+      ]
+    },
+    "townhouses.1946": {
+      "eras": [
+        1946
+      ]
+    },
+    "townhouses.1986": {
+      "eras": [
+        1986
+      ]
+    },
+    "townhouses.2026": {
+      "eras": [
+        2026
+      ]
+    },
+    "oak.garden.1946": {
+      "eras": [
+        1946
+      ],
+      "when": [
+        [
+          "oak.location",
+          "==",
+          "garden"
+        ]
+      ]
+    },
+    "oak.garden.1986.full": {
+      "eras": [
+        1986
+      ],
+      "when": [
+        [
+          "oak.location",
+          "==",
+          "garden"
+        ]
+      ]
+    },
+    "oak.garden.2026.full": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "oak.location",
+          "==",
+          "garden"
+        ]
+      ]
+    },
+    "oak.yard.1946": {
+      "eras": [
+        1946
+      ],
+      "when": [
+        [
+          "oak.location",
+          "==",
+          "yard"
+        ]
+      ]
+    },
+    "oak.yard.1986.pruned": {
+      "eras": [
+        1986
+      ],
+      "when": [
+        [
+          "oak.location",
+          "==",
+          "yard"
+        ],
+        [
+          "oak.pruned",
+          "==",
+          true
+        ]
+      ]
+    },
+    "oak.yard.1986.full": {
+      "eras": [
+        1986
+      ],
+      "when": [
+        [
+          "oak.location",
+          "==",
+          "yard"
+        ],
+        [
+          "oak.preserved",
+          "==",
+          true
+        ]
+      ]
+    },
+    "oak.yard.2026.pruned": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "oak.location",
+          "==",
+          "yard"
+        ],
+        [
+          "oak.pruned",
+          "==",
+          true
+        ],
+        [
+          "oak.felled",
+          "==",
+          false
+        ]
+      ]
+    },
+    "oak.yard.2026.full": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "oak.roofAccess",
+          "==",
+          true
+        ]
+      ]
+    },
+    "oak.yard.stump": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "oak.felled",
+          "==",
+          true
+        ]
+      ]
+    },
+    "oak.square.1946": {
+      "eras": [
+        1946
+      ],
+      "when": [
+        [
+          "oak.location",
+          "==",
+          "square"
+        ]
+      ]
+    },
+    "oak.square.1986.pruned": {
+      "eras": [
+        1986
+      ],
+      "when": [
+        [
+          "oak.location",
+          "==",
+          "square"
+        ],
+        [
+          "oak.pruned",
+          "==",
+          true
+        ]
+      ]
+    },
+    "oak.square.1986.full": {
+      "eras": [
+        1986
+      ],
+      "when": [
+        [
+          "oak.squareCanopy",
+          "==",
+          true
+        ]
+      ]
+    },
+    "oak.square.2026.pruned": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "oak.location",
+          "==",
+          "square"
+        ],
+        [
+          "oak.pruned",
+          "==",
+          true
+        ]
+      ]
+    },
+    "oak.square.2026.full": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "oak.squareCanopy",
+          "==",
+          true
+        ]
+      ]
+    },
+    "trees.1946": {
+      "eras": [
+        1946
+      ]
+    },
+    "trees.1986": {
+      "eras": [
+        1986
+      ]
+    },
+    "trees.2026": {
+      "eras": [
+        2026
+      ]
+    },
+    "garden.plot1946": {
+      "eras": [
+        1946
+      ]
+    },
+    "garden.plants": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "garden.exists",
+          "==",
+          true
+        ]
+      ]
+    },
+    "fence.garden": {
+      "eras": [
+        1986,
+        2026
+      ],
+      "when": [
+        [
+          "garden.exists",
+          "==",
+          true
+        ]
+      ]
+    },
+    "garden.plaque": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "garden.petition",
+          "==",
+          true
+        ],
+        [
+          "garden.exists",
+          "==",
+          true
+        ]
+      ]
+    },
+    "props.1946": {
+      "eras": [
+        1946
+      ]
+    },
+    "props.1986": {
+      "eras": [
+        1986
+      ]
+    },
+    "props.2026": {
+      "eras": [
+        2026
+      ]
+    },
+    "car.yard": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "car.spot",
+          "==",
+          "yard"
+        ]
+      ]
+    },
+    "car.lane": {
+      "eras": [
+        2026
+      ],
+      "when": [
+        [
+          "car.spot",
+          "==",
+          "lane"
+        ]
+      ]
+    },
+    "site.alleyNotice1986": {
+      "eras": [
+        1986
+      ]
+    },
+    "site.blueprint1986": {
+      "eras": [
+        1986
+      ]
+    },
+    "site.petition1986": {
+      "eras": [
+        1986
+      ]
+    },
+    "site.petitionSigned": {
+      "eras": [
+        1986
+      ],
+      "when": [
+        [
+          "garden.petition",
+          "==",
+          true
+        ]
+      ]
+    },
+    "bike.getaway": {
+      "eras": [
+        2026
+      ]
+    }
+  }
+}

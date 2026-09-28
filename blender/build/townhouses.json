@@ -1,0 +1,339 @@
+{
+ "asset": "townhouses",
+ "file": "assets/models/townhouses.glb",
+ "source": "blender/source/townhouses.blend",
+ "blender": "5.0.1",
+ "stats": {
+  "objects": 13,
+  "triangles": 13416,
+  "materials": [
+   "bj_brick",
+   "bj_edge",
+   "bj_foliage",
+   "bj_glass",
+   "bj_paper",
+   "bj_plank",
+   "bj_roof",
+   "bj_wall",
+   "bj_wood"
+  ],
+  "images": [
+   "bj_tex_brick",
+   "bj_tex_edge",
+   "bj_tex_foliage",
+   "bj_tex_glass",
+   "bj_tex_grain",
+   "bj_tex_hatch",
+   "bj_tex_plank",
+   "bj_tex_roof",
+   "bj_tex_wood"
+  ],
+  "glb_bytes": 214468
+ },
+ "nodes": [
+  {
+   "node": "proxy__townhouses",
+   "role": "proxy",
+   "proxy": "site.townhouses",
+   "size": [
+    9.0,
+    4.4,
+    4.0
+   ],
+   "position": [
+    -10.5,
+    2.2,
+    6.0
+   ]
+  },
+  {
+   "node": "townhouses__1946",
+   "role": "variant",
+   "variant": "townhouses.1946",
+   "anim": "rise",
+   "building": "townhouses",
+   "position": [
+    -10.5,
+    0.0,
+    6.0
+   ],
+   "bounds": {
+    "min": [
+     -15.12,
+     0.0,
+     3.86
+    ],
+    "max": [
+     -5.94,
+     5.4,
+     8.57
+    ]
+   }
+  },
+  {
+   "node": "townhouses__1946__house0",
+   "role": "part",
+   "anim": "rise",
+   "order": 0,
+   "parent": "townhouses__1946",
+   "position": [
+    -13.5,
+    0.0,
+    8.0
+   ],
+   "bounds": {
+    "min": [
+     -15.12,
+     0.0,
+     3.86
+    ],
+    "max": [
+     -11.88,
+     5.4,
+     8.57
+    ]
+   }
+  },
+  {
+   "node": "townhouses__1946__house1",
+   "role": "part",
+   "anim": "rise",
+   "order": 1,
+   "parent": "townhouses__1946",
+   "position": [
+    -10.5,
+    0.0,
+    8.0
+   ],
+   "bounds": {
+    "min": [
+     -12.12,
+     0.0,
+     3.86
+    ],
+    "max": [
+     -8.88,
+     5.4,
+     8.57
+    ]
+   }
+  },
+  {
+   "node": "townhouses__1946__house2",
+   "role": "part",
+   "anim": "rise",
+   "order": 2,
+   "parent": "townhouses__1946",
+   "position": [
+    -7.5,
+    0.0,
+    8.0
+   ],
+   "bounds": {
+    "min": [
+     -9.06,
+     0.0,
+     3.86
+    ],
+    "max": [
+     -5.94,
+     2.4,
+     8.45
+    ]
+   }
+  },
+  {
+   "node": "townhouses__1986",
+   "role": "variant",
+   "variant": "townhouses.1986",
+   "anim": "rise",
+   "building": "townhouses",
+   "position": [
+    -10.5,
+    0.0,
+    6.0
+   ],
+   "bounds": {
+    "min": [
+     -15.12,
+     0.0,
+     3.86
+    ],
+    "max": [
+     -5.88,
+     5.4,
+     8.57
+    ]
+   }
+  },
+  {
+   "node": "townhouses__1986__house0",
+   "role": "part",
+   "anim": "rise",
+   "order": 0,
+   "parent": "townhouses__1986",
+   "position": [
+    -13.5,
+    0.0,
+    8.0
+   ],
+   "bounds": {
+    "min": [
+     -15.12,
+     0.0,
+     3.86
+    ],
+    "max": [
+     -11.88,
+     5.4,
+     8.57
+    ]
+   }
+  },
+  {
+   "node": "townhouses__1986__house1",
+   "role": "part",
+   "anim": "rise",
+   "order": 1,
+   "parent": "townhouses__1986",
+   "position": [
+    -10.5,
+    0.0,
+    8.0
+   ],
+   "bounds": {
+    "min": [
+     -12.12,
+     0.0,
+     3.86
+    ],
+    "max": [
+     -8.88,
+     5.4,
+     8.57
+    ]
+   }
+  },
+  {
+   "node": "townhouses__1986__house2",
+   "role": "part",
+   "anim": "rise",
+   "order": 2,
+   "parent": "townhouses__1986",
+   "position": [
+    -7.5,
+    0.0,
+    8.0
+   ],
+   "bounds": {
+    "min": [
+     -9.12,
+     0.0,
+     3.86
+    ],
+    "max": [
+     -5.88,
+     5.4,
+     8.57
+    ]
+   }
+  },
+  {
+   "node": "townhouses__2026",
+   "role": "variant",
+   "variant": "townhouses.2026",
+   "anim": "rise",
+   "building": "townhouses",
+   "position": [
+    -10.5,
+    0.0,
+    6.0
+   ],
+   "bounds": {
+    "min": [
+     -15.12,
+     0.0,
+     3.86
+    ],
+    "max": [
+     -5.88,
+     5.4,
+     8.57
+    ]
+   }
+  },
+  {
+   "node": "townhouses__2026__house0",
+   "role": "part",
+   "anim": "rise",
+   "order": 0,
+   "parent": "townhouses__2026",
+   "position": [
+    -13.5,
+    0.0,
+    8.0
+   ],
+   "bounds": {
+    "min": [
+     -15.12,
+     0.0,
+     3.86
+    ],
+    "max": [
+     -11.88,
+     5.4,
+     8.57
+    ]
+   }
+  },
+  {
+   "node": "townhouses__2026__house1",
+   "role": "part",
+   "anim": "rise",
+   "order": 1,
+   "parent": "townhouses__2026",
+   "position": [
+    -10.5,
+    0.0,
+    8.0
+   ],
+   "bounds": {
+    "min": [
+     -12.12,
+     0.0,
+     3.86
+    ],
+    "max": [
+     -8.88,
+     5.4,
+     8.57
+    ]
+   }
+  },
+  {
+   "node": "townhouses__2026__house2",
+   "role": "part",
+   "anim": "rise",
+   "order": 2,
+   "parent": "townhouses__2026",
+   "position": [
+    -7.5,
+    0.0,
+    8.0
+   ],
+   "bounds": {
+    "min": [
+     -9.12,
+     0.0,
+     3.86
+    ],
+    "max": [
+     -5.88,
+     5.4,
+     8.57
+    ]
+   }
+  }
+ ],
+ "animations": []
+}

@@ -1,0 +1,587 @@
+{
+ "asset": "props",
+ "file": "assets/models/props.glb",
+ "source": "blender/source/props.blend",
+ "blender": "5.0.1",
+ "stats": {
+  "objects": 26,
+  "triangles": 15686,
+  "materials": [
+   "bj_edge",
+   "bj_foliage",
+   "bj_glass",
+   "bj_paper",
+   "bj_plank",
+   "bj_roof",
+   "bj_wall",
+   "bj_wood"
+  ],
+  "images": [
+   "bj_tex_edge",
+   "bj_tex_foliage",
+   "bj_tex_glass",
+   "bj_tex_grain",
+   "bj_tex_hatch",
+   "bj_tex_plank",
+   "bj_tex_roof",
+   "bj_tex_wood"
+  ],
+  "glb_bytes": 205428
+ },
+ "nodes": [
+  {
+   "node": "anchor__exit",
+   "role": "anchor",
+   "anchor": "exit",
+   "parent": "bike__getaway",
+   "position": [
+    -13.5,
+    0.0,
+    9.5
+   ]
+  },
+  {
+   "node": "bike__getaway",
+   "role": "variant",
+   "variant": "bike.getaway",
+   "anim": "pop",
+   "position": [
+    -14.45,
+    0.0,
+    9.6
+   ],
+   "bounds": {
+    "min": [
+     -14.63,
+     0.0,
+     9.0
+    ],
+    "max": [
+     -14.27,
+     0.78,
+     10.2
+    ]
+   }
+  },
+  {
+   "node": "bike__getaway__bike",
+   "role": "part",
+   "parent": "bike__getaway",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -14.63,
+     0.0,
+     9.0
+    ],
+    "max": [
+     -14.27,
+     0.78,
+     10.2
+    ]
+   }
+  },
+  {
+   "node": "car__lane",
+   "role": "variant",
+   "variant": "car.lane",
+   "anim": "pop",
+   "position": [
+    8.0,
+    0.0,
+    -10.5
+   ],
+   "bounds": {
+    "min": [
+     7.15,
+     0.0,
+     -10.9
+    ],
+    "max": [
+     8.85,
+     0.94,
+     -10.1
+    ]
+   }
+  },
+  {
+   "node": "car__lane__body",
+   "role": "part",
+   "parent": "car__lane",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     7.15,
+     0.0,
+     -10.9
+    ],
+    "max": [
+     8.85,
+     0.94,
+     -10.1
+    ]
+   }
+  },
+  {
+   "node": "car__yard",
+   "role": "variant",
+   "variant": "car.yard",
+   "anim": "pop",
+   "position": [
+    12.5,
+    0.0,
+    -4.0
+   ],
+   "bounds": {
+    "min": [
+     12.1,
+     0.0,
+     -4.85
+    ],
+    "max": [
+     12.9,
+     0.94,
+     -3.15
+    ]
+   }
+  },
+  {
+   "node": "car__yard__body",
+   "role": "part",
+   "parent": "car__yard",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     12.1,
+     0.0,
+     -4.85
+    ],
+    "max": [
+     12.9,
+     0.94,
+     -3.15
+    ]
+   }
+  },
+  {
+   "node": "props__1946",
+   "role": "variant",
+   "variant": "props.1946",
+   "anim": "pop",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -8.66,
+     0.0,
+     -10.83
+    ],
+    "max": [
+     11.66,
+     2.04,
+     10.73
+    ]
+   }
+  },
+  {
+   "node": "props__1946__set",
+   "role": "part",
+   "parent": "props__1946",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -8.66,
+     0.0,
+     -10.83
+    ],
+    "max": [
+     11.66,
+     2.04,
+     10.73
+    ]
+   }
+  },
+  {
+   "node": "props__1986",
+   "role": "variant",
+   "variant": "props.1986",
+   "anim": "pop",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -11.6,
+     0.0,
+     -10.77
+    ],
+    "max": [
+     12.91,
+     2.05,
+     10.67
+    ]
+   }
+  },
+  {
+   "node": "props__1986__set",
+   "role": "part",
+   "parent": "props__1986",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -11.6,
+     0.0,
+     -10.77
+    ],
+    "max": [
+     12.91,
+     2.05,
+     10.67
+    ]
+   }
+  },
+  {
+   "node": "props__2026",
+   "role": "variant",
+   "variant": "props.2026",
+   "anim": "pop",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -12.0,
+     0.0,
+     -10.8
+    ],
+    "max": [
+     11.6,
+     2.019,
+     10.7
+    ]
+   }
+  },
+  {
+   "node": "props__2026__set",
+   "role": "part",
+   "parent": "props__2026",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -12.0,
+     0.0,
+     -10.8
+    ],
+    "max": [
+     11.6,
+     2.019,
+     10.7
+    ]
+   }
+  },
+  {
+   "node": "proxy__alleyNotice",
+   "role": "proxy",
+   "proxy": "site.alley",
+   "size": [
+    1.0,
+    1.6,
+    0.4
+   ],
+   "parent": "site__alleyNotice1986",
+   "position": [
+    -4.4,
+    0.8,
+    -0.6
+   ]
+  },
+  {
+   "node": "proxy__blueprint",
+   "role": "proxy",
+   "proxy": "site.bankService",
+   "size": [
+    0.9,
+    1.2,
+    0.5
+   ],
+   "parent": "site__blueprint1986",
+   "position": [
+    -1.6,
+    0.6,
+    -0.3
+   ]
+  },
+  {
+   "node": "proxy__petition",
+   "role": "proxy",
+   "proxy": "site.garden",
+   "size": [
+    1.2,
+    1.3,
+    0.8
+   ],
+   "parent": "site__petition1986",
+   "position": [
+    5.6,
+    0.6,
+    2.4
+   ]
+  },
+  {
+   "node": "site__alleyNotice1986",
+   "role": "variant",
+   "variant": "site.alleyNotice1986",
+   "anim": "fold",
+   "position": [
+    -4.4,
+    0.0,
+    -0.6
+   ],
+   "bounds": {
+    "min": [
+     -4.85,
+     0.0,
+     -0.625
+    ],
+    "max": [
+     -3.95,
+     1.3,
+     -0.54
+    ]
+   }
+  },
+  {
+   "node": "site__alleyNotice1986__board",
+   "role": "part",
+   "parent": "site__alleyNotice1986",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -4.85,
+     0.0,
+     -0.625
+    ],
+    "max": [
+     -3.95,
+     1.3,
+     -0.54
+    ]
+   }
+  },
+  {
+   "node": "site__blueprint1986",
+   "role": "variant",
+   "variant": "site.blueprint1986",
+   "anim": "fold",
+   "position": [
+    -1.6,
+    0.0,
+    -0.3
+   ],
+   "bounds": {
+    "min": [
+     -2.0,
+     0.0,
+     -0.415
+    ],
+    "max": [
+     -1.2,
+     1.1,
+     -0.035
+    ]
+   }
+  },
+  {
+   "node": "site__blueprint1986__easel",
+   "role": "part",
+   "parent": "site__blueprint1986",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -2.0,
+     0.0,
+     -0.415
+    ],
+    "max": [
+     -1.2,
+     1.1,
+     -0.035
+    ]
+   }
+  },
+  {
+   "node": "site__petition1986",
+   "role": "variant",
+   "variant": "site.petition1986",
+   "anim": "fold",
+   "position": [
+    5.6,
+    0.0,
+    2.4
+   ],
+   "bounds": {
+    "min": [
+     5.03,
+     0.0,
+     2.05
+    ],
+    "max": [
+     6.17,
+     1.35,
+     2.68
+    ]
+   }
+  },
+  {
+   "node": "site__petition1986__table",
+   "role": "part",
+   "parent": "site__petition1986",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     5.03,
+     0.0,
+     2.05
+    ],
+    "max": [
+     6.17,
+     1.35,
+     2.68
+    ]
+   }
+  },
+  {
+   "node": "site__petitionSigned",
+   "role": "variant",
+   "variant": "site.petitionSigned",
+   "anim": "unfurl",
+   "position": [
+    5.6,
+    1.5,
+    2.4
+   ],
+   "bounds": {
+    "min": [
+     4.9,
+     1.31,
+     2.7
+    ],
+    "max": [
+     6.4,
+     1.52,
+     2.7
+    ]
+   }
+  },
+  {
+   "node": "site__petitionSigned__bunting",
+   "role": "part",
+   "parent": "site__petitionSigned",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     4.9,
+     1.31,
+     2.7
+    ],
+    "max": [
+     6.4,
+     1.52,
+     2.7
+    ]
+   }
+  },
+  {
+   "node": "van__delivery",
+   "role": "dynamic",
+   "dynamic": "van",
+   "position": [
+    -15.0,
+    0.0,
+    -11.0
+   ],
+   "bounds": {
+    "min": [
+     -15.95,
+     0.0,
+     -11.43
+    ],
+    "max": [
+     -14.05,
+     1.25,
+     -10.55
+    ]
+   }
+  },
+  {
+   "node": "van__delivery__body",
+   "role": "part",
+   "parent": "van__delivery",
+   "position": [
+    -15.0,
+    0.0,
+    -11.0
+   ],
+   "bounds": {
+    "min": [
+     -15.95,
+     0.0,
+     -11.43
+    ],
+    "max": [
+     -14.05,
+     1.25,
+     -10.55
+    ]
+   }
+  }
+ ],
+ "animations": []
+}

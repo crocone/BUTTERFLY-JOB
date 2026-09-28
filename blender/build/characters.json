@@ -1,0 +1,232 @@
+{
+ "asset": "characters",
+ "file": "assets/models/characters.glb",
+ "source": "blender/source/characters.blend",
+ "blender": "5.0.1",
+ "stats": {
+  "objects": 9,
+  "triangles": 1776,
+  "materials": [
+   "bj_paper"
+  ],
+  "images": [
+   "bj_tex_grain"
+  ],
+  "glb_bytes": 71552
+ },
+ "nodes": [
+  {
+   "node": "char__civA",
+   "role": "character",
+   "character": "civA",
+   "parent": "char__rig",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -0.103,
+     0.0,
+     -0.225
+    ],
+    "max": [
+     0.1,
+     0.926,
+     0.225
+    ]
+   }
+  },
+  {
+   "node": "char__civB",
+   "role": "character",
+   "character": "civB",
+   "parent": "char__rig",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -0.103,
+     0.0,
+     -0.225
+    ],
+    "max": [
+     0.1,
+     0.926,
+     0.225
+    ]
+   }
+  },
+  {
+   "node": "char__civC",
+   "role": "character",
+   "character": "civC",
+   "parent": "char__rig",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -0.16,
+     0.0,
+     -0.225
+    ],
+    "max": [
+     0.16,
+     0.986,
+     0.225
+    ]
+   }
+  },
+  {
+   "node": "char__courier",
+   "role": "character",
+   "character": "courier",
+   "parent": "char__rig",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -0.1,
+     0.0,
+     -0.225
+    ],
+    "max": [
+     0.3,
+     0.931,
+     0.225
+    ]
+   }
+  },
+  {
+   "node": "char__gardener",
+   "role": "character",
+   "character": "gardener",
+   "parent": "char__rig",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -0.19,
+     0.0,
+     -0.225
+    ],
+    "max": [
+     0.19,
+     0.951,
+     0.225
+    ]
+   }
+  },
+  {
+   "node": "char__guard",
+   "role": "character",
+   "character": "guard",
+   "parent": "char__rig",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -0.1,
+     0.0,
+     -0.225
+    ],
+    "max": [
+     0.17,
+     0.931,
+     0.225
+    ]
+   }
+  },
+  {
+   "node": "char__rig",
+   "role": "rig",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -0.19,
+     0.0,
+     -0.225
+    ],
+    "max": [
+     0.3,
+     0.986,
+     0.225
+    ]
+   }
+  },
+  {
+   "node": "char__thief",
+   "role": "character",
+   "character": "thief",
+   "parent": "char__rig",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -0.18,
+     0.0,
+     -0.225
+    ],
+    "max": [
+     0.16,
+     0.986,
+     0.225
+    ]
+   }
+  },
+  {
+   "node": "char__worker",
+   "role": "character",
+   "character": "worker",
+   "parent": "char__rig",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -0.13,
+     0.0,
+     -0.225
+    ],
+    "max": [
+     0.13,
+     0.965,
+     0.225
+    ]
+   }
+  }
+ ],
+ "animations": [
+  "climb",
+  "crouch",
+  "idle",
+  "interact",
+  "sit",
+  "walk"
+ ]
+}

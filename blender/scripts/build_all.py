@@ -27,7 +27,14 @@ import bj_kit as K  # noqa: E402  (imports bpy)
 
 ASSETS = [
     # (asset id, module)
+    ('terrain', 'asset_terrain'),
+    ('bank', 'asset_bank'),
+    ('cafe', 'asset_cafe'),
+    ('workshop', 'asset_workshop'),
+    ('townhouses', 'asset_townhouses'),
     ('trees', 'asset_trees'),
+    ('props', 'asset_props'),
+    ('characters', 'asset_characters'),
 ]
 
 

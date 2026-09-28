@@ -1,0 +1,453 @@
+{
+ "asset": "cafe",
+ "file": "assets/models/cafe.glb",
+ "source": "blender/source/cafe.blend",
+ "blender": "5.0.1",
+ "stats": {
+  "objects": 19,
+  "triangles": 14844,
+  "materials": [
+   "bj_brick",
+   "bj_edge",
+   "bj_foliage",
+   "bj_glass",
+   "bj_paper",
+   "bj_plank",
+   "bj_roof",
+   "bj_wall",
+   "bj_wood"
+  ],
+  "images": [
+   "bj_tex_brick",
+   "bj_tex_edge",
+   "bj_tex_foliage",
+   "bj_tex_glass",
+   "bj_tex_grain",
+   "bj_tex_hatch",
+   "bj_tex_plank",
+   "bj_tex_roof",
+   "bj_tex_wood"
+  ],
+  "glb_bytes": 199856
+ },
+ "nodes": [
+  {
+   "node": "cafe__building",
+   "role": "variant",
+   "variant": "cafe.building",
+   "anim": "rise",
+   "building": "cafe",
+   "position": [
+    -10.0,
+    0.0,
+    1.5
+   ],
+   "bounds": {
+    "min": [
+     -13.65,
+     -0.1,
+     -1.2
+    ],
+    "max": [
+     -5.8,
+     5.3,
+     4.2
+    ]
+   }
+  },
+  {
+   "node": "cafe__building__passage",
+   "role": "part",
+   "parent": "cafe__building",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -13.65,
+     0.0,
+     -0.65
+    ],
+    "max": [
+     -13.35,
+     0.9,
+     3.65
+    ]
+   }
+  },
+  {
+   "node": "cafe__building__shell",
+   "role": "part",
+   "anim": "rise",
+   "parent": "cafe__building",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -13.2,
+     -0.1,
+     -1.2
+    ],
+    "max": [
+     -5.8,
+     5.3,
+     4.2
+    ]
+   }
+  },
+  {
+   "node": "cafe__flood_closed",
+   "role": "variant",
+   "variant": "cafe.closed.flood",
+   "anim": "fold",
+   "position": [
+    -6.0,
+    0.0,
+    1.5
+   ],
+   "bounds": {
+    "min": [
+     -6.02,
+     0.34,
+     -0.95
+    ],
+    "max": [
+     -5.928,
+     2.448,
+     3.95
+    ]
+   }
+  },
+  {
+   "node": "cafe__flood_closed__front",
+   "role": "part",
+   "parent": "cafe__flood_closed",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.02,
+     0.34,
+     -0.95
+    ],
+    "max": [
+     -5.928,
+     2.448,
+     3.95
+    ]
+   }
+  },
+  {
+   "node": "cafe__lot1946",
+   "role": "variant",
+   "variant": "cafe.lot1946",
+   "anim": "pop",
+   "position": [
+    -10.0,
+    0.0,
+    1.5
+   ],
+   "bounds": {
+    "min": [
+     -12.9,
+     0.0,
+     -0.95
+    ],
+    "max": [
+     -5.978,
+     1.2,
+     3.95
+    ]
+   }
+  },
+  {
+   "node": "cafe__lot1946__site",
+   "role": "part",
+   "parent": "cafe__lot1946",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -12.9,
+     0.0,
+     -0.95
+    ],
+    "max": [
+     -5.978,
+     1.2,
+     3.95
+    ]
+   }
+  },
+  {
+   "node": "cafe__open1986",
+   "role": "variant",
+   "variant": "cafe.open1986",
+   "anim": "unfurl",
+   "position": [
+    -6.0,
+    1.9,
+    1.5
+   ],
+   "bounds": {
+    "min": [
+     -6.02,
+     1.28,
+     -0.9
+    ],
+    "max": [
+     -5.109,
+     2.448,
+     3.9
+    ]
+   }
+  },
+  {
+   "node": "cafe__open1986__front",
+   "role": "part",
+   "parent": "cafe__open1986",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.02,
+     1.28,
+     -0.9
+    ],
+    "max": [
+     -5.109,
+     2.448,
+     3.9
+    ]
+   }
+  },
+  {
+   "node": "cafe__open2026",
+   "role": "variant",
+   "variant": "cafe.open2026",
+   "anim": "pop",
+   "position": [
+    -5.5,
+    0.0,
+    1.5
+   ],
+   "bounds": {
+    "min": [
+     -6.25,
+     0.0,
+     -0.9
+    ],
+    "max": [
+     -4.08,
+     2.448,
+     3.9
+    ]
+   }
+  },
+  {
+   "node": "cafe__terrace1986",
+   "role": "variant",
+   "variant": "cafe.terrace1986",
+   "anim": "pop",
+   "position": [
+    -5.5,
+    0.0,
+    1.5
+   ],
+   "bounds": {
+    "min": [
+     -6.25,
+     0.0,
+     -0.25
+    ],
+    "max": [
+     -4.75,
+     1.71,
+     3.25
+    ]
+   }
+  },
+  {
+   "node": "cafe__terrace1986__set",
+   "role": "part",
+   "parent": "cafe__terrace1986",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.25,
+     0.0,
+     -0.25
+    ],
+    "max": [
+     -4.75,
+     1.71,
+     3.25
+    ]
+   }
+  },
+  {
+   "node": "cafe__terrace2026__set",
+   "role": "part",
+   "parent": "cafe__open2026",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.25,
+     0.0,
+     -0.9
+    ],
+    "max": [
+     -4.08,
+     2.448,
+     3.9
+    ]
+   }
+  },
+  {
+   "node": "cafe__terrace_closed",
+   "role": "variant",
+   "variant": "cafe.closed.terrace",
+   "anim": "fold",
+   "position": [
+    -6.0,
+    0.0,
+    1.5
+   ],
+   "bounds": {
+    "min": [
+     -6.02,
+     0.34,
+     -0.95
+    ],
+    "max": [
+     -5.928,
+     2.448,
+     3.95
+    ]
+   }
+  },
+  {
+   "node": "cafe__terrace_closed__front",
+   "role": "part",
+   "parent": "cafe__terrace_closed",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.02,
+     0.34,
+     -0.95
+    ],
+    "max": [
+     -5.928,
+     2.448,
+     3.95
+    ]
+   }
+  },
+  {
+   "node": "cafe__valve",
+   "role": "variant",
+   "variant": "cafe.valve",
+   "anim": "pop",
+   "level": "S",
+   "position": [
+    -6.5,
+    -2.6,
+    1.5
+   ],
+   "bounds": {
+    "min": [
+     -6.68,
+     -2.95,
+     1.25
+    ],
+    "max": [
+     -6.32,
+     -2.25,
+     1.75
+    ]
+   }
+  },
+  {
+   "node": "cafe__valve__fitting",
+   "role": "part",
+   "parent": "cafe__valve",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.68,
+     -2.95,
+     1.25
+    ],
+    "max": [
+     -6.32,
+     -2.25,
+     1.75
+    ]
+   }
+  },
+  {
+   "node": "proxy__cafe",
+   "role": "proxy",
+   "proxy": "site.cafe",
+   "size": [
+    7.0,
+    3.6,
+    5.0
+   ],
+   "parent": "cafe__building",
+   "position": [
+    -10.0,
+    1.8,
+    1.5
+   ]
+  },
+  {
+   "node": "proxy__cafe1946",
+   "role": "proxy",
+   "proxy": "site.cafe",
+   "size": [
+    7.0,
+    1.0,
+    5.0
+   ],
+   "parent": "cafe__lot1946",
+   "position": [
+    -10.0,
+    0.5,
+    1.5
+   ]
+  }
+ ],
+ "animations": []
+}

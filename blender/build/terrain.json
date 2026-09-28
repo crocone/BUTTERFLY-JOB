@@ -1,0 +1,1051 @@
+{
+ "asset": "terrain",
+ "file": "assets/models/terrain.glb",
+ "source": "blender/source/terrain.blend",
+ "blender": "5.0.1",
+ "stats": {
+  "objects": 48,
+  "triangles": 17267,
+  "materials": [
+   "bj_brick",
+   "bj_cobble",
+   "bj_edge",
+   "bj_foliage",
+   "bj_glass",
+   "bj_grass",
+   "bj_paper",
+   "bj_paving",
+   "bj_wood"
+  ],
+  "images": [
+   "bj_tex_brick",
+   "bj_tex_cobble",
+   "bj_tex_edge",
+   "bj_tex_foliage",
+   "bj_tex_glass",
+   "bj_tex_grain",
+   "bj_tex_grass",
+   "bj_tex_paving",
+   "bj_tex_wood"
+  ],
+  "glb_bytes": 241392
+ },
+ "nodes": [
+  {
+   "node": "anchor__portal_hatch_bottom",
+   "role": "anchor",
+   "anchor": "portal.hatch.a",
+   "parent": "sewer__hatchShaft",
+   "position": [
+    -2.5,
+    -3.6,
+    -2.5
+   ]
+  },
+  {
+   "node": "anchor__portal_manhole_bottom",
+   "role": "anchor",
+   "anchor": "portal.manhole.b",
+   "parent": "sewer__street",
+   "position": [
+    -6.5,
+    -3.6,
+    9.5
+   ]
+  },
+  {
+   "node": "anchor__portal_manhole_top",
+   "role": "anchor",
+   "anchor": "portal.manhole.a",
+   "parent": "sewer__street",
+   "position": [
+    -6.5,
+    0.0,
+    9.5
+   ]
+  },
+  {
+   "node": "anchor__site_drain",
+   "role": "anchor",
+   "anchor": "site.drain",
+   "position": [
+    -6.5,
+    0.4,
+    8.5
+   ]
+  },
+  {
+   "node": "drainworks__1986",
+   "role": "variant",
+   "variant": "drainworks.1986",
+   "anim": "pop",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -8.8,
+     -0.01,
+     7.6
+    ],
+    "max": [
+     -5.68,
+     0.7,
+     10.32
+    ]
+   }
+  },
+  {
+   "node": "drainworks__1986__site",
+   "role": "part",
+   "parent": "drainworks__1986",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -8.8,
+     -0.01,
+     7.6
+    ],
+    "max": [
+     -5.68,
+     0.7,
+     10.32
+    ]
+   }
+  },
+  {
+   "node": "ground__1946",
+   "role": "variant",
+   "variant": "ground.1946",
+   "anim": "flatten",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -15.0,
+     -0.07,
+     -11.0
+    ],
+    "max": [
+     15.0,
+     0.03,
+     11.0
+    ]
+   }
+  },
+  {
+   "node": "ground__1946__plates",
+   "role": "part",
+   "anim": "flatten",
+   "parent": "ground__1946",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -15.0,
+     -0.07,
+     -11.0
+    ],
+    "max": [
+     15.0,
+     0.03,
+     11.0
+    ]
+   }
+  },
+  {
+   "node": "ground__1986",
+   "role": "variant",
+   "variant": "ground.1986",
+   "anim": "flatten",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -15.0,
+     -0.07,
+     -11.0
+    ],
+    "max": [
+     15.0,
+     0.054,
+     11.0
+    ]
+   }
+  },
+  {
+   "node": "ground__1986__plates",
+   "role": "part",
+   "anim": "flatten",
+   "parent": "ground__1986",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -15.0,
+     -0.07,
+     -11.0
+    ],
+    "max": [
+     15.0,
+     0.054,
+     11.0
+    ]
+   }
+  },
+  {
+   "node": "ground__2026",
+   "role": "variant",
+   "variant": "ground.2026",
+   "anim": "flatten",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -15.0,
+     -0.07,
+     -11.0
+    ],
+    "max": [
+     15.0,
+     0.064,
+     11.0
+    ]
+   }
+  },
+  {
+   "node": "ground__2026__plates",
+   "role": "part",
+   "anim": "flatten",
+   "parent": "ground__2026",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -15.0,
+     -0.07,
+     -11.0
+    ],
+    "max": [
+     15.0,
+     0.064,
+     11.0
+    ]
+   }
+  },
+  {
+   "node": "ground__alley_1946",
+   "role": "variant",
+   "variant": "ground.alley.1946",
+   "anim": "flatten",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.0,
+     -0.05,
+     -9.0
+    ],
+    "max": [
+     -4.0,
+     0.0,
+     -1.0
+    ]
+   }
+  },
+  {
+   "node": "ground__alley_1946__plate",
+   "role": "part",
+   "parent": "ground__alley_1946",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.0,
+     -0.05,
+     -9.0
+    ],
+    "max": [
+     -4.0,
+     0.0,
+     -1.0
+    ]
+   }
+  },
+  {
+   "node": "ground__alley_kept",
+   "role": "variant",
+   "variant": "ground.alley.kept",
+   "anim": "flatten",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.0,
+     -0.05,
+     -9.0
+    ],
+    "max": [
+     -4.0,
+     0.054,
+     -1.0
+    ]
+   }
+  },
+  {
+   "node": "ground__alley_kept__plate",
+   "role": "part",
+   "parent": "ground__alley_kept",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.0,
+     -0.05,
+     -9.0
+    ],
+    "max": [
+     -4.0,
+     0.054,
+     -1.0
+    ]
+   }
+  },
+  {
+   "node": "ground__garden",
+   "role": "variant",
+   "variant": "ground.garden",
+   "anim": "unfurl",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     7.0,
+     -0.06,
+     -1.0
+    ],
+    "max": [
+     14.0,
+     0.066,
+     7.0
+    ]
+   }
+  },
+  {
+   "node": "ground__garden_1946",
+   "role": "variant",
+   "variant": "ground.garden.1946",
+   "anim": "flatten",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     7.0,
+     -0.05,
+     -1.0
+    ],
+    "max": [
+     14.0,
+     0.09,
+     7.0
+    ]
+   }
+  },
+  {
+   "node": "ground__garden_1946__plate",
+   "role": "part",
+   "parent": "ground__garden_1946",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     7.0,
+     -0.05,
+     -1.0
+    ],
+    "max": [
+     14.0,
+     0.09,
+     7.0
+    ]
+   }
+  },
+  {
+   "node": "ground__garden__plate",
+   "role": "part",
+   "parent": "ground__garden",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     7.0,
+     -0.06,
+     -1.0
+    ],
+    "max": [
+     14.0,
+     0.066,
+     7.0
+    ]
+   }
+  },
+  {
+   "node": "manhole__street",
+   "role": "variant",
+   "variant": "manhole.street",
+   "anim": "pop",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.86,
+     0.05,
+     9.14
+    ],
+    "max": [
+     -6.14,
+     0.085,
+     9.86
+    ]
+   }
+  },
+  {
+   "node": "manhole__street__cover",
+   "role": "part",
+   "parent": "manhole__street",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.86,
+     0.05,
+     9.14
+    ],
+    "max": [
+     -6.14,
+     0.085,
+     9.86
+    ]
+   }
+  },
+  {
+   "node": "proxy__manhole",
+   "role": "proxy",
+   "proxy": "site.drain",
+   "size": [
+    0.9,
+    0.4,
+    0.9
+   ],
+   "parent": "manhole__street",
+   "position": [
+    -6.5,
+    0.2,
+    9.5
+   ]
+  },
+  {
+   "node": "repair__creek",
+   "role": "variant",
+   "variant": "repair.creek",
+   "anim": "flatten",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.7,
+     0.0,
+     -4.0
+    ],
+    "max": [
+     -2.3,
+     0.072,
+     9.0
+    ]
+   }
+  },
+  {
+   "node": "repair__creek__patch",
+   "role": "part",
+   "parent": "repair__creek",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.7,
+     0.0,
+     -4.0
+    ],
+    "max": [
+     -2.3,
+     0.072,
+     9.0
+    ]
+   }
+  },
+  {
+   "node": "repair__street",
+   "role": "variant",
+   "variant": "repair.street",
+   "anim": "flatten",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -12.0,
+     0.0,
+     9.3
+    ],
+    "max": [
+     15.0,
+     0.072,
+     9.7
+    ]
+   }
+  },
+  {
+   "node": "repair__street__patch",
+   "role": "part",
+   "parent": "repair__street",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -12.0,
+     0.0,
+     9.3
+    ],
+    "max": [
+     15.0,
+     0.072,
+     9.7
+    ]
+   }
+  },
+  {
+   "node": "sewer__creek",
+   "role": "variant",
+   "variant": "sewer.creek",
+   "anim": "rise",
+   "level": "S",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -7.07,
+     -3.72,
+     -4.07
+    ],
+    "max": [
+     -1.93,
+     -2.35,
+     9.07
+    ]
+   }
+  },
+  {
+   "node": "sewer__creek__tunnel",
+   "role": "part",
+   "level": "S",
+   "parent": "sewer__creek",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -7.07,
+     -3.72,
+     -4.07
+    ],
+    "max": [
+     -1.93,
+     -2.35,
+     9.07
+    ]
+   }
+  },
+  {
+   "node": "sewer__hatchShaft",
+   "role": "variant",
+   "variant": "sewer.hatchShaft",
+   "anim": "rise",
+   "level": "S",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -2.88,
+     -2.35,
+     -2.88
+    ],
+    "max": [
+     -2.12,
+     -2.02,
+     -2.12
+    ]
+   }
+  },
+  {
+   "node": "sewer__hatchShaft__shaft",
+   "role": "part",
+   "level": "S",
+   "parent": "sewer__hatchShaft",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -2.88,
+     -2.35,
+     -2.88
+    ],
+    "max": [
+     -2.12,
+     -2.02,
+     -2.12
+    ]
+   }
+  },
+  {
+   "node": "sewer__street",
+   "role": "variant",
+   "variant": "sewer.street",
+   "anim": "rise",
+   "level": "S",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -12.07,
+     -3.72,
+     8.93
+    ],
+    "max": [
+     16.0,
+     -0.06,
+     10.07
+    ]
+   }
+  },
+  {
+   "node": "sewer__street__manholeShaft",
+   "role": "part",
+   "level": "S",
+   "parent": "sewer__street",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.88,
+     -3.6,
+     9.12
+    ],
+    "max": [
+     -6.12,
+     -0.06,
+     9.88
+    ]
+   }
+  },
+  {
+   "node": "sewer__street__tunnel",
+   "role": "part",
+   "level": "S",
+   "parent": "sewer__street",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -12.07,
+     -3.72,
+     8.93
+    ],
+    "max": [
+     16.0,
+     -2.35,
+     10.07
+    ]
+   }
+  },
+  {
+   "node": "survey__1946",
+   "role": "variant",
+   "variant": "survey.1946",
+   "anim": "pop",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -7.739,
+     -0.006,
+     -3.77
+    ],
+    "max": [
+     -2.55,
+     0.82,
+     8.27
+    ]
+   }
+  },
+  {
+   "node": "survey__1946__stakes",
+   "role": "part",
+   "parent": "survey__1946",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -7.739,
+     -0.006,
+     -3.77
+    ],
+    "max": [
+     -2.55,
+     0.82,
+     8.27
+    ]
+   }
+  },
+  {
+   "node": "terrain__hedges__west",
+   "role": "part",
+   "parent": "terrain__hedges",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -15.062,
+     0.041,
+     -9.046
+    ],
+    "max": [
+     -13.93,
+     0.831,
+     4.03
+    ]
+   }
+  },
+  {
+   "node": "terrain__plinth",
+   "role": "variant",
+   "variant": "terrain.plinth",
+   "anim": "none",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -15.74,
+     -4.46,
+     -11.83
+    ],
+    "max": [
+     15.74,
+     -0.012,
+     11.74
+    ]
+   }
+  },
+  {
+   "node": "terrain__plinth__body",
+   "role": "part",
+   "anim": "none",
+   "parent": "terrain__plinth",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -15.74,
+     -4.46,
+     -11.74
+    ],
+    "max": [
+     15.74,
+     -0.02,
+     11.74
+    ]
+   }
+  },
+  {
+   "node": "terrain__plinth__lettering",
+   "role": "part",
+   "parent": "terrain__plinth",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -7.244,
+     -1.396,
+     -1.967
+    ],
+    "max": [
+     15.72,
+     -1.135,
+     11.72
+    ]
+   }
+  },
+  {
+   "node": "terrain__plinth__marks",
+   "role": "part",
+   "parent": "terrain__plinth",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -15.033,
+     -0.019,
+     -11.83
+    ],
+    "max": [
+     15.45,
+     -0.012,
+     11.581
+    ]
+   }
+  },
+  {
+   "node": "trench__creek",
+   "role": "variant",
+   "variant": "trench.creek",
+   "anim": "fold",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -7.053,
+     -0.002,
+     -3.88
+    ],
+    "max": [
+     -1.967,
+     0.187,
+     8.88
+    ]
+   }
+  },
+  {
+   "node": "trench__creek__cut",
+   "role": "part",
+   "anim": "rise",
+   "parent": "trench__creek",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -7.053,
+     -0.002,
+     -3.88
+    ],
+    "max": [
+     -1.967,
+     0.187,
+     8.88
+    ]
+   }
+  },
+  {
+   "node": "trench__street",
+   "role": "variant",
+   "variant": "trench.street",
+   "anim": "fold",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -11.88,
+     -0.003,
+     8.955
+    ],
+    "max": [
+     14.88,
+     0.187,
+     10.048
+    ]
+   }
+  },
+  {
+   "node": "trench__street__cut",
+   "role": "part",
+   "anim": "rise",
+   "parent": "trench__street",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -11.88,
+     -0.003,
+     8.955
+    ],
+    "max": [
+     14.88,
+     0.187,
+     10.048
+    ]
+   }
+  },
+  {
+   "node": "utility__creek",
+   "role": "variant",
+   "variant": "utility.creek",
+   "anim": "flatten",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.57,
+     0.0,
+     -3.75
+    ],
+    "max": [
+     -2.43,
+     0.078,
+     8.75
+    ]
+   }
+  },
+  {
+   "node": "utility__creek__marks",
+   "role": "part",
+   "parent": "utility__creek",
+   "position": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bounds": {
+    "min": [
+     -6.57,
+     0.0,
+     -3.75
+    ],
+    "max": [
+     -2.43,
+     0.078,
+     8.75
+    ]
+   }
+  }
+ ],
+ "animations": []
+}
