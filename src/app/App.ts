@@ -20,6 +20,7 @@ import {
   blockedPrereqs,
   computeTimeline,
   CONSEQUENCES,
+  effectiveDecisions,
   originalTimeline,
   type ActiveConsequence,
   type Timeline,
@@ -38,6 +39,8 @@ import { runReplay } from './Replay';
 import { erasWithIntervention, interventionAt, siteStatus, siteTile } from './sites';
 
 type Mode = 'loading' | 'intro' | 'planning' | 'heist' | 'paused' | 'failed' | 'replay' | 'results' | 'error';
+/** tracing-paper silhouette of the original timeline (compare mode) */
+const COMPARE_GHOST = new THREE.MeshBasicMaterial({ color: '#8fa7bd', transparent: true, opacity: 0.28, depthWrite: false, side: THREE.DoubleSide });
 const DEG = Math.PI / 180;
 const LEVELS_UP: Level[] = ['R', 'U', 'G', 'B', 'S'];
 
@@ -389,10 +392,10 @@ export class App {
 
   select(site: string | null): void {
     this.selected = site;
+    if (site && this.onboarding === 'inspect' && site === 'oak') this.setOnboarding('choose');
     this.refreshCard();
     if (site) {
       this.audio.paper();
-      if (this.onboarding === 'inspect' && site === 'oak') this.setOnboarding('choose');
       // show causal lines to this site's discovered consequences
       this.overlays.clearCausal();
       const from = this.sitePoint(site);
@@ -400,6 +403,17 @@ export class App {
         if (c.def.sites.includes(site) && this.discovered.has(c.def.id) && c.def.era >= this.era) this.overlays.causalLine(from, this.consequencePoint(c), 3.5);
       }
     }
+  }
+
+  sitePointOf(site: string): THREE.Vector3 {
+    return this.sitePoint(site);
+  }
+
+  /** world point → client pixels */
+  toScreen(p: THREE.Vector3): { x: number; y: number } {
+    const r = this.stage.renderer.domElement.getBoundingClientRect();
+    const v = p.clone().project(this.stage.rig.camera);
+    return { x: r.left + (v.x * 0.5 + 0.5) * r.width, y: r.top + (-v.y * 0.5 + 0.5) * r.height };
   }
 
   private sitePoint(site: string): THREE.Vector3 {
@@ -579,7 +593,7 @@ export class App {
     if (!this.compare || this.mode !== 'planning') return;
     const mine = visibleVariantSet(this.era, this.timeline.facts, this.contract.id);
     const orig = visibleVariantSet(this.era, originalTimeline().facts, this.contract.id);
-    const ghostMat = new THREE.MeshBasicMaterial({ color: '#8fa7bd', transparent: true, opacity: 0.28, depthWrite: false, side: THREE.DoubleSide });
+    const ghostMat = COMPARE_GHOST;
     for (const id of orig) {
       if (mine.has(id) || id.startsWith('ground.')) continue;
       for (const n of this.world.variants.get(id) ?? []) {
@@ -1217,6 +1231,8 @@ export class App {
       if (this.mode === 'intro') return;
       this.stage.rig.zoom(e.deltaY);
     }, { passive: false });
+    // audio may only start from a user gesture: any press anywhere (canvas or interface) counts
+    addEventListener('pointerdown', () => this.audio.init(), { capture: true });
     addEventListener('keydown', (e) => this.onKey(e, true));
     addEventListener('keyup', (e) => this.onKey(e, false));
     addEventListener('resize', () => this.stage.resize());
@@ -1323,7 +1339,14 @@ export class App {
       if (!isShown(hit.object)) continue;
       const site = this.world.siteOf(hit.object);
       if (site) return site;
-      return null;
+      break;
+    }
+    // small things (the 1946 sapling, the manhole) are easy to miss: accept a click near them
+    for (const site of ['oak', 'drain']) {
+      const c = this.world.siteCenter(site);
+      if (!c) continue;
+      const p = this.toScreen(c);
+      if (Math.hypot(p.x - this.pointer.x, p.y - this.pointer.y) < 30) return site;
     }
     return null;
   }
@@ -1421,6 +1444,28 @@ export class App {
   }
 
   // ==================================================================================== automation (tests)
+  /** Replace the plan (validated like a shared link) and show it; used by tests and debugging. */
+  loadPlanDirect(contract: ContractId, decisions: Record<string, string>): void {
+    if (this.mode !== 'planning') return;
+    if (!this.save.unlocked.includes(contract)) this.save.unlocked.push(contract);
+    this.world.animator.finishAll();
+    if (contract !== this.contract.id) {
+      this.contract = CONTRACT_BY_ID.get(contract)!;
+      this.history.clear();
+    } else this.history.push(this.decisions);
+    const before = activeConsequences(this.timeline).map((c) => c.def.id);
+    const clean: Record<string, string> = {};
+    for (const [id, opt] of Object.entries(decisions)) {
+      const def = INTERVENTION_BY_ID.get(id);
+      if (def && def.options.some((o) => o.id === opt) && opt !== def.options[0].id) clean[id] = opt;
+    }
+    const eff = effectiveDecisions(clean);
+    this.decisions = planCost(eff) <= this.contract.budget ? eff : {};
+    this.timeline = computeTimeline(this.decisions);
+    this.afterPlanChange(before);
+    this.world.animator.finishAll();
+  }
+
   /** Drive the live heist with a reference script (issues commands between fixed ticks). */
   startAutoplay(steps: ScriptStep[], waits: number[]): void {
     this.autoplay = { steps, waits, i: 0, w: 0, state: 'idle', until: 0, done: false };
@@ -1500,6 +1545,9 @@ export class App {
       get transitioning() {
         return app.world.busy;
       },
+      get cameraMoving() {
+        return app.stage.rig.moving;
+      },
       facts: () => ({ ...app.timeline.facts }),
       setEra: (e: Era) => app.setEra(e),
       choose: (id: string, o: string) => app.choose(id, o),
@@ -1516,18 +1564,35 @@ export class App {
         app.persist();
       },
       heist: () => (app.sim ? { status: app.sim.status, t: app.sim.t, detections: app.sim.detections, carrying: app.sim.carrying, meter: app.sim.meter, power: app.sim.power, tile: app.sim.thiefTile } : null),
-      /** solve a reference solution offline and play it in the live game at `speed`× */
+      /** load a plan directly (unlocking its contract), as a shared link would */
+      loadPlan: (contract: ContractId, decisions: Record<string, string>) => app.loadPlanDirect(contract, decisions),
+      /**
+       * Solve a reference solution offline, load its plan, start a fresh heist and let the
+       * autoplayer issue the same commands at the same ticks, at `speed`×.  The live result
+       * must match the offline one exactly (determinism check).
+       */
       playSolution: (id: string, speed = 6) => {
         const sol = SOLUTIONS.find((s) => s.id === id);
         if (!sol) return { ok: false, error: 'unknown solution' };
         const w = presentWorld(CONTRACT_BY_ID.get(sol.contract)!, computeTimeline(sol.plan).facts);
         const solved = solveScript(w, sol.steps, { step: 0.5 });
         if (!solved.ok) return { ok: false, error: solved.reason };
+        if (app.mode !== 'planning') app.backToPlanning();
+        app.loadPlanDirect(sol.contract, sol.plan);
+        app.enterHeist(false);
         app.timeScale = speed;
         app.startAutoplay(sol.steps, solved.waits);
-        return { ok: true, waits: solved.waits };
+        return { ok: true, waits: solved.waits, expected: { t: Math.round(solved.sim.t * 1000) / 1000, detections: solved.sim.detections, approach: solved.sim.approach() } };
       },
       setTimeScale: (s: number) => (app.timeScale = s),
+      /** client-pixel position of a site or a tile (for tests that click the canvas) */
+      screenOf: (site: string) => app.toScreen(app.world.siteCenter(site) ?? app.sitePointOf(site)),
+      planLink: (contract: ContractId, decisions: Record<string, string>) => planUrl(location.href, contract, decisions),
+      screenOfTile: (level: Level, x: number, z: number) => app.toScreen(simToWorld(x + 0.5, z + 0.5, level)),
+      move: (level: Level, x: number, z: number) => (app.sim ? app.sim.moveTo({ level, x, z }).ok : false),
+      interact: (what: Interactable) => (app.sim ? app.sim.interact(what).ok : false),
+      audio: () => app.audio.state,
+      memory: () => ({ ...app.stage.info() }),
       autoplay: () => (app.autoplay ? { done: app.autoplay.done, error: app.autoplay.error, step: app.autoplay.i } : null),
       decodePlan: (s: string) => decodePlan(s),
       consequences: () => activeConsequences(app.timeline).map((c) => c.def.id),

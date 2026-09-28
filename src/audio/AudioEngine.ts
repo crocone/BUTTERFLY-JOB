@@ -26,6 +26,11 @@ export class AudioEngine {
     return !!this.ctx;
   }
 
+  /** 'none' until the first user gesture, then the AudioContext state */
+  get state(): string {
+    return this.ctx ? this.ctx.state : 'none';
+  }
+
   init(): void {
     if (this.ctx) {
       if (this.ctx.state === 'suspended') void this.ctx.resume();

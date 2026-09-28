@@ -14,9 +14,10 @@ export async function launch() {
 export async function openPage(browser, url, { width = 1400, height = 860, storage = null } = {}) {
   const context = await browser.newContext({ viewport: { width, height } });
   if (storage) {
+    // seed the save only when none exists, so reloads keep what the game wrote
     await context.addInitScript((s) => {
       try {
-        localStorage.setItem('butterfly-job.save', s);
+        if (!localStorage.getItem('butterfly-job.save.v1')) localStorage.setItem('butterfly-job.save.v1', s);
       } catch {}
     }, storage);
   }
@@ -39,3 +40,22 @@ export async function waitFor(page, expr, timeout = 90000) {
 }
 
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/** A save that skips the intro/onboarding, with the given overrides. */
+export function seededSave(over = {}) {
+  const base = {
+    v: 1,
+    current: 'c1',
+    unlocked: ['c1'],
+    completed: {},
+    approaches: {},
+    plans: {},
+    discovered: [],
+    hintLevel: {},
+    introSeen: true,
+    onboardingDone: true,
+    settings: { volume: 0.7, muted: false, reducedMotion: false, quality: 'medium', showFps: false, overlays: true },
+  };
+  const out = { ...base, ...over, settings: { ...base.settings, ...(over.settings ?? {}) } };
+  return JSON.stringify(out);
+}

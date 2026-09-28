@@ -67,6 +67,12 @@ export class CameraRig {
     });
   }
 
+  /** true while a scripted flight or a smoothed move is still under way */
+  get moving(): boolean {
+    if (this.tween) return true;
+    return this.target.distanceTo(this.goal.target) > 0.02 || Math.abs(this.viewSize - this.goal.viewSize) > 0.02 || Math.abs(this.azimuth - this.goal.azimuth) > 0.002;
+  }
+
   current(): CameraView {
     return { target: this.target.clone(), azimuth: this.azimuth, elevation: this.elevation, viewSize: this.viewSize };
   }

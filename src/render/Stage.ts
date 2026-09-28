@@ -16,6 +16,7 @@ export class Stage {
   readonly rig: CameraRig;
   readonly sun: THREE.DirectionalLight;
   readonly hemi: THREE.HemisphereLight;
+  readonly fill: THREE.DirectionalLight;
   private post: PostFX | null = null;
   private deskShadow: THREE.Mesh;
   quality: Quality = 'medium';
@@ -48,6 +49,11 @@ export class Stage {
     this.sun.shadow.normalBias = 0.02;
     Object.assign(this.sun.shadow.camera, { left: -24, right: 24, top: 22, bottom: -22, near: 1, far: 90 });
     this.scene.add(this.sun, this.sun.target);
+    // warm bounce from the desk lamp side, so faces turned from the sun (the plinth sides seen
+    // from the default view) read as lit cardboard rather than mud
+    this.fill = new THREE.DirectionalLight('#ffe4c4', 1.4);
+    this.fill.position.set(18, 8, 22);
+    this.scene.add(this.fill);
 
     // soft shadow of the diorama on the desk (a shadow-only helper plane under the plinth)
     this.deskShadow = new THREE.Mesh(new THREE.PlaneGeometry(90, 90), new THREE.ShadowMaterial({ opacity: 0.16 }));

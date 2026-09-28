@@ -322,7 +322,6 @@ export const T = {
     body: 'The client’s conditions do not hold in 2026:',
     practice: 'Start anyway (practice run)',
     back: 'Keep planning',
-    noRoute: 'Heads up: from the street there is no way into the bank yet. You can still try.',
   },
   heist: {
     getTarget: 'Reach {target}',
@@ -445,7 +444,7 @@ export const T = {
   errors: {
     webgl: 'This browser could not start WebGL, which Butterfly Job needs. Try a current desktop Chrome, Firefox, Edge or Safari.',
     assets: 'Part of the neighborhood failed to load ({file}). Check the connection and reload the page.',
-    link: 'That plan link could not be read, so the timeline starts untouched.',
+    link: 'That plan link could not be read, so it was ignored. Your own plan is unchanged.',
     linkLocked: 'That plan link is for a contract you have not unlocked yet.',
     reload: 'Reload',
   },

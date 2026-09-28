@@ -201,7 +201,7 @@ export class UI {
     for (const e of entries) {
       const li = h('li', { class: e.fresh ? 'fresh' : '' },
         h('span', { class: 'dot', style: `background:${ERA_COLORS[e.era]}` }),
-        h('span', { class: 'era', text: String(e.era) }),
+        h('span', { class: 'tl-era', text: String(e.era) }),
         h('span', { class: 'txt', text: e.text.replace(/^\d{4} — /, '') }));
       this.tlList.append(li);
     }

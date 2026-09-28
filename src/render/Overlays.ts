@@ -23,12 +23,52 @@ function mat(color: THREE.Color, opacity: number, depthTest = true): THREE.MeshB
   return new THREE.MeshBasicMaterial({ color, transparent: true, opacity, depthWrite: false, depthTest, side: THREE.DoubleSide });
 }
 
+/** A pool of identical flat marks drawn in one call (patrol dashes, path dots...). */
+class Marks {
+  readonly mesh: THREE.InstancedMesh;
+  private n = 0;
+  private readonly m = new THREE.Matrix4();
+  private readonly q = new THREE.Quaternion();
+  private readonly e = new THREE.Euler();
+  private readonly one = new THREE.Vector3(1, 1, 1);
+
+  constructor(geometry: THREE.BufferGeometry, material: THREE.Material, readonly capacity: number, renderOrder: number) {
+    this.mesh = new THREE.InstancedMesh(geometry, material, capacity);
+    this.mesh.count = 0;
+    this.mesh.frustumCulled = false;
+    this.mesh.renderOrder = renderOrder;
+    this.mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+  }
+
+  clear(): void {
+    this.n = 0;
+    this.mesh.count = 0;
+  }
+
+  /** add a mark lying flat at p, turned by `angle` about the vertical */
+  add(p: THREE.Vector3, angle: number, flat = true): void {
+    if (this.n >= this.capacity) return;
+    // flat marks are XY-plane geometry laid down on the floor; others are already horizontal
+    if (flat) this.e.set(-Math.PI / 2, 0, angle);
+    else this.e.set(0, angle, 0);
+    this.q.setFromEuler(this.e);
+    this.m.compose(p, this.q, this.one);
+    this.mesh.setMatrixAt(this.n++, this.m);
+    this.mesh.count = this.n;
+    this.mesh.instanceMatrix.needsUpdate = true;
+  }
+}
+
 export class Overlays {
   readonly root = new THREE.Group();
   private fans = new Map<string, THREE.Mesh>();
   private fanGroup = new THREE.Group();
   private patrolGroup = new THREE.Group();
   private pathGroup = new THREE.Group();
+  private readonly patrolDashes: Marks;
+  private readonly patrolArrows: Marks;
+  private readonly pathDots: Marks;
+  private readonly pathDotsBlocked: Marks;
   private hover: THREE.Mesh;
   private pulses: Array<{ mesh: THREE.Mesh; t: number; dur: number }> = [];
   private causal: Array<{ mesh: THREE.Mesh; t: number; dur: number; mat: THREE.MeshBasicMaterial }> = [];
@@ -47,6 +87,12 @@ export class Overlays {
     this.root.add(this.fanGroup, this.patrolGroup, this.pathGroup);
     this.arrow = new THREE.BufferGeometry();
     this.arrow.setAttribute('position', new THREE.Float32BufferAttribute([0.16, 0, 0, -0.1, 0, 0.11, -0.1, 0, -0.11], 3));
+    this.patrolDashes = new Marks(this.dash, this.matPatrol, 1200, 0);
+    this.patrolArrows = new Marks(this.arrow, this.matPatrol, 300, 0);
+    this.patrolGroup.add(this.patrolDashes.mesh, this.patrolArrows.mesh);
+    this.pathDots = new Marks(this.dot, this.matRoute, 900, 11);
+    this.pathDotsBlocked = new Marks(this.dot, this.matBlocked, 900, 11);
+    this.root.add(this.pathDots.mesh, this.pathDotsBlocked.mesh);
     const hoverGeo = new THREE.RingGeometry(0.36, 0.46, 4, 1, Math.PI / 4);
     hoverGeo.rotateX(-Math.PI / 2);
     this.hover = new THREE.Mesh(hoverGeo, mat(COLORS.route, 0.9, false));
@@ -93,8 +139,10 @@ export class Overlays {
 
   // ------------------------------------------------------------------ patrol routes
   setPatrols(routes: Array<{ level: Level; polyline: Array<[number, number]> }>, visible: boolean): void {
-    this.clearGroup(this.patrolGroup);
+    this.patrolDashes.clear();
+    this.patrolArrows.clear();
     this.patrolGroup.visible = visible;
+    const lift = new THREE.Vector3(0, 0.002, 0);
     for (const r of routes) {
       const y = levelY(r.level) + Y_LIFT - 0.01;
       const pts = r.polyline.map(([x, z]) => new THREE.Vector3(x - 15, y, z - 11));
@@ -108,16 +156,8 @@ export class Overlays {
         const ang = Math.atan2(-dir.z, dir.x);
         for (let d = carry; d < len; d += 0.55) {
           const p = a.clone().addScaledVector(dir, d);
-          const m = new THREE.Mesh(this.dash, this.matPatrol);
-          m.position.copy(p);
-          m.rotation.set(-Math.PI / 2, 0, ang);
-          this.patrolGroup.add(m);
-          if (Math.round(d / 0.55) % 5 === 2) {
-            const ar = new THREE.Mesh(this.arrow, this.matPatrol);
-            ar.position.copy(p).add(new THREE.Vector3(0, 0.002, 0));
-            ar.rotation.y = ang;
-            this.patrolGroup.add(ar);
-          }
+          this.patrolDashes.add(p, ang);
+          if (Math.round(d / 0.55) % 5 === 2) this.patrolArrows.add(p.add(lift), ang, false);
           carry = d + 0.55 - len;
         }
         if (carry < 0) carry = 0;
@@ -132,22 +172,18 @@ export class Overlays {
   // ------------------------------------------------------------------ path preview
   setPath(points: Array<{ x: number; z: number; level: Level }> | null, ok: boolean, waits: Array<{ x: number; z: number; level: Level }> = []): void {
     this.clearGroup(this.pathGroup);
+    this.pathDots.clear();
+    this.pathDotsBlocked.clear();
     if (!points || points.length < 1) return;
     const material = ok ? this.matRoute : this.matBlocked;
+    const dots = ok ? this.pathDots : this.pathDotsBlocked;
     let prev: THREE.Vector3 | null = null;
     for (const p of points) {
       const v = new THREE.Vector3(p.x - 15, levelY(p.level) + Y_LIFT + 0.02, p.z - 11);
       if (prev && prev.y === v.y) {
         const len = prev.distanceTo(v);
         const steps = Math.max(1, Math.round(len / 0.34));
-        for (let i = 1; i <= steps; i++) {
-          const q = prev.clone().lerp(v, i / steps);
-          const d = new THREE.Mesh(this.dot, material);
-          d.position.copy(q);
-          d.rotation.x = -Math.PI / 2;
-          d.renderOrder = 11;
-          this.pathGroup.add(d);
-        }
+        for (let i = 1; i <= steps; i++) dots.add(prev.clone().lerp(v, i / steps), 0);
       }
       prev = v;
     }

@@ -37,6 +37,41 @@ export class Actor {
     this.play('idle', 0);
   }
 
+  /**
+   * Draw this actor as a flat tint wherever scenery hides it, so the thief and the guards stay
+   * readable behind buildings and under canopies.  Draw order does the work: scenery (order 0)
+   * fills the depth buffer, then the tint copies pass only where scenery is in front
+   * (inverted depth test, order 1), then the real actor (order 2) paints over every part that
+   * is actually visible — so the actor never tints itself.  The copies share the actor's
+   * geometry and skeleton, so they animate for free.
+   */
+  addSilhouette(color: string, opacity: number): void {
+    const mat = new THREE.MeshBasicMaterial({
+      color,
+      opacity,
+      transparent: false, // stay in the opaque list so render order applies
+      blending: THREE.CustomBlending,
+      blendSrc: THREE.SrcAlphaFactor,
+      blendDst: THREE.OneMinusSrcAlphaFactor,
+      depthWrite: false,
+      depthFunc: THREE.GreaterDepth,
+    });
+    const meshes: THREE.Mesh[] = [];
+    this.group.traverse((o) => {
+      if ((o as THREE.Mesh).isMesh && !o.userData.silhouette) meshes.push(o as THREE.Mesh);
+    });
+    for (const m of meshes) {
+      const copy = m.clone();
+      copy.material = mat;
+      copy.castShadow = false;
+      copy.receiveShadow = false;
+      copy.renderOrder = 1;
+      copy.userData.silhouette = true;
+      m.renderOrder = 2;
+      m.parent?.add(copy);
+    }
+  }
+
   play(name: Clip, fade = 0.18, timeScale = 1): void {
     const a = this.actions.get(name);
     if (!a) return;
@@ -87,6 +122,9 @@ export class Actors {
     this.clips = gltf.animations;
     this.thief = this.make('thief');
     this.guards = { guardA: this.make('guard'), guardB: this.make('guard') };
+    this.thief.addSilhouette('#2f7d4a', 0.55);
+    this.guards.guardA.addSilhouette('#b8322d', 0.5);
+    this.guards.guardB.addSilhouette('#b8322d', 0.5);
     this.courier = this.make('courier');
     for (const def of DECOR_PEOPLE) {
       const actor = this.make(def.character);
