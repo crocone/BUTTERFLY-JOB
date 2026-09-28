@@ -80,6 +80,7 @@ export class App {
   sim: HeistSim | null = null;
   private practice = false;
   private acc = 0;
+  private previewAcc = 0;
   private holdSpace = false;
   private eventCursor = 0;
   private hatchUsed = false;
@@ -201,8 +202,12 @@ export class App {
     this.audio.update();
     if (this.mode === 'heist' && this.sim) this.stepHeist(dt);
     else if (this.preview && this.era === 2026 && (this.mode === 'planning' || this.mode === 'intro')) {
-      this.preview.run(dt);
-      if (this.preview.status !== 'running') this.rebuildPreview();
+      // fixed 30 Hz steps whatever the display rate, like the heist itself
+      this.previewAcc += dt;
+      while (this.previewAcc >= DT) {
+        this.preview.step();
+        this.previewAcc -= DT;
+      }
     }
     this.world.update(dt);
     if (this.world.busy !== this.wasBusy) {

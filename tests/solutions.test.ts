@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { CONTRACT_BY_ID } from '../src/data/contracts';
 import { computeTimeline } from '../src/sim/causality';
-import { presentWorld } from '../src/sim/heist';
+import { HeistSim, presentWorld } from '../src/sim/heist';
 import { planCost } from '../src/sim/plan';
 import { solveScript, type ScriptStep } from '../src/sim/script';
 import { SOLUTIONS } from '../src/sim/solutions';
@@ -65,5 +65,22 @@ describe('contract conditions separate clean and dirty solutions', () => {
       expect(f['garden.exists']).toBe(true);
       expect(f['cafe.open']).toBe(true);
     }
+  });
+});
+
+describe('the planning preview', () => {
+  it('animates guards and deliveries without recording a replay', () => {
+    const w = presentWorld(CONTRACT_BY_ID.get('c1')!, computeTimeline({}).facts);
+    const preview = new HeistSim(w, { preview: true });
+    const before = preview.snapshot().guards.map((g) => [g.x, g.z]);
+    preview.run(20);
+    const after = preview.snapshot().guards.map((g) => [g.x, g.z]);
+    expect(after).not.toEqual(before);
+    expect(preview.recording.length).toBe(0);
+    expect(preview.detections).toBe(0);
+    // a real run records ten snapshots a second for the replay
+    const live = new HeistSim(w);
+    live.run(3);
+    expect(live.recording.length).toBe(30);
   });
 });

@@ -272,16 +272,18 @@ or HTTP error. It writes `e2e/out/report.json` and screenshots.
 ### Results (run on 2026-09-28 in this repository's container)
 
 - **Type check:** clean.
-- **Unit tests:** 57 passed. They cover:
+- **Unit tests:** 58 passed. They cover:
   - causality: determinism, invalidation, no cycles, budget and refunds;
   - plan links and saves against garbage input;
   - layout and geometry agreement;
   - navigation and line of sight: no sight through walls, floors or canopies; guard hearing;
   - every reference solution solved and replayed offline, and the untouched timeline failing;
+  - the planning preview animating the present without recording a replay;
   - the manifest agreeing with the variant registry.
 - **Blender:** all 8 `.blend` files open in Blender 5.0.1 (`verify_blend.py`), and a full rebuild reproduces the `.glb` files byte for byte.
 - **Production build:** clean.
-- **End-to-end: 12/12 passed** on the production build:
+- **End-to-end: 12/12 passed on the production build, and 12/12 on the dev server (`npm run dev`).**
+  The nine live solutions finished at identical times on both.
 
 | test | what it checks |
 |---|---|

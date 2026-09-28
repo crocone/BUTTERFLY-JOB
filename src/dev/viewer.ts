@@ -69,7 +69,7 @@ if (layout === 'grid') {
 
 const status = document.getElementById('status')!;
 const mixers: THREE.AnimationMixer[] = [];
-const clock = new THREE.Clock();
+const clock = new THREE.Timer();
 const list = document.getElementById('list')!;
 
 async function main() {
@@ -166,6 +166,7 @@ function isAncestor(a: THREE.Object3D, b: THREE.Object3D): boolean {
 }
 
 function loop() {
+  clock.update();
   const dt = clock.getDelta();
   for (const m of mixers) m.update(dt);
   controls.update();

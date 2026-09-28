@@ -544,7 +544,8 @@ export class HeistSim {
     this.tick++;
     if (!this.preview) this.stepThief();
     this.stepGuardsAndDetection();
-    if (this.tick % 3 === 0) this.recording.push(this.snapshot());
+    // the planning preview runs indefinitely and is never replayed: only real heists record
+    if (!this.preview && this.tick % 3 === 0) this.recording.push(this.snapshot());
   }
 
   run(seconds: number): void {
