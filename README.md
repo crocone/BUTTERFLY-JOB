@@ -303,12 +303,14 @@ or HTTP error. It writes `e2e/out/report.json` and screenshots.
 ### Performance, measured honestly
 
 The only renderer available here is **headless Chromium with SwiftShader**, which renders WebGL
-on the CPU. At 1280×720 on this container it measured:
+on the CPU. At 1280×720 on this container, across three suite runs, it measured:
 
 | quality | frames per second | draw calls | triangles drawn |
 |---|---|---|---|
-| low | ≈ 7.9 | 332 | 51,580 |
-| medium | ≈ 4.3 | 650 (includes the shadow pass) | 102,000 |
+| low | 7.9–8.3 | 332–335 | 51,600–53,500 |
+| medium | 4.2–4.3 | 650 (includes the shadow pass) | about 102,000 |
+
+Counts vary a little with which characters are on screen at the moment of sampling.
 
 These numbers describe a software rasterizer. They say nothing about frame rates on a GPU, and
 **no GPU frame rate has been measured**. The simulation runs at a fixed 30 Hz regardless of frame
