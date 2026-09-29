@@ -58,6 +58,20 @@ export const T = {
     openCaseFile: 'Open the case file',
     place: 'RIVERDALE · LINDEN SQUARE',
   },
+  howto: {
+    chip: 'How to play',
+    title: 'HOW TO PLAY',
+    lead: 'In 2026 the bank is sealed. Change the past so that the present leaves you a way in — then do the job.',
+    steps: [
+      ['Pick an era', 'Use the buttons at the bottom (or keys 1 2 3): 1946, 1986, 2026.'],
+      ['Change the past', 'In 1946 or 1986, click an object on the model — it lights up on hover. Its card on the right lists what you can change. Start with the oak sapling in the garden.'],
+      ['Check the present', 'Switch to 2026 and see what your change did. Amber pulses and arcs show what changed; red cones are what guards and cameras see.'],
+      ['Do the job', 'When 2026 offers a way in, press START THE JOB. Click the ground to walk, click the ◆ target to take it, then get back to the bicycle ⚑. Hold Space to wait, Esc to pause.'],
+    ] as Array<[string, string]>,
+    example: 'Contract 1 in two moves: plant the oak beside the service yard (1946), then preserve its canopy (1986). In 2026 its branch reaches the bank’s annex roof.',
+    ok: 'Got it',
+    stuck: 'Stuck? Press Hint for progressive hints.',
+  },
   hints: {
     title: 'HINTS',
     intro: 'Hints go from a direction, to specifics, to the answer for one obstacle.',

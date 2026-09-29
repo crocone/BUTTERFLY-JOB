@@ -84,6 +84,14 @@ await test('boot-intro-onboarding', async (ctx) => {
   await page.mouse.click(640, 300); // click skips the intro
   await waitFor(page, 'window.__bj.mode === "planning"', 30000);
   assert((await bj(page, () => window.__bj.era)) === 1946, 'the intro ends in 1946');
+  // the four-step guide opens after the intro
+  await waitFor(page, "document.querySelector('.dialog h2')?.textContent === 'HOW TO PLAY'", 10000);
+  assert((await page.$$('.dialog .howto li')).length === 4, 'four steps in the guide');
+  await clickText(page, '.dialog button', 'Got it');
+  // and stays in the empty case-notes panel, plus a button to reopen it
+  assert((await page.$$('.panel.right .howto li')).length === 4, 'guide in the right panel');
+  await clickText(page, '.topbar button', 'How to play');
+  await clickText(page, '.dialog button', 'Got it');
   await settle(page);
   await sleep(300);
   const label = await page.$$eval('.labels .label', (els) => els.filter((e) => e.style.display !== 'none').map((e) => e.textContent).join('|'));

@@ -34,7 +34,7 @@ import { solveScript, type ScriptStep } from '../sim/script';
 import { SOLUTIONS } from '../sim/solutions';
 import type { Era, Level, TileRef } from '../sim/types';
 import { visionFan, type Observer, type SightContext } from '../sim/vision';
-import { h, UI, type CardModel } from '../ui/UI';
+import { h, howtoList, UI, type CardModel } from '../ui/UI';
 import { runReplay } from './Replay';
 import { erasWithIntervention, interventionAt, siteStatus, siteTile } from './sites';
 
@@ -119,6 +119,7 @@ export class App {
       start: () => this.startJob(false),
       toggle: (n, on) => this.toggle(n, on),
       hint: () => this.showHints(),
+      help: () => this.showHowTo(),
       contracts: () => this.showContracts(),
       settings: () => this.showSettings(),
       share: () => void this.sharePlan(),
@@ -731,6 +732,7 @@ export class App {
     this.persist();
     this.era = 1946; // also when the intro was skipped before the jump to 1946
     this.enterPlanning();
+    this.showHowTo();
     await rig.flyTo({ target: DEFAULT_VIEW.target.clone(), azimuth: DEFAULT_VIEW.azimuth, elevation: DEFAULT_VIEW.elevation, viewSize: 10.5 }, 1.6);
   }
 
@@ -1092,6 +1094,18 @@ export class App {
     });
     this.ui.dialog([h('h2', { text: T.ui.contracts.toUpperCase() }), h('div', { class: 'contract-list' }, ...items),
       h('div', { class: 'actions' }, h('button', { class: 'btn', onclick: () => this.ui.closeDialog() }, T.ui.close))], { onClose: () => this.ui.closeDialog() });
+  }
+
+  /** The four steps of play, shown after the intro and from the How-to-play button. */
+  showHowTo(): void {
+    if (this.mode !== 'planning') return;
+    this.ui.dialog([
+      h('h2', { text: T.howto.title }),
+      h('p', { text: T.howto.lead }),
+      howtoList(),
+      h('p', { style: 'font-style:italic;color:var(--ink-soft)', text: T.howto.example }),
+      h('div', { class: 'actions' }, h('button', { class: 'btn primary', onclick: () => this.ui.closeDialog() }, T.howto.ok)),
+    ], { onClose: () => this.ui.closeDialog() });
   }
 
   showHints(): void {
