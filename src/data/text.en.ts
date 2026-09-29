@@ -102,8 +102,8 @@ export const T = {
       question: 'Where should the gardener plant the oak?',
       options: {
         garden: { label: 'In the community garden', log: '1946 — Oak planted in the community garden.' },
-        yard: { label: 'Beside the bank’s service yard', log: '1946 — Oak planted beside the service yard.', note: 'Right against the bank’s low annex.' },
-        square: { label: 'In the middle of the square', log: '1946 — Oak planted in the square.', note: 'Between the square camera and the bank.' },
+        yard: { label: 'Beside the bank’s service yard', log: '1946 — Oak planted beside the service yard.', note: 'Right against the bank’s low annex: grown tall, it could be a way onto the roof.' },
+        square: { label: 'In the middle of the square', log: '1946 — Oak planted in the square.', note: 'Between the square camera and the bank: its canopy could hide the front service door. Not a way up.' },
       },
     },
     'drain.route': {
@@ -356,6 +356,14 @@ export const T = {
     back: 'Keep planning',
   },
   heist: {
+    climbOak: 'Climb the oak to the annex roof',
+    oakNo: {
+      square: 'This oak can’t take you anywhere: in the square it only hides the front service door from the lamppost camera. Slip in there while the courier props the door open.',
+      garden: 'The garden oak is too far from the bank to climb onto anything.',
+      pruned: 'This oak was pruned back in 1986 — its branches no longer reach the annex roof.',
+      felled: 'Only a stump is left: the 1987 Garden Wing crane felled the oak.',
+    } as Record<string, string>,
+    targetWhere: { B: 'basement', G: 'ground floor', U: 'upper floor', R: 'roof', S: 'sewer' } as Record<string, string>,
     getTarget: 'Reach {target}',
     escape: 'Escape to the getaway bicycle',
     waitingDoor: 'Waiting for the courier to prop the door open…',
