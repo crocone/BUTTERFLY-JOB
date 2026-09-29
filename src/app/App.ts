@@ -27,14 +27,14 @@ import {
 } from '../sim/causality';
 import { DELIVERY } from '../data/security';
 import { DT, HeistSim, presentWorld, type HeistEvent, type Interactable, type PresentWorld, type Snapshot } from '../sim/heist';
-import { areaAt, isWalkable, levelY, type WorldGrid } from '../sim/layout';
+import { areaAt, isWalkable, LAYOUT, levelY, type WorldGrid } from '../sim/layout';
 import { isPathFailure, type PathFailure, type PathResult } from '../sim/nav';
 import { PlanHistory, orderedDecisions, planCost, setDecision } from '../sim/plan';
 import { solveScript, type ScriptStep } from '../sim/script';
 import { SOLUTIONS } from '../sim/solutions';
 import type { Era, Level, TileRef } from '../sim/types';
 import { visionFan, type Observer, type SightContext } from '../sim/vision';
-import { h, UI, type CardModel } from '../ui/UI';
+import { h, howtoList, UI, type CardModel } from '../ui/UI';
 import { runReplay } from './Replay';
 import { erasWithIntervention, interventionAt, siteStatus, siteTile } from './sites';
 
@@ -84,7 +84,7 @@ export class App {
   private holdSpace = false;
   private eventCursor = 0;
   private hatchUsed = false;
-  private hover: { tile: TileRef | null; interact: Interactable | null; path: PathResult | PathFailure | null } = { tile: null, interact: null, path: null };
+  private hover: { tile: TileRef | null; interact: Interactable | null; path: PathResult | PathFailure | null; oakNote: string | null } = { tile: null, interact: null, path: null, oakNote: null };
   private pointer = { x: 0, y: 0, down: false, button: 0, moved: 0, startX: 0, startY: 0, inside: false };
   readonly raycaster = new THREE.Raycaster();
   private hoverSite: string | null = null;
@@ -119,6 +119,7 @@ export class App {
       start: () => this.startJob(false),
       toggle: (n, on) => this.toggle(n, on),
       hint: () => this.showHints(),
+      help: () => this.showHowTo(),
       contracts: () => this.showContracts(),
       settings: () => this.showSettings(),
       share: () => void this.sharePlan(),
@@ -731,6 +732,7 @@ export class App {
     this.persist();
     this.era = 1946; // also when the intro was skipped before the jump to 1946
     this.enterPlanning();
+    this.showHowTo();
     await rig.flyTo({ target: DEFAULT_VIEW.target.clone(), azimuth: DEFAULT_VIEW.azimuth, elevation: DEFAULT_VIEW.elevation, viewSize: 10.5 }, 1.6);
   }
 
@@ -800,7 +802,11 @@ export class App {
     const w = this.sim!.world;
     this.labels.hidePrefix('it:');
     const tgt = w.target;
-    this.labels.set('it:target', simToWorld(tgt.x + 0.5, tgt.z + 0.5, tgt.level).add(new THREE.Vector3(0, 1.3, 0)), `<span class="icon target"><span>◆</span></span>`);
+    // below-ground targets are marked above their spot at street level (a marker underground
+    // would project onto whatever stands in front of the bank), with the floor named
+    const where = T.heist.targetWhere[tgt.level] ?? '';
+    const y = Math.max(0, levelY(tgt.level)) + 1.3;
+    this.labels.set('it:target', simToWorld(tgt.x + 0.5, tgt.z + 0.5, 'G').add(new THREE.Vector3(0, y, 0)), `<span class="icon target"><span>◆</span></span><span class="tag">${where}</span>`);
     this.labels.set('it:exit', simToWorld(w.exit.x + 0.5, w.exit.z + 0.5, 'G').add(new THREE.Vector3(0, 1.2, 0)), `<span class="icon exit">⚑</span>`);
     if (w.junction) this.labels.set('it:junction', simToWorld(w.junction.x + 0.2, w.junction.z + 0.5, 'G').add(new THREE.Vector3(0, 1.7, 0)), `<span class="icon power">ϟ</span>`);
   }
@@ -1094,6 +1100,18 @@ export class App {
       h('div', { class: 'actions' }, h('button', { class: 'btn', onclick: () => this.ui.closeDialog() }, T.ui.close))], { onClose: () => this.ui.closeDialog() });
   }
 
+  /** The four steps of play, shown after the intro and from the How-to-play button. */
+  showHowTo(): void {
+    if (this.mode !== 'planning') return;
+    this.ui.dialog([
+      h('h2', { text: T.howto.title }),
+      h('p', { text: T.howto.lead }),
+      howtoList(),
+      h('p', { style: 'font-style:italic;color:var(--ink-soft)', text: T.howto.example }),
+      h('div', { class: 'actions' }, h('button', { class: 'btn primary', onclick: () => this.ui.closeDialog() }, T.howto.ok)),
+    ], { onClose: () => this.ui.closeDialog() });
+  }
+
   showHints(): void {
     if (this.mode !== 'planning') return;
     const id = this.contract.id;
@@ -1383,6 +1401,7 @@ export class App {
     if (this.mode === 'heist' && this.sim) {
       this.heistHover();
       const sim = this.sim;
+      if (this.hover.oakNote) this.ui.toast(this.hover.oakNote, 'amber', 6500);
       if (this.hover.interact) {
         const r = sim.interact(this.hover.interact);
         if (!r.ok) this.explainFailure(r.failure);
@@ -1401,6 +1420,16 @@ export class App {
     if (f.reason === 'blocked-door' && f.door) this.ui.toast(fmt(T.heist.blockedDoor, { door: T.doors[f.door.kind] ?? f.door.kind }), 'danger', 2400);
     else if (f.reason === 'not-walkable') this.ui.toast(T.heist.notWalkable, 'danger', 1800);
     else this.ui.toast(T.heist.unreachable, 'danger', 1800);
+  }
+
+  /** Is the pointer on the oak (the first visible thing under it)?  Uses the ray already set up. */
+  private oakUnderPointer(): boolean {
+    this.raycaster.far = Infinity;
+    for (const hit of this.raycaster.intersectObject(this.world.root, true)) {
+      if (!isShown(hit.object)) continue;
+      return this.world.siteOf(hit.object) === 'oak';
+    }
+    return false;
   }
 
   /** Heist hover: interactables first, then walkable tiles on the levels currently shown. */
@@ -1435,6 +1464,20 @@ export class App {
       tile = cand;
       break;
     }
+    // the oak itself: climb it when it reaches the roof, otherwise explain why not on click
+    this.hover.oakNote = null;
+    let climb = false;
+    if (!pick && this.oakUnderPointer()) {
+      const f = w.facts;
+      const top = LAYOUT.portals.find((p) => p.id === 'portal.oak')?.b;
+      if (f['oak.roofAccess'] && top) {
+        tile = { level: top.level, x: top.x, z: top.z };
+        climb = true;
+      } else {
+        const why = f['oak.felled'] ? 'felled' : f['oak.location'] === 'yard' ? 'pruned' : String(f['oak.location']);
+        this.hover.oakNote = T.heist.oakNo[why] ?? null;
+      }
+    }
     this.hover.interact = pick;
     this.hover.tile = tile;
     const dest = pick ? sim.interactionTile(pick) : tile;
@@ -1459,6 +1502,8 @@ export class App {
     if (pick) {
       const label = pick === 'target' ? fmt(T.heist.take, { target: T.contracts[this.contract.id].target }) : pick === 'junction' ? T.heist.junction : T.heist.exit;
       this.labels.set('hover', simToWorld(dest.x + 0.5, dest.z + 0.5, dest.level).add(new THREE.Vector3(0, 1.9, 0)), `<span class="tag">${label}</span>`);
+    } else if (climb) {
+      this.labels.set('hover', simToWorld(dest.x + 0.5, dest.z + 0.5, dest.level).add(new THREE.Vector3(0, 1.2, 0)), `<span class="tag">${T.heist.climbOak}</span>`);
     } else this.labels.hide('hover');
   }
 

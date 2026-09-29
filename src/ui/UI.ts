@@ -28,6 +28,7 @@ export interface UIActions {
   start(): void;
   toggle(name: 'compare' | 'overlays' | 'underground', on: boolean): void;
   hint(): void;
+  help(): void;
   contracts(): void;
   settings(): void;
   share(): void;
@@ -103,7 +104,8 @@ export class UI {
     this.topContract = h('div', { class: 'contract' });
     this.topGoal = h('div', { class: 'goal' });
     this.hintBtn = h('button', { class: 'chip', onclick: () => act.hint(), title: T.ui.hintTitle }, T.ui.hint);
-    const actions = h('div', { class: 'actions' }, this.hintBtn, h('button', { class: 'chip', onclick: () => act.contracts() }, T.ui.contracts),
+    const helpBtn = h('button', { class: 'chip help', onclick: () => act.help() }, T.howto.chip);
+    const actions = h('div', { class: 'actions' }, helpBtn, this.hintBtn, h('button', { class: 'chip', onclick: () => act.contracts() }, T.ui.contracts),
       h('button', { class: 'chip', onclick: () => act.share(), title: T.ui.share }, T.ui.share), h('button', { class: 'chip', onclick: () => act.settings() }, T.ui.settings));
     this.modeEl = h('div', { class: 'mode' }, T.modes.planning);
     root.append(h('header', { class: 'topbar' },
@@ -229,8 +231,7 @@ export class UI {
     this.right.classList.toggle('has-card', !!m);
     this.right.innerHTML = '';
     if (!m) {
-      this.right.append(h('h2', { text: T.ui.caseNotes }), h('div', { class: 'placeholder', text: T.ui.selectHint }),
-        h('div', { class: 'quote', html: `${LEAF}${T.ui.quoteRight}` }));
+      this.right.append(h('h2', { text: T.howto.title }), howtoList(), h('div', { class: 'placeholder', text: T.howto.stuck }));
       return;
     }
     this.right.append(h('h2', { text: m.title }), h('div', { class: 'era-line', html: `<span class="swatch" style="background:${ERA_COLORS[m.era]}"></span>${m.era}` }),
@@ -355,4 +356,9 @@ export class UI {
     this.loadingEl?.remove();
     this.loadingEl = null;
   }
+}
+
+/** The four-step guide (right panel when nothing is selected, and the How-to-play dialog). */
+export function howtoList(): HTMLOListElement {
+  return h('ol', { class: 'howto' }, ...T.howto.steps.map(([title, body]) => h('li', {}, h('b', { text: title }), h('span', { text: body }))));
 }
