@@ -6,13 +6,11 @@
 <!-- coders-talk:repo -->
 ## Built with AI
 
-[![Build a browser 3D flight-combat game with Blender-generated assets \(Three.js/Rapier\)](https://coders.talk/embed/b/build-a-browser-3d-flight-combat-game-with-blender-generated-assets-th.svg)](https://coders.talk/b/build-a-browser-3d-flight-combat-game-with-blender-generated-assets-th?utm_source=github&utm_medium=readme&utm_campaign=build)
+[![Built with AI on Coders Talk](https://coders.talk/embed/r/crocone/BUTTERFLY-JOB.svg)](https://coders.talk/r/crocone/BUTTERFLY-JOB?utm_source=github&utm_medium=readme&utm_campaign=build)
 
-**Build a browser 3D flight-combat game with Blender-generated assets \(Three.js/Rapier\)**  
-Claude Code · Opus 5.5  
-3h 17m · zero-touch · 2 agent fails
+The coding-agent sessions behind this repository: the prompts, where the agent went wrong and what the human did about it.
 
-[View the full build →](https://coders.talk/b/build-a-browser-3d-flight-combat-game-with-blender-generated-assets-th?utm_source=github&utm_medium=readme&utm_campaign=build)
+[View the sessions →](https://coders.talk/r/crocone/BUTTERFLY-JOB?utm_source=github&utm_medium=readme&utm_campaign=build)
 <!-- /coders-talk:repo -->
 
 
