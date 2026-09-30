@@ -1,6 +1,20 @@
 # BUTTERFLY JOB
 
 > *"I robbed a bank by planting a tree 80 years ago."*
+<img width="3839" height="2159" alt="Снимок экрана 2026-09-30 135646" src="https://github.com/user-attachments/assets/cbe8f4b0-af10-4372-b1ca-5dac29fcd262" />
+
+<!-- coders-talk:repo -->
+## Built with AI
+
+[![Build a browser 3D flight-combat game with Blender-generated assets \(Three.js/Rapier\)](https://coders.talk/embed/b/build-a-browser-3d-flight-combat-game-with-blender-generated-assets-th.svg)](https://coders.talk/b/build-a-browser-3d-flight-combat-game-with-blender-generated-assets-th?utm_source=github&utm_medium=readme&utm_campaign=build)
+
+**Build a browser 3D flight-combat game with Blender-generated assets \(Three.js/Rapier\)**  
+Claude Code · Opus 5.5  
+3h 17m · zero-touch · 2 agent fails
+
+[View the full build →](https://coders.talk/b/build-a-browser-3d-flight-combat-game-with-blender-generated-assets-th?utm_source=github&utm_medium=readme&utm_campaign=build)
+<!-- /coders-talk:repo -->
+
 
 A heist game about changing the past. Linden Square is a paper architectural model you can
 turn in your hands. Visit it in **1946**, **1986** and **2026**. Plant a tree, reroute a
